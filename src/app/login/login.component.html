@@ -1,1 +1,21 @@
-<p>login works!</p>
+<form [formControl]="loginForm">
+<div class="log6">
+   
+    <div>
+    <input type="text" placeholder="Email" class="log1" formControlName="email">
+    </div>
+
+    <div>
+    <input type="password"  placeholder="password" class="log2" formControlName="password">
+    </div>
+
+    <div>
+        <button type="button" class="log3" (click)="onLoginClick()">Login</button>
+    </div>
+
+    <span>
+        <a [routerLink]="['/forgot-password']" ><button type="button" class="log4"> forgot password</button> </a>
+        <a [routerLink]="['/reset-password']"><button type="button" class="log5">reset password</button></a>
+    </span>
+</div>
+</form>

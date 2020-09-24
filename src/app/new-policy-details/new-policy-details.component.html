@@ -1,1 +1,30 @@
-<p>new-policy-details works!</p>
+<div class="buy1">
+    <form [formGroup]="newPolicyForm">
+    <div class="buy3"><h1>Plans</h1></div>
+    <div><h3>Choose your Plan</h3></div>
+    <span>
+     <input type="radio"   value="thirdParty" name="plan" formControlName="party">
+     <label for="thirdParty">Third Party Liability</label>
+     <input type="radio"  value="comprehensive" name="plan" formControlName="party">
+     <label for="comprehensive">Comprehensive</label>
+
+
+    </span>
+    <div>
+     <input type="radio"  value="oneYear" name="duration" formControlName="duration">
+     <label for="oneYear">One year</label>
+     <input type="radio"   value="twoYear" name="duration" formControlName="duration">
+     <label for="twoYear">Two years</label>
+     <input type="radio"   value="threeYear" name="duration" formControlName="duration">
+     <label for="threeYear">Three years</label>
+
+
+
+    </div>
+    <div>
+        <button type="button" class="buy2" (click)="onClickNewPolicy()">Make Payment</button>
+    </div>
+    </form>
+ </div>
+
+

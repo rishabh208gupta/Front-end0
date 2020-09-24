@@ -15,6 +15,7 @@ import { NewPolicyDetailsComponent } from './new-policy-details/new-policy-detai
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ClaimComponent } from './claim/claim.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UserPageComponent } from './user-page/user-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

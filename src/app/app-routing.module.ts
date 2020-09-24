@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'claim', component:ClaimComponent},
   { path: 'forgot-password', component:ForgotPasswordComponent},
   { path: 'home-page', component: HomePageComponent},
-  { path: 'login', component:LoginComponent},
+  { path: 'login', component: LoginComponent},
   { path:'new-policy', component:NewPolicyDetailsComponent},
   { path: 'register', component:RegisterComponent},
   { path: 'renew-policy', component:RenewPolicyComponent},
