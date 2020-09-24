@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-claim',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClaimComponent implements OnInit {
 
-  constructor() { }
+  claimForm:FormGroup;
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onClaimClick(){
+
+    this.router.navigate(['/user-page']);
+  }
 }

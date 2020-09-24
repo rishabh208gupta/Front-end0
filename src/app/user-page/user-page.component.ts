@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-page',
   templateUrl: './user-page.component.html',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onBuyPolicyClick(){
+    this.router.navigate(['/new-policy']);
+  }
+
+  onRenewPolicyClick(){
+    this.router.navigate(['/renew-policy']);
+  }
+
+  onClaimClick(){
+
+    this.router.navigate(['/claim']);
+  }
 }

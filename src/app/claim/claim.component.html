@@ -1,1 +1,25 @@
-<p>claim works!</p>
+<div>
+    <form [formGroup]="claimForm">
+        <div>
+            <label for="policyNo">Policy number</label>
+            <input formControlName="policyNo" type="number" id ="pol">
+        </div>
+        <div>
+            <label for="reason">reason :</label>
+            <select name="reason" >
+                <option value="natural disaster">Natural Disaster</option>
+                <option value="man made disaster">Man Made Disaster</option>
+                <option value="road accident">Road Accident</option>
+                <option value="theft">Theft</option>
+            </select>
+        </div>
+        <div>
+            <div>
+                <button type="button" (click)="onClaimClick()">Claim</button>
+            </div>
+        </div>
+       
+
+
+    </form>
+</div>
