@@ -1,1 +1,12 @@
-<p>register works!</p>
+<div class="register">
+    <form [formGroup]="registrationForm">
+        <input  formControlName="name" placeholder="Name.." type="text"><br>
+        <input formControlName="email" placeholder="Email" type="text"><br>
+        <input formControlName="dateOfBirth" placeholder="Date of Birth" type="date"><br>
+        <input formControlName="contactNumber" placeholder="Contact Number" type="number"><br>
+        <input formControlName="address" placeholder="Address" type="text"><br>
+        <input formControlName="password" placeholder="Password" type="text"><br>
+        <input formControlName="confirmPassword" placeholder="Confirm Password" type="text"><br>
+        <button (click)="onSubmitClick()" type="button">Submit</button><br>
+    </form>
+</div>
