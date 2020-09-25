@@ -15,6 +15,17 @@ export class LoginComponent implements OnInit {
     
   }
  
+  onForgotClick(){
+    this.router.navigate(['/forgot-password']);
+  }
+
+  onResetClick(){
+    this.router.navigate(['/reset-password']);
+  }
+
+  onLoginClick(){
+    this.router.navigate(['/user-page']);
+  }
   }
 
 

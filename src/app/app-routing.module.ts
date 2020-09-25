@@ -14,7 +14,7 @@ import { UserPageComponent } from '../app/user-page/user-page.component';
 import { VehicleDetailsComponent } from '../app/vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
-  { path:'', redirectTo: 'home', pathMatch:'full'},
+  { path:'', redirectTo: 'home-page', pathMatch:'full'},
   { path:'admin-page', component: AdminPageComponent},
   { path:'calculate-premium', component: CalculatePremiumComponent },
   { path: 'claim', component:ClaimComponent},
