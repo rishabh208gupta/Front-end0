@@ -9,16 +9,31 @@ import { Router } from '@angular/router';
 })
 export class ClaimComponent implements OnInit {
 
+  err:boolean=false;
+  fun:string="error";
   claimForm:FormGroup;
   constructor(
-    private router:Router
+    private router:Router,
+    private fb:FormBuilder
   ) { }
 
   ngOnInit(): void {
+    this.buildClaimForm();
   }
 
   onClaimClick(){
+    if(this.claimForm.valid){
+      this.router.navigate(['/user-page']);
+    }
+    else{
+      this.err=true;
+    }
+    
+  }
 
-    this.router.navigate(['/user-page']);
+  buildClaimForm(){
+    this.claimForm=this.fb.group({
+      policyNo:['',Validators.required]
+    })
   }
 }
