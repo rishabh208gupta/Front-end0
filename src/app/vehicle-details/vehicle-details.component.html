@@ -1,42 +1,88 @@
+<app-navbar></app-navbar>
 <div class="ins1">
-
-    <h1 class="ins6">BUY INSURANCE</h1>
-    <form [formGroup]="insuranceForm" class="ins2">
-        <label for="wheeler"><h3>Select whether vehicle is 2 or 4 wheeler</h3></label>
+  <h1 class="ins6">BUY INSURANCE</h1>
+  <form [formGroup]="insuranceForm" class="ins2">
+    <label for="wheeler"
+      ><h3>Select whether vehicle is 2 or 4 wheeler</h3></label
+    >
     <span>
-        
-    <input type="radio" formControlName="wheeler" class="ins3"  value="twoWheeler" name="Wheeler">
-    <label for="twoWheeler">2 Wheeler</label>
-    <input type="radio" formControlName="wheeler" class="ins3"  value="fourWheeler" name="Wheeler">
-    <label for="fourWheeler">4 Wheeler</label>
+      <input
+        type="radio"
+        formControlName="wheeler"
+        class="ins3"
+        value="twoWheeler"
+        name="Wheeler"
+      />
+      <label for="twoWheeler">2 Wheeler</label>
+      <input
+        type="radio"
+        formControlName="wheeler"
+        class="ins3"
+        value="fourWheeler"
+        name="Wheeler"
+      />
+      <label for="fourWheeler">4 Wheeler</label>
     </span>
     <div>
-    <input type="text" formControlName="manufacturer" placeholder="Enter car/bike manufacturer" class="ins4">
+      <input
+        type="text"
+        formControlName="manufacturer"
+        placeholder="Enter car/bike manufacturer"
+        class="ins4"
+      />
     </div>
     <div>
-        <input type="text" formControlName="model" placeholder="Enter car/bike model" class="ins4">
+      <input
+        type="text"
+        formControlName="model"
+        placeholder="Enter car/bike model"
+        class="ins4"
+      />
     </div>
     <div>
-        <input type="text" formControlName="drivingLicence" placeholder="Enter driving licence" class="ins4">
+      <input
+        type="text"
+        formControlName="drivingLicence"
+        placeholder="Enter driving licence"
+        class="ins4"
+      />
     </div>
     <div>
-        <input type="date" formControlName="purchaseDate" placeholder="Enter purchase date" class="ins4">
+      <input
+        type="date"
+        formControlName="purchaseDate"
+        placeholder="Enter purchase date"
+        class="ins4"
+      />
     </div>
     <div>
-        <input type="number" formControlName="registrationNumber" placeholder="Enter Registration number" class="ins4">  
+      <input
+        type="number"
+        formControlName="registrationNumber"
+        placeholder="Enter Registration number"
+        class="ins4"
+      />
     </div>
     <div>
-        <input type="number" formControlName="engineNumber" placeholder="Enter Engine number" class="ins4">
+      <input
+        type="number"
+        formControlName="engineNumber"
+        placeholder="Enter Engine number"
+        class="ins4"
+      />
     </div>
     <div>
-        <input type="number" formControlName="chassisNumber" placeholder="Enter Chassis number" class="ins4">
+      <input
+        type="number"
+        formControlName="chassisNumber"
+        placeholder="Enter Chassis number"
+        class="ins4"
+      />
     </div>
     <div>
-        <button type="button" class="ins5" (click)="onBuyInsuranceClick()"> Submit</button>
+      <button type="button" class="ins5" (click)="onBuyInsuranceClick()">
+        Submit
+      </button>
     </div>
-    
-    </form>
-    
-    
-    </div>
-    
+  </form>
+</div>

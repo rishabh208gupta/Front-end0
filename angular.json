@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "insurance"
+    }
+  },
+  "defaultProject": "insurance",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -16,6 +16,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ClaimComponent } from './claim/claim.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NewPolicyDetailsComponent,
     ForgotPasswordComponent,
     ClaimComponent,
-    UserPageComponent
+    UserPageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

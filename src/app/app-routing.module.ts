@@ -15,17 +15,17 @@ import { VehicleDetailsComponent } from '../app/vehicle-details/vehicle-details.
 
 const routes: Routes = [
   { path:'', redirectTo: 'home-page', pathMatch:'full'},
+  { path: 'home-page', component: HomePageComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component:RegisterComponent},
   { path:'admin-page', component: AdminPageComponent},
+  { path:'user-page', component:UserPageComponent},
   { path:'calculate-premium', component: CalculatePremiumComponent },
   { path: 'claim', component:ClaimComponent},
   { path: 'forgot-password', component:ForgotPasswordComponent},
-  { path: 'home-page', component: HomePageComponent},
-  { path: 'login', component: LoginComponent},
   { path:'new-policy', component:NewPolicyDetailsComponent},
-  { path: 'register', component:RegisterComponent},
   { path: 'renew-policy', component:RenewPolicyComponent},
   { path:'reset-password', component:ResetPasswordComponent},
-  { path:'user-page', component:UserPageComponent},
   { path:'vehicle-details', component:VehicleDetailsComponent}
 ];
 
