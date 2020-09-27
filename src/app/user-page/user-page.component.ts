@@ -15,7 +15,7 @@ export class UserPageComponent implements OnInit {
   }
 
   onBuyPolicyClick(){
-    this.router.navigate(['/new-policy']);
+    this.router.navigate(['/vehicle-details']);
   }
 
   onRenewPolicyClick(){
