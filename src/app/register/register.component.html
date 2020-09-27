@@ -1,12 +1,28 @@
 <div class="register">
     <form [formGroup]="registrationForm">
-        <input  formControlName="name" placeholder="Name.." type="text"><br>
-        <input formControlName="email" placeholder="Email" type="text"><br>
-        <input formControlName="dateOfBirth" placeholder="Date of Birth" type="date"><br>
-        <input formControlName="contactNumber" placeholder="Contact Number" type="number"><br>
-        <input formControlName="address" placeholder="Address" type="text"><br>
-        <input formControlName="password" placeholder="Password" type="text"><br>
-        <input formControlName="confirmPassword" placeholder="Confirm Password" type="text"><br>
-        <button (click)="onSubmitClick()" type="button">Submit</button><br>
+        <div>
+            <input  formControlName="name" class="reg1" placeholder="Name.." type="text"><br>
+        </div>
+        <div>
+            <input formControlName="email" class="reg2" placeholder="Email" type="text"><br>
+        </div>
+        <div>
+            <input formControlName="dateOfBirth" class="reg3" placeholder="Date of Birth" type="date"><br>
+        </div>
+        <div>
+            <input formControlName="contactNumber" class="reg4" placeholder="Contact Number" type="number"><br>
+        </div>
+        <div>
+            <input formControlName="address" class="reg5" placeholder="Address" type="text"><br>
+        </div>
+        <div>
+            <input formControlName="password" class="reg6" placeholder="Password" type="text"><br>
+        </div>
+        <div>
+            <input formControlName="confirmPassword" class="reg7" placeholder="Confirm Password" type="text"><br>
+        </div>
+        <div>
+            <button (click)="onSubmitClick()" class="reg8" type="button">Submit</button><br>
+        </div>
     </form>
 </div>

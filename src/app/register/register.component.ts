@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
   onSubmitClick(): void {
     if (this.registrationForm.valid) {
       this.register();
-      alert('Register successful')
+      alert('Registered successfully')
     } 
     else {
       alert('Please enter all the fields')
