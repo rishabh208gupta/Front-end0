@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-renew-policy',
@@ -6,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./renew-policy.component.css'],
 })
 export class RenewPolicyComponent implements OnInit {
-  constructor() {}
+  renewPolicyForm: FormGroup;
+  constructor(private fb: FormBuilder, private route: Router) {}
 
   ngOnInit(): void {}
+
+  onClickRenewPolicy(): void {
+    this.route.navigate(['/user-page']);
+  }
 }

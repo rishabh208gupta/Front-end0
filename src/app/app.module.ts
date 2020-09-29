@@ -18,6 +18,7 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PaymentComponent } from './payment/payment.component';
     ClaimComponent,
     UserPageComponent,
     NavbarComponent,
-    PaymentComponent
+    PaymentComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+.container {
+  min-height: calc(100vh - 95px);
+  padding: 3rem 4rem;
+}
+.row {
+  display: flex;
+}
+h2 {
+  color: #0d405f;
+  text-align: center;
+}
+.column {
+  flex: 50%;
+  border: 2px solid #0d405f;
+  margin: 2rem;
+  border-radius: 12px;
+  padding: 16px;
+}
+.column h3 {
+  margin: auto;
+  color: #0d405f;
+  transform: translateY(-34px);
+  background-color: #f2f6f7;
+  width: 68%;
+  padding: 8px;
+  /* margin-left: ; */
+}

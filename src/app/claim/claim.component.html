@@ -1,27 +1,27 @@
-<app-navbar></app-navbar>
+<app-nav></app-nav>
 <div id="container">
-    <form [formGroup]="claimForm">
-        <div>
-            <label for="policyNo">Policy number</label>
-            <input formControlName="policyNo" type="number" id ="pol" placeholder="policy number">
-            <label *ngIf="err" [class]="fun">policy number cannot be empty</label>
-        </div>
-        <div>
-            <label for="reason">Reason</label>
-            <select name="reason" >
-                <option value="natural disaster">Natural Disaster</option>
-                <option value="man made disaster">Man Made Disaster</option>
-                <option value="road accident">Road Accident</option>
-                <option value="theft">Theft</option>
-            </select>
-        </div>
-        <div>
-            
-                <button type="button" (click)="onClaimClick()">Claim</button>
-            
-        </div>
-       
-
-
-    </form>
+  <form [formGroup]="claimForm">
+    <div>
+      <label for="policyNo">Policy number</label>
+      <input
+        formControlName="policyNo"
+        type="number"
+        id="pol"
+        placeholder="policy number"
+      />
+      <label *ngIf="err" [class]="fun">policy number cannot be empty</label>
+    </div>
+    <div>
+      <label for="reason">Reason</label>
+      <select name="reason">
+        <option value="natural disaster">Natural Disaster</option>
+        <option value="man made disaster">Man Made Disaster</option>
+        <option value="road accident">Road Accident</option>
+        <option value="theft">Theft</option>
+      </select>
+    </div>
+    <div>
+      <button type="button" (click)="onClaimClick()">Claim</button>
+    </div>
+  </form>
 </div>
