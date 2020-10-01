@@ -8,7 +8,7 @@ import { Customer } from '../models/Customer';
   providedIn: 'root'
 })
 export class AuthService {
-  registerUrl: string = 'http://localhost:8080/register';
+  registerUrl: string = 'http://localhost:9090/register';
 
   constructor(private http: HttpClient) {}
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Router } from '@angular/router';
 import { Customer } from '../models/Customer';
 import { AuthService } from '../services/auth.service';
@@ -11,7 +11,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class RegisterComponent implements OnInit {
   customer:Customer = new Customer();
-  registrationForm: FormGroup;
+  
 
   constructor(
     
