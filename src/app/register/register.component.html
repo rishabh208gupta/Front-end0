@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="register">
-  <form [formGroup]="registrationForm">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmitClick()">
     <div>
       <input
         formControlName="name"
@@ -11,10 +11,11 @@
     </div>
     <div>
       <input
-        formControlName="email"
+        name="email"
         class="reg2"
         placeholder="Email"
-        type="text"
+        type="email"
+        [(ngModel)]="customer.email"
       /><br />
     </div>
     <div>
@@ -22,7 +23,8 @@
         formControlName="dateOfBirth"
         class="reg3"
         placeholder="Date of Birth"
-        type="date"
+        type="text"
+        [(ngModel)]="customer.name"
       /><br />
     </div>
     <div>
@@ -46,7 +48,7 @@
         formControlName="password"
         class="reg6"
         placeholder="Password"
-        type="text"
+        type="password"
       /><br />
     </div>
     <div>
@@ -54,13 +56,9 @@
         formControlName="confirmPassword"
         class="reg7"
         placeholder="Confirm Password"
-        type="text"
+        type="password"
       /><br />
     </div>
-    <div>
-      <button (click)="onSubmitClick()" class="reg8" type="button">
-        Submit</button
-      ><br />
-    </div>
+    <div><button class="reg8" type="button">Submit</button><br /></div>
   </form>
 </div>

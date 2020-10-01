@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms'; //Needed for reactive form validation
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +16,6 @@ import { NewPolicyDetailsComponent } from './new-policy-details/new-policy-detai
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ClaimComponent } from './claim/claim.component';
 import { UserPageComponent } from './user-page/user-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
 import { NavComponent } from './nav/nav.component';
@@ -37,14 +37,10 @@ import { NavComponent } from './nav/nav.component';
     UserPageComponent,
     NavbarComponent,
     PaymentComponent,
-    NavComponent
+    NavComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
