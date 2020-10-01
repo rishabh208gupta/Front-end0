@@ -10,44 +10,44 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  customers: any;
+  customer:Customer = new Customer();
   registrationForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    
     private authService: AuthService
   ) // private router: Router
   {}
 
-  customer: Customer = new Customer();
+  
 
   ngOnInit(): void {
-    this.buildRegisterForm();
+   // this.buildRegisterForm();
   }
 
-  buildRegisterForm(): void {
-    this.registrationForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
-      contactNumber: ['', Validators.required],
-      address: ['', Validators.required],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
-    });
-  }
+  // buildRegisterForm(): void {
+  //   this.registrationForm = this.fb.group({
+  //     name: ['', Validators.required],
+  //     email: ['', Validators.required],
+  //     dateOfBirth: ['', Validators.required],
+  //     contactNumber: ['', Validators.required],
+  //     address: ['', Validators.required],
+  //     password: ['', Validators.required],
+  //     confirmPassword: ['', Validators.required],
+  //   });
+  
 
   onSubmitClick(): void {
-    if (this.registrationForm.valid) {
-      this.register();
-    } else {
-      alert('Please enter all the fields');
-    }
+    // if (this.registrationForm.valid) {
+    //   this.register();
+    // } else {
+    //   alert('Please enter all the fields');
+    // }
   }
 
   register() {
-    this.authService.regCustomer(this.customer).subscribe((response) => {
-      this.customers = response;
-    });
+    this.authService.regCustomer(this.customer).subscribe(data=>{
+      alert(JSON.stringify(data));
+    })
   }
 }
