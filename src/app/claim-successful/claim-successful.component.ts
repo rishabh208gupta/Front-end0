@@ -7,11 +7,13 @@ import{StatusClaim} from '../models/statusClaim';
 })
 export class ClaimSuccessfulComponent implements OnInit {
   statusClaim:any;
+  name:any;
   constructor() { }
 
   ngOnInit(): void {
     this.statusClaim=sessionStorage.getItem('statusClaim');
-    console.log(this.statusClaim);
+    //console.log(this.statusClaim);
+    this.name=sessionStorage.getItem('customerName');
   }
 
 }

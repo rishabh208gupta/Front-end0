@@ -1,4 +1,6 @@
 <app-nav></app-nav>
+<button type="button" (click)="displayOnClaimPage()">See all your policies</button>
+<div *ngIf="toggle">
 <div *ngIf="claimPageDisplay[0].status">
   <table border="1" >
     <div *ngFor="let c of claimPageDisplay">
@@ -27,6 +29,8 @@
   <div *ngIf="!claimPageDisplay[0].status">
     <h3>There is no policy associated with this account...</h3>
   </div>
+</div>
+
 
 <div id="container">
   <form (ngSubmit)="onClaimClick()">

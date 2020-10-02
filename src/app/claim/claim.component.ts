@@ -15,11 +15,12 @@ export class ClaimComponent implements OnInit {
   reason:string;
   claimPageDisplay:any;
   statusClaim:StatusClaim;
+  toggle:boolean=false;
   constructor(private router:Router,private claimService:ClaimService) { }
 
   ngOnInit(): void {
     
-    this.displayOnClaimPage();
+   // this.displayOnClaimPage();
   }
 
   onClaimClick(){
@@ -31,6 +32,7 @@ export class ClaimComponent implements OnInit {
 
 
   displayOnClaimPage(){
+    this.toggle=true;
     this.claimPageDisplay=JSON.parse(sessionStorage.getItem(this.claimPageDisplay) || '[]');
   }
 }
