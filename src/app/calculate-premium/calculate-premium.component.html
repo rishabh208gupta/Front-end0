@@ -1,31 +1,35 @@
 <app-nav></app-nav>
 <div class="pre">
   <h1 class="pre1">Calculate Vechile Premium</h1>
-  <form class="pre2"  >
+  <form class="pre2" (ngSubmit)="calculatePremium()" >
     <label for="wheeler"><h3>Select whether vehicle is 2 or 4 wheeler</h3></label>
     <span>
-      <input type="radio" class="pre3" value="2-wheeler" name="vehicleType"  />
+      <input type="radio" class="pre3" value="50000" name="vehicleType"  [(ngModel)]="vehiclePrice"/>
       <label for="2-wheeler">For 2 Wheeler</label>
-      <input type="radio" class="pre4" value="4-wheeler" name="vehicleType"  />
+      <input type="radio" class="pre4" value="400000" name="vehicleType" [(ngModel)]="vehiclePrice"/>
       <label for="4-wheeler">For 4 Wheeler</label>
     </span>
 
-    <div >
-      <input type="number" name="Ex-showroom price" placeholder="Enter Ex-showroom price for your city" class="pre5" [(ngModel)]="price"/>
-    </div>
-    <div >
-      <input type="number" name="age" placeholder="Enter age of your vehicle" class="pre6" [(ngModel)]="age"/>
-    </div>
+    <label for="policy"><h3>Select policy type : comprehensive or third-party</h3></label>
+    <span>
+      <input type="radio" class="pre3" value="5000" name="policyType" [(ngModel)]="policyAmount" />
+      <label for="comprehensive">Comprehensive</label>
+      <input type="radio" class="pre4" value="4000" name="policyType" [(ngModel)]="policyAmount" />
+      <label for="third-party">Third-party</label>
+    </span>
 
+    <div >
+      <input type="date" name="dateOfPurchase" placeholder="Enter date of purchase" class="pre6" [(ngModel)]="purchaseDate"/>
+    </div>
+    
     <div>
-      <button type="submit" class="pre7" (click)="calculatePremium()" >
+      <button type="submit" class="pre7" >
         Submit
       </button>
     </div>
-    <div>
-      <br>
-      Your Estimated Premium is: <b>{{estimatedValue}}</b>
-    </div>
+    <br>
+    Your Estimated Value is:<b>{{estimatedValue}}</b>
+  <br>
   </form>
 </div>
 

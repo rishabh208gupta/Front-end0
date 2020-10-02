@@ -6,15 +6,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./calculate-premium.component.css'],
 })
 export class CalculatePremiumComponent implements OnInit {
-  price: number;
-  age:number;
-  depreciationRate:5;
+  
+  vehiclePrice:number;
+  purchaseDate:Date;
+  policyAmount:number;
   estimatedValue:number;
-
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
   calculatePremium(){
-    this.estimatedValue==this.price-(this.price*this.depreciationRate)/100; 
+    this.estimatedValue=+this.vehiclePrice+ +this.policyAmount;
   }
 }
