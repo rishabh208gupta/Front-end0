@@ -14,7 +14,6 @@ export class ClaimComponent implements OnInit {
   policyNo:number;
   reason:string;
   claimPageDisplay:any;
-  statusClaim:StatusClaim;
   toggle:boolean=false;
   constructor(private router:Router,private claimService:ClaimService) { }
 
@@ -23,7 +22,11 @@ export class ClaimComponent implements OnInit {
 
   onClaimClick(){
     this.claimService.onClickingClaim(this.policyNo,this.reason).subscribe(data=>{
-      sessionStorage.setItem('statusClaim',data);
+      sessionStorage.setItem('claimId',String(data.claimId));
+      sessionStorage.setItem('statusMessage',data.statusMessage);
+      sessionStorage.setItem('status',String(data.status));
+      // console.log(this.statusClaim[0]);
+      this.router.navigate(['/claim-successful']);
     })
     
   }

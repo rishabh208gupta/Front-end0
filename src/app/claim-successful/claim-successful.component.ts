@@ -6,14 +6,20 @@ import{StatusClaim} from '../models/statusClaim';
   styleUrls: ['./claim-successful.component.css']
 })
 export class ClaimSuccessfulComponent implements OnInit {
-  statusClaim:any;
+  claimId:any;
+  statusMessage:any;
+  status:any;
+
   name:any;
   constructor() { }
 
   ngOnInit(): void {
-    this.statusClaim=sessionStorage.getItem('statusClaim');
-    //console.log(this.statusClaim);
-    this.name=sessionStorage.getItem('customerName');
+    this.claimId= sessionStorage.getItem('claimId');
+    this.statusMessage=sessionStorage.getItem('statusMessage');
+    this.status=sessionStorage.getItem('status');
+
+    
+
   }
 
 }
