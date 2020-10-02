@@ -25,13 +25,12 @@ export class LoginComponent implements OnInit {
       console.log(data);
       if (data.status == true) {
         sessionStorage.setItem('customerId', String(data.customerId));
-        sessionStorage.setItem('customerName', data.name);
-        this.router.navigate(['/forgot-password']);
-        this.router.navigate(['/reset-password']);
-        this.router.navigate(['/user-page']);
+        sessionStorage.setItem('customerName', data.customerName);
+        
       }
-      else 
-        alert('Please enter valid userid/password');
+      this.router.navigate(['/forgot-password']);
+      this.router.navigate(['/reset-password']);
+      this.router.navigate(['/user-page']);
     });
   }
 }
@@ -45,7 +44,7 @@ export class LoginComponent implements OnInit {
     status: boolean;
     statusMessage: string;
     customerId: number;
-    name: string;
+    customerName: string;
   }
 
 
