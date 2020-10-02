@@ -8,7 +8,7 @@ import{StatusClaim} from '../models/statusClaim';
 export class ClaimSuccessfulComponent implements OnInit {
   claimId:any;
   statusMessage:any;
-  status:any;
+  status:boolean;
 
   name:any;
   constructor() { }
@@ -16,7 +16,7 @@ export class ClaimSuccessfulComponent implements OnInit {
   ngOnInit(): void {
     this.claimId= sessionStorage.getItem('claimId');
     this.statusMessage=sessionStorage.getItem('statusMessage');
-    this.status=sessionStorage.getItem('status');
+    this.status=JSON.parse(sessionStorage.getItem('status'));
 
     
 
