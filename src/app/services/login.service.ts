@@ -8,12 +8,11 @@ import { Login, LoginStatus } from '../login/login.component';
   providedIn: 'root'
 })
 export class LoginService {
-  loginUrl: string = 'http://localhost:9090/login';
+  loginUrl: string = 'http://localhost:9090/loginpage';
 
   constructor(private http: HttpClient) { }
 
   login(login: Login): Observable<LoginStatus>{
-    let url='http://localhost:8183/login';
-    return this.http.post<LoginStatus>(url,login);
+    return this.http.post<LoginStatus>(this.loginUrl,login);
   }
 }
