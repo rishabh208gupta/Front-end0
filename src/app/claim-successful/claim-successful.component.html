@@ -1,1 +1,8 @@
-<p>claim-successful works!</p>
+<div *ngIf="statusClaim.status">
+    {{statusClaim.statusMessage}}
+    Your claim id is {{statusClaim.claimId}}.Please keep this for future reference...<br>
+    Thanks {{name}}!
+</div>
+<div *ngIf="!statusClaim.status">
+    {{statusClaim.statusMessage}}
+</div>

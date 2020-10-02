@@ -12,4 +12,8 @@ export class ClaimService {
     let url="http://localhost:9090/claimpage?customerId="+customerId;
     return this.http.get(url);
   }
+  onClickingClaim(policyNo:number,reason:string):Observable<any>{
+    let url="http://localhost:9090/claimstatus?policyNo="+policyNo+"&reason="+reason;
+    return this.http.get(url);
+  }
 }

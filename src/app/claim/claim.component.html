@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <div *ngIf="claimPageDisplay[0].status">
-    <table border="1" >
-      <div *ngFor="let c of claimPageDisplay">
+  <table border="1" >
+    <div *ngFor="let c of claimPageDisplay">
       <tr>
       <th>Policy Number</th>
       <th>Policy Id </th>
@@ -10,10 +10,9 @@
       <th>Manufacturer</th>
       <th>Car Model</th>
       <th>Registration Number</th>
-    </tr>
+     </tr>
     
       <tr>
-        
         <td>{{c.policyNo}}</td>
        <td>{{c.policyId}}</td>
         <td>{{c.policyType}}</td>
@@ -21,47 +20,34 @@
         <td>{{c.manufacturer}}</td>
         <td>{{c.model}}</td>
         <td>{{c.registrationNo}}</td>
-     
       </tr>
     </div>
     </table>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
+  <div *ngIf="!claimPageDisplay[0].status">
+    <h3>There is no policy associated with this account...</h3>
+  </div>
 
 <div id="container">
-  <form >
+  <form (ngSubmit)="onClaimClick()">
     <div>
       <label for="policyNo">Policy number</label>
-      <input
-        name="policyNo"
-        type="number"
-        id="pol"
-        placeholder="policy number"
-      />
-      <label *ngIf="err" [class]="fun">policy number cannot be empty</label>
+      <input name="policyNo" type="number" id="pol" placeholder="policy number" [(ngModel)]="policyNo" />
+     <!-- <label *ngIf="err" [class]="fun">policy number cannot be empty</label>-->
     </div>
+  
     <div>
       <label for="reason">Reason</label>
-      <select name="reason">
+      <select name="reason" [(ngModel)]="reason"> 
         <option value="natural disaster">Natural Disaster</option>
         <option value="man made disaster">Man Made Disaster</option>
         <option value="road accident">Road Accident</option>
         <option value="theft">Theft</option>
       </select>
     </div>
+    
     <div>
-      <button type="button" (click)="onClaimClick()">Claim</button>
+      <button type="submit" >Claim</button>
     </div>
   </form>
 </div>

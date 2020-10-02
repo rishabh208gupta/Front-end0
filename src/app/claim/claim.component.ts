@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
 import { Router } from '@angular/router';
-import{ClaimPageDisplay} from '../models/claimPageDisplay';
-
+import{ClaimService}from '../services/claim.service';
+import{StatusClaim} from '../models/statusClaim';
 @Component({
   selector: 'app-claim',
   templateUrl: './claim.component.html',
@@ -12,38 +11,26 @@ export class ClaimComponent implements OnInit {
 
   err:boolean=false;
   fun:string="error";
-  claimForm:FormGroup;
+  policyNo:number;
+  reason:string;
   claimPageDisplay:any;
-  constructor(
-    private router:Router,
-    private fb:FormBuilder
-  ) { }
+  statusClaim:StatusClaim;
+  constructor(private router:Router,private claimService:ClaimService) { }
 
   ngOnInit(): void {
-    this.buildClaimForm();
+    
     this.displayOnClaimPage();
   }
 
   onClaimClick(){
-    if(this.claimForm.valid){
-      this.router.navigate(['/user-page']);
-    }
-    else{
-      this.err=true;
-    }
+    this.claimService.onClickingClaim(this.policyNo,this.reason).subscribe(data=>{
+      sessionStorage.setItem('statusClaim',data);
+    })
     
   }
 
-  buildClaimForm(){
-    this.claimForm=this.fb.group({
-      policyNo:['',Validators.required]
-    })
-  }
 
   displayOnClaimPage(){
-   // this.claimPageDisplay=sessionStorage.getItem('data');
-    //alert(JSON.stringify(this.claimPageDisplay[0]));
-    this.claimPageDisplay=JSON.parse(sessionStorage.getItem(this.claimPageDisplay) || '[]')
-    //console.log(this.claimPageDisplay);
+    this.claimPageDisplay=JSON.parse(sessionStorage.getItem(this.claimPageDisplay) || '[]');
   }
 }
