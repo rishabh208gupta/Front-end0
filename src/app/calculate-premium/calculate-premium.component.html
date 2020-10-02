@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <div class="pre">
   <h1 class="pre1">Calculate Vechile Premium</h1>
-  <form class="pre2" (ngSubmit)="calculatePremium()" >
+  <form class="pre2"  >
     <label for="wheeler"><h3>Select whether vehicle is 2 or 4 wheeler</h3></label>
     <span>
       <input type="radio" class="pre3" value="2-wheeler" name="vehicleType"  />
@@ -11,15 +11,20 @@
     </span>
 
     <div >
-      <input type="number" name="Ex-showroom price" placeholder="Enter Ex-showroom price for your city" class="pre5"/>
+      <input type="number" name="Ex-showroom price" placeholder="Enter Ex-showroom price for your city" class="pre5" [(ngModel)]="price"/>
     </div>
     <div >
-      <input type="number" name="age" placeholder="Enter age of your vehicle" class="pre6"/>
+      <input type="number" name="age" placeholder="Enter age of your vehicle" class="pre6" [(ngModel)]="age"/>
     </div>
+
     <div>
-      <button type="submit" class="pre7"  >
+      <button type="submit" class="pre7" (click)="calculatePremium()" >
         Submit
       </button>
+    </div>
+    <div>
+      <br>
+      Your Estimated Premium is: <b>{{estimatedValue}}</b>
     </div>
   </form>
 </div>
