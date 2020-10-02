@@ -20,6 +20,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     PaymentComponent,
     NavComponent,
+    ClaimSuccessfulComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,FormsModule, HttpClientModule],
   providers: [],
