@@ -28,6 +28,16 @@ export class LoginComponent implements OnInit {
   }
   }
 
-
+  export class Login {
+    email: string;
+    password: string;
+  }
+  
+  export class LoginStatus {
+    status: boolean;
+    statusMessage: string;
+    customerId: number;
+    name: string;
+  }
 
 
