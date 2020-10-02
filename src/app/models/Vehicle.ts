@@ -1,4 +1,5 @@
 import { Customer } from './Customer';
+import { Status } from './Status';
 
 export class Vehicle{
     vehicleId:number;
@@ -11,4 +12,9 @@ export class Vehicle{
     engineNo:number;
     chasisNo:number;
     customer:Customer = new Customer();
+}
+
+export class VehicleRegistrationStatus extends Status{
+
+    vehicleId:number;
 }
