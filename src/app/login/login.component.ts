@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   loginCheck() {
     console.log(JSON.stringify(this.login));
+    
     this.loginService.login(this.login).subscribe((data) => {
       console.log(data);
       if (data.status == true) {
@@ -29,6 +30,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/reset-password']);
         this.router.navigate(['/user-page']);
       }
+      else 
+        alert('Please enter valid userid/password');
     });
   }
 }
