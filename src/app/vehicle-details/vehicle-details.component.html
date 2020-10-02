@@ -1,32 +1,32 @@
 <app-navbar></app-navbar>
 <div class="ins1">
   <h1 class="ins6">BUY INSURANCE</h1>
-  <form [formGroup]="insuranceForm" class="ins2">
+  <form class="ins2">
     <label for="wheeler"
       ><h3>Select whether vehicle is 2 or 4 wheeler</h3></label
     >
     <span>
       <input
         type="radio"
-        formControlName="wheeler"
+        
         class="ins3"
-        value="twoWheeler"
-        name="Wheeler"
+        value="2-wheeler"
+        name="vehicleType"
       />
-      <label for="twoWheeler">2 Wheeler</label>
+      <label for="2-wheeler">2 Wheeler</label>
       <input
         type="radio"
-        formControlName="wheeler"
+        
         class="ins3"
-        value="fourWheeler"
-        name="Wheeler"
+        value="4-wheeler"
+        name="vehicleType"
       />
-      <label for="fourWheeler">4 Wheeler</label>
+      <label for="4-wheeler">4 Wheeler</label>
     </span>
     <div>
       <input
         type="text"
-        formControlName="manufacturer"
+        name="manufacturer"
         placeholder="Enter car/bike manufacturer"
         class="ins4"
       />
@@ -34,15 +34,15 @@
     <div>
       <input
         type="text"
-        formControlName="model"
+        name="model"
         placeholder="Enter car/bike model"
         class="ins4"
       />
     </div>
     <div>
       <input
-        type="text"
-        formControlName="drivingLicence"
+        type="number"
+        name="dlNo"
         placeholder="Enter driving licence"
         class="ins4"
       />
@@ -50,7 +50,7 @@
     <div>
       <input
         type="date"
-        formControlName="purchaseDate"
+        name="purchaseDate"
         placeholder="Enter purchase date"
         class="ins4"
       />
@@ -58,7 +58,7 @@
     <div>
       <input
         type="number"
-        formControlName="registrationNumber"
+        name="registrationNo"
         placeholder="Enter Registration number"
         class="ins4"
       />
@@ -66,15 +66,15 @@
     <div>
       <input
         type="number"
-        formControlName="engineNumber"
+        name="engineNo"
         placeholder="Enter Engine number"
         class="ins4"
       />
     </div>
     <div>
       <input
-        type="number"
-        formControlName="chassisNumber"
+        type="text"
+        name="chasisNo"
         placeholder="Enter Chassis number"
         class="ins4"
       />
