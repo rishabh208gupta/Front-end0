@@ -19,8 +19,6 @@ export class ClaimComponent implements OnInit {
   constructor(private router:Router,private claimService:ClaimService) { }
 
   ngOnInit(): void {
-    
-   // this.displayOnClaimPage();
   }
 
   onClaimClick(){
