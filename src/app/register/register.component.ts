@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Customer } from '../models/Customer';
-import { AuthService } from '../services/auth.service';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -10,19 +10,14 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  customer:Customer = new Customer();
-  
+  customer: Customer = new Customer();
 
   constructor(
-    
-    private authService: AuthService
-  ) // private router: Router
-  {}
-
-  
+    private registerService: RegisterService // private router: Router
+  ) {}
 
   ngOnInit(): void {
-   // this.buildRegisterForm();
+    // this.buildRegisterForm();
   }
 
   // buildRegisterForm(): void {
@@ -35,7 +30,6 @@ export class RegisterComponent implements OnInit {
   //     password: ['', Validators.required],
   //     confirmPassword: ['', Validators.required],
   //   });
-  
 
   onSubmitClick(): void {
     // if (this.registrationForm.valid) {
@@ -46,8 +40,8 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.authService.regCustomer(this.customer).subscribe(data=>{
+    this.registerService.regCustomer(this.customer).subscribe((data) => {
       alert(JSON.stringify(data));
-    })
+    });
   }
 }
