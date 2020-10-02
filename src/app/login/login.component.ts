@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       console.log(data);
       if (data.status == true) {
         sessionStorage.setItem('customerId', String(data.customerId));
-        sessionStorage.setItem('customerName', data.name);
+        sessionStorage.setItem('customerName', data.customerName);
         
       }
       this.router.navigate(['/forgot-password']);
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     status: boolean;
     statusMessage: string;
     customerId: number;
-    name: string;
+    customerName: string;
   }
 
 
