@@ -1,49 +1,53 @@
 <app-nav></app-nav>
 <div class="buy1">
-  <form [formGroup]="newPolicyForm">
+  <form  (ngSubmit)="onClickPayment()">
     <div class="buy3"><h1>Plans</h1></div>
     <div><h3>Choose your Plan</h3></div>
     <span>
       <input
         type="radio"
-        value="thirdParty"
-        name="plan"
-        formControlName="party"
+        value="third party liability"
+        name="policyType"
+        [(ngModel)]="newPolicy.policy.policyType"
+        
       />
-      <label for="thirdParty">Third Party Liability</label>
+      <label for="policyType">Third Party Liability</label>
       <input
         type="radio"
         value="comprehensive"
-        name="plan"
-        formControlName="party"
+        name="policyType"
+        [(ngModel)]="newPolicy.policy.policyType"
       />
-      <label for="comprehensive">Comprehensive</label>
+      <label for="policyType">Comprehensive</label>
     </span>
     <div>
       <input
         type="radio"
-        value="oneYear"
-        name="duration"
-        formControlName="duration"
+        value="1"
+        name="policyDuration"
+        [(ngModel)]="newPolicy.policy.policyDuration"
+        
       />
-      <label for="oneYear">One year</label>
+      <label for="policyDuration">One year</label>
       <input
         type="radio"
-        value="twoYear"
-        name="duration"
-        formControlName="duration"
+        value="2"
+        name="policyDuration"
+        [(ngModel)]="newPolicy.policy.policyDuration"
+        
       />
-      <label for="twoYear">Two years</label>
+      <label for="policyDuration">Two years</label>
       <input
         type="radio"
-        value="threeYear"
-        name="duration"
-        formControlName="duration"
+        value="3"
+        name="policyDuration"
+        [(ngModel)]="newPolicy.policy.policyDuration"
+        
       />
-      <label for="threeYear">Three years</label>
+      <label for="policyDuration">Three years</label>
     </div>
     <div>
-      <button type="button" class="buy2" (click)="onClickNewPolicy()">
+      <button type="submit" class="buy2">
         Make Payment
       </button>
     </div>

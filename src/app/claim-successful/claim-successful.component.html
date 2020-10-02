@@ -1,8 +1,9 @@
-<div *ngIf="statusClaim.status">
-    {{statusClaim.statusMessage}}
-    Your claim id is {{statusClaim.claimId}}.Please keep this for future reference...<br>
-    Thanks {{name}}!
+
+<div *ngIf="!status">
+   <h3> {{statusMessage}}.....
+    Your claim id is {{claimId}}.Please keep this for future reference...<br>
+    Thanks !</h3>
 </div>
-<div *ngIf="!statusClaim.status">
-    {{statusClaim.statusMessage}}
+<div *ngIf="status">
+   <h3> {{statusMessage}}</h3>
 </div>
