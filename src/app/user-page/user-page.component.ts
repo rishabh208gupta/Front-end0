@@ -8,7 +8,7 @@ import{ClaimService} from '../services/claim.service';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
-  claimPageDisplay:ClaimPageDisplay[];
+  claimPageDisplay:any;
   customerId:any;
   constructor(
     private router:Router, private claimService:ClaimService
@@ -28,8 +28,13 @@ export class UserPageComponent implements OnInit {
   onClaimClick(){
     this.customerId=sessionStorage.getItem('customerId');
     this.claimService.displayOnClaimPage(this.customerId).subscribe(data=>{
-      sessionStorage.setItem('claimPageDisplay', data);
+      for(let i:0;i<data.size;i++)
+      sessionStorage.setItem('claimPageDisplay', JSON.stringify(data));
+      //alert(JSON.stringify(data[1].model));
+     // alert(JSON.stringify(this.claimPageDisplay.status));
+     //console.log(this.claimPageDisplay);
+     alert(this.claimPageDisplay);
     })
-      this.router.navigate(['/claim']);
+      //this.router.navigate(['/claim']);
   }
 }

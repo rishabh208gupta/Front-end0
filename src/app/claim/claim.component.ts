@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
 import { Router } from '@angular/router';
+import{ClaimPageDisplay} from '../models/claimPageDisplay';
 
 @Component({
   selector: 'app-claim',
@@ -12,6 +13,7 @@ export class ClaimComponent implements OnInit {
   err:boolean=false;
   fun:string="error";
   claimForm:FormGroup;
+  claimPageDisplay:any;
   constructor(
     private router:Router,
     private fb:FormBuilder
@@ -19,6 +21,7 @@ export class ClaimComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildClaimForm();
+    this.displayOnClaimPage();
   }
 
   onClaimClick(){
@@ -35,5 +38,10 @@ export class ClaimComponent implements OnInit {
     this.claimForm=this.fb.group({
       policyNo:['',Validators.required]
     })
+  }
+
+  displayOnClaimPage(){
+    this.claimPageDisplay=sessionStorage.getItem('claimPageDisplay');
+    alert(JSON.stringify(this.claimPageDisplay));
   }
 }
