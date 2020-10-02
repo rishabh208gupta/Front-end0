@@ -11,10 +11,19 @@ export class CalculatePremiumComponent implements OnInit {
   purchaseDate:Date;
   policyAmount:number;
   estimatedValue:number;
+  age:number;
+  timeDiff:any;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
   calculatePremium(){
-    this.estimatedValue=+this.vehiclePrice+ +this.policyAmount;
+    if(this.purchaseDate){
+      const pdate = new Date(this.purchaseDate);
+      this.timeDiff = Math.abs(Date.now()-pdate.getTime());
+      //Used Math.floor instead of Math.ceil
+      //so 26 years and 140 days would be considered as 26, not 27.
+      this.age = Math.floor((this.timeDiff / (1000 * 3600 * 24))/365);
+    this.estimatedValue=+this.vehiclePrice+ +this.policyAmount+ +this.age;
   }
+}
 }
