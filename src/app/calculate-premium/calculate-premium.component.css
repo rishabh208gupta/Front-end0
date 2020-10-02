@@ -1,4 +1,4 @@
-.container {
+/*.container {
   min-height: calc(100vh - 95px);
   padding: 3rem 4rem;
 }
@@ -23,5 +23,23 @@ h2 {
   background-color: #f2f6f7;
   width: 68%;
   padding: 8px;
-  /* margin-left: ; */
+ 
+}*/
+
+.pre{
+  text-align: center;
+}
+
+.pre2{
+  margin: 5%;
+}
+.pre3,.pre4{
+
+  margin: 2%;
+}
+.pre5{
+  margin:2%;
+  width:25%;
+  padding:1%;
+  
 }
