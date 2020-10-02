@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Vehicle } from '../models/Vehicle';
 import { Router } from '@angular/router';
+import { BuyPolicyService } from '../services/buy-policy.service';
 
 @Component({
   selector: 'app-vehicle-details',
@@ -9,11 +10,16 @@ import { Router } from '@angular/router';
 })
 export class VehicleDetailsComponent implements OnInit {
  
-  constructor(private router:Router) { }
+  vehicle:Vehicle = new Vehicle();
+  constructor(private router:Router, private buyPolicyService:BuyPolicyService) { }
 
  
 
   ngOnInit(): void {
+    this.vehicle.customer.customerId=parseInt(sessionStorage.getItem('customerId')) ;
+  }
+
+  onBuyInsuranceClick(){
     
   }
   
