@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NewPolicy, PolicyRegistrationStatus } from '../models/new-policy';
 import { Vehicle, VehicleRegistrationStatus } from '../models/Vehicle';
+import { Bill } from '../models/bill-details';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,5 +22,10 @@ export class BuyPolicyService {
     registerPolicy(newPolicy:NewPolicy):Observable<PolicyRegistrationStatus>{
       let url = 'http://localhost:9090/register-policy';
       return this.http.post<PolicyRegistrationStatus>(url,newPolicy);
+    }
+
+    getBillDetails(policyNo:number):Observable<Bill>{
+      let url = 'http://localhost:9090/bill-details?policyNo='+policyNo;
+      return this.http.get<Bill>(url);
     }
 }

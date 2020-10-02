@@ -1,5 +1,6 @@
 
 import { NewPolicy, PolicyRegistrationStatus } from '../models/new-policy';
+import { Bill } from '../models/bill-details';
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -14,6 +15,7 @@ export class NewPolicyDetailsComponent implements OnInit {
  
   newPolicy:NewPolicy = new NewPolicy();
   policyRegistrationStatus :PolicyRegistrationStatus= new PolicyRegistrationStatus();
+  bill:Bill=new Bill();
   constructor(private router:Router, private buyPolicyService:BuyPolicyService) { }
 
   ngOnInit(): void {
@@ -27,6 +29,11 @@ export class NewPolicyDetailsComponent implements OnInit {
        this.policyRegistrationStatus=data;
        sessionStorage.setItem('policyNo',String(this.policyRegistrationStatus.policyNo))
        console.log(this.policyRegistrationStatus.policyNo);
+       this.buyPolicyService.getBillDetails(this.policyRegistrationStatus.policyNo).subscribe(obj=>{
+         this.bill=obj;
+         sessionStorage.setItem('billing', JSON.stringify(this.bill));
+       })
+
        this.router.navigate(['/make-payment']);
      })
   }
