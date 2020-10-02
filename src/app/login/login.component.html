@@ -1,12 +1,12 @@
 <app-nav></app-nav>
 <div class="log6">
-  <form [formGroup]="loginForm">
+  <form (ngSubmit)="loginCheck()">
     <div>
       <input
         type="text"
         placeholder="Email"
         class="log1"
-        formControlName="email"
+        [(ngModel)]="login.email"
       />
     </div>
 
@@ -15,19 +15,19 @@
         type="password"
         placeholder="password"
         class="log2"
-        formControlName="password"
+        [(ngModel)]="login.password"
       />
     </div>
 
     <div>
-      <button type="button" class="log3" (click)="onLoginClick()">Login</button>
+      <button type="button" class="log3" >Login</button>
     </div>
 
     <span>
-      <button type="button" class="log4" (click)="onForgotClick()">
+      <button type="button" class="log4" >
         forgot password
       </button>
-      <button type="button" class="log5" (click)="onResetClick()">
+      <button type="button" class="log5" >
         reset password
       </button>
     </span>

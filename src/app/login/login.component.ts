@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from 'src/app/services/login.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,25 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm:FormGroup;
-  constructor(private fb:FormBuilder,private router:Router) { }
 
-  ngOnInit(): void {
-    
-  }
- 
-  onForgotClick(){
-    this.router.navigate(['/forgot-password']);
-  }
+  login: Login = new Login();
 
-  onResetClick(){
-    this.router.navigate(['/reset-password']);
-  }
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) {}
 
-  onLoginClick(){
-    this.router.navigate(['/user-page']);
+  ngOnInit(): void {}
+
+  loginCheck() {
+    console.log(JSON.stringify(this.login));
+    this.loginService.login(this.login).subscribe((data) => {
+      console.log(data);
+      if (data.status == true) {
+        sessionStorage.setItem('customerId', String(data.customerId));
+        sessionStorage.setItem('customerName', data.name);
+        this.router.navigate(['/forgot-password']);
+        this.router.navigate(['/reset-password']);
+        this.router.navigate(['/user-page']);
+      }
+    });
   }
-  }
+}
 
   export class Login {
     email: string;
