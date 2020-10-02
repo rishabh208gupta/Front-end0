@@ -29,13 +29,7 @@ export class UserPageComponent implements OnInit {
   onClaimClick(){
     this.customerId=sessionStorage.getItem('customerId');
     this.claimService.displayOnClaimPage(this.customerId).subscribe(data=>{
-      //for(let i:0;i<data.size;i++)
       sessionStorage.setItem(this.claimPageDisplay, JSON.stringify(data));
-      //alert(JSON.stringify(data[1].model));
-     // alert(JSON.stringify(this.claimPageDisplay.status));
-     //console.log(this.claimPageDisplay);
-     //console.log(JSON.parse(sessionStorage.getItem(this.claimPageDisplay) || '[]'));
-     
     })
       this.router.navigate(['/claim']);
   }
