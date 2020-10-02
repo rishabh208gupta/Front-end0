@@ -26,12 +26,11 @@ export class LoginComponent implements OnInit {
       if (data.status == true) {
         sessionStorage.setItem('customerId', String(data.customerId));
         sessionStorage.setItem('customerName', data.name);
-        this.router.navigate(['/forgot-password']);
-        this.router.navigate(['/reset-password']);
-        this.router.navigate(['/user-page']);
+        
       }
-      else 
-        alert('Please enter valid userid/password');
+      this.router.navigate(['/forgot-password']);
+      this.router.navigate(['/reset-password']);
+      this.router.navigate(['/user-page']);
     });
   }
 }
