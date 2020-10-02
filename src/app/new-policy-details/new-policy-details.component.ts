@@ -1,8 +1,9 @@
 
-import { IfStmt } from '@angular/compiler';
+import { NewPolicy, PolicyRegistrationStatus } from '../models/new-policy';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Router } from '@angular/router';
+import { BuyPolicyService } from '../services/buy-policy.service';
 
 @Component({
   selector: 'app-new-policy-details',
@@ -10,28 +11,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-policy-details.component.css']
 })
 export class NewPolicyDetailsComponent implements OnInit {
-  newPolicyForm:FormGroup;
-  constructor(private fb:FormBuilder,private route:Router) { }
+ 
+  newPolicy:NewPolicy = new NewPolicy();
+  policyRegistrationStatus :PolicyRegistrationStatus= new PolicyRegistrationStatus();
+  constructor(private route:Router, private buyPolicyService:BuyPolicyService) { }
 
   ngOnInit(): void {
-    this.buildNewPolicyForm();
+    this.newPolicy.vehicle.vehicleId=parseInt(sessionStorage.getItem('vehicleId'));
   }
-  buildNewPolicyForm():void{
-    this.newPolicyForm=this.fb.group({
-      party:['',Validators.required],
-      duration:['',Validators.required]
-
-
-    })
+  
    
-  }
-  onClickNewPolicy():void{
-      if(this.newPolicyForm.valid){
-        alert("proceed to payment");
-      }
-      else{
-        alert("enter all the fields");
-      }
+  
+  onClickPayment():void{
+     this.buyPolicyService.registerPolicy(this.newPolicy).subscribe(data=>{
+       this.policyRegistrationStatus=data;
+       sessionStorage.setItem('policyNo',String(this.policyRegistrationStatus.policyNo))
+       console.log(this.policyRegistrationStatus.policyNo);
+     })
   }
 
 }
