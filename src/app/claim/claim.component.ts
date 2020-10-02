@@ -41,7 +41,9 @@ export class ClaimComponent implements OnInit {
   }
 
   displayOnClaimPage(){
-    this.claimPageDisplay=sessionStorage.getItem('claimPageDisplay');
-    alert(JSON.stringify(this.claimPageDisplay));
+   // this.claimPageDisplay=sessionStorage.getItem('data');
+    //alert(JSON.stringify(this.claimPageDisplay[0]));
+    this.claimPageDisplay=JSON.parse(sessionStorage.getItem(this.claimPageDisplay) || '[]')
+    //console.log(this.claimPageDisplay);
   }
 }

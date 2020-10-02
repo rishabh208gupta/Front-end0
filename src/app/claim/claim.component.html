@@ -1,7 +1,44 @@
-
-
-
 <app-nav></app-nav>
+<div *ngIf="claimPageDisplay[0].status">
+    <table border="1" >
+      <div *ngFor="let c of claimPageDisplay">
+      <tr>
+      <th>Policy Number</th>
+      <th>Policy Id </th>
+      <th>Policy Type</th>
+      <th>Vehicle Type</th>
+      <th>Manufacturer</th>
+      <th>Car Model</th>
+      <th>Registration Number</th>
+    </tr>
+    
+      <tr>
+        
+        <td>{{c.policyNo}}</td>
+       <td>{{c.policyId}}</td>
+        <td>{{c.policyType}}</td>
+        <td>{{c.vehicleType}}</td>
+        <td>{{c.manufacturer}}</td>
+        <td>{{c.model}}</td>
+        <td>{{c.registrationNo}}</td>
+     
+      </tr>
+    </div>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="container">
   <form >
     <div>
