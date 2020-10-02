@@ -19,6 +19,7 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaymentComponent } from './payment/payment.component';
 import { NavComponent } from './nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { NavComponent } from './nav/nav.component';
     PaymentComponent,
     NavComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,FormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
