@@ -20,7 +20,7 @@ export class CalculatePremiumComponent implements OnInit {
 
   ngOnInit(): void {}
   calculatePremium(){
-    this.depreciatonRate=10;
+    this.depreciatonRate=11;
     if(this.purchaseDate){
       const pdate = new Date(this.purchaseDate);
       this.timeDiff = Math.abs(Date.now()-pdate.getTime());
