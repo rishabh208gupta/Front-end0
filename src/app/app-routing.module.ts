@@ -13,6 +13,7 @@ import { ResetPasswordComponent } from '../app/reset-password/reset-password.com
 import { UserPageComponent } from '../app/user-page/user-page.component';
 import { VehicleDetailsComponent } from '../app/vehicle-details/vehicle-details.component';
 import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.component';
+import { PaymentSuccessfulComponent } from './payment-successful/payment-successful.component';
 import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'vehicle-details', component: VehicleDetailsComponent },
   { path:'claim-successful',component:ClaimSuccessfulComponent},
-  { path:'make-payment',component:PaymentComponent}
+  { path:'make-payment',component:PaymentComponent},
+  { path: 'payment-successful',component:PaymentSuccessfulComponent}
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Bill } from '../models/bill-details';
 import { Payment,PaymentStatus } from '../models/payment';
 import { BuyPolicyService } from '../services/buy-policy.service';
@@ -14,7 +15,8 @@ export class PaymentComponent implements OnInit {
   payment:Payment=new Payment();
   paymentStatus:PaymentStatus = new PaymentStatus();
   constructor(
-    private buyPolicyservice:BuyPolicyService
+    private buyPolicyservice:BuyPolicyService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +31,7 @@ export class PaymentComponent implements OnInit {
       this.paymentStatus=data;
       sessionStorage.setItem('userPolicyNo',String(this.paymentStatus.policyNo));
       console.log(this.paymentStatus.policyNo);
+      this.router.navigate(['/payment-successful']);
     })
   }
 
