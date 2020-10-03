@@ -12,10 +12,20 @@
 
     <label for="policy"><h3>Select policy type : comprehensive or third-party</h3></label>
     <span>
-      <input type="radio" class="pre3" value="5000" name="policyType" [(ngModel)]="policyAmount" />
+      <input type="radio" class="pre3" value="6.5" name="policyType" [(ngModel)]="premiumRate" />
       <label for="comprehensive">Comprehensive</label>
-      <input type="radio" class="pre4" value="4000" name="policyType" [(ngModel)]="policyAmount" />
+      <input type="radio" class="pre4" value="6" name="policyType" [(ngModel)]="premiumRate" />
       <label for="third-party">Third-party</label>
+    </span>
+
+    <label for="policy"><h3>Select plan duration : one two or three year plan</h3></label>
+    <span>
+      <input type="radio" class="pre3" value="1" name="years" [(ngModel)]="planYear" />
+      <label for="1 year">1 year</label>
+      <input type="radio" class="pre4" value="2" name="years" [(ngModel)]="planYear" />
+      <label for="2 year">2 year</label>
+      <input type="radio" class="pre4" value="3" name="years" [(ngModel)]="planYear" />
+      <label for="3 year">3 year</label>
     </span>
 
     <div >
