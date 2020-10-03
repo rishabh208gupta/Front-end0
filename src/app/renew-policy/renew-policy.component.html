@@ -1,21 +1,21 @@
 <app-nav></app-nav>
 <div>
-  <form [formGroup]="renewPolicyForm">
+  <form (ngSubmit)="onClickRenewPolicy()">
     <div><h1>Renew Policy</h1></div>
     <div>
       <label for="policyNo">Policy number</label>
-      <input formControlName="policyNo" type="number" id="pol" />
+      <input type="number" id="pol" [(ngModel)]="policyNo"/>
     </div>
     <div>
       <label for="year">Year</label>
-      <select name="year">
-        <option value="One year">One yea</option>
-        <option value="Two year">Two year</option>
-        <option value="Three year">Three year</option>
+      <select name="year" [(ngModel)]="policyDuration">
+        <option value="1">One year</option>
+        <option value="2">Two year</option>
+        <option value="3">Three year</option>
       </select>
     </div>
     <div>
-      <button type="button" (click)="onClickRenewPolicy()">Make Payment</button>
+      <button type="submit" >Make Payment</button>
     </div>
   </form>
 </div>
