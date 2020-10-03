@@ -22,6 +22,7 @@ import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.component';
 import { PaymentSuccessfulComponent } from './payment-successful/payment-successful.component';
+import { RenewPaymentComponent } from './renew-payment/renew-payment.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { PaymentSuccessfulComponent } from './payment-successful/payment-success
     NavComponent,
     ClaimSuccessfulComponent,
     PaymentSuccessfulComponent,
+    RenewPaymentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,FormsModule, HttpClientModule],
   providers: [],

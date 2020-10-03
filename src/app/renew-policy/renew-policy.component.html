@@ -4,7 +4,7 @@
     <div><h1>Renew Policy</h1></div>
     <div>
       <label for="policyNo">Policy number</label>
-      <input type="number" id="pol" [(ngModel)]="policyNo"/>
+      <input type="number" id="pol" [(ngModel)]="policyNo" name="policyNo"/>
     </div>
     <div>
       <label for="year">Year</label>
@@ -18,4 +18,7 @@
       <button type="submit" >Make Payment</button>
     </div>
   </form>
+  <div *ngIf=!status class="status">
+    {{statusMessage}}
+  </div>
 </div>
