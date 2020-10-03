@@ -27,7 +27,7 @@ export class RenewPolicyComponent implements OnInit {
      this.status=data.status;
      this.statusMessage=data.statusMessage;
      if(data.status==true){
-      this.route.navigate(['/payment']);
+      this.route.navigate(['/renew-payment']);
      }
 
     })

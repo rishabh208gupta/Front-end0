@@ -5,3 +5,7 @@ export class RenewPolicy extends Payment{
     policyNo:number;
 
 }
+export class RenewPayment extends Payment{
+    statusConfirmation:boolean;
+    policyDuration:number;
+}
