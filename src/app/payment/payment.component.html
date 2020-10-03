@@ -1,6 +1,46 @@
 <app-nav></app-nav>
-<p>payment works!</p>
-<p>
-{{bill.customerName}}
-{{ bill.policyType }}
-</p>
+<div>
+    <div>
+        <div>
+            <h2>{{ bill.customerName }}</h2>
+        </div>
+        <div>
+            <h3>Phone Number : {{ bill.phoneNo }}</h3>
+        </div>
+        <div>
+            <h3>vehicle type : {{ bill.vehicleType }}</h3>
+        </div>
+        <div>
+            <h3>vehicle manufacturer : {{ bill.manufacturer }}</h3>
+        </div>
+        <div>
+            <h3>vehicle chasis number : {{ bill.chasisNo }}</h3>
+        </div>
+        <div>
+            <h3>policy type : {{ bill.policyType }}</h3>
+        </div>
+        <div>
+            <h3>policy duration : {{ bill.policyDuration }} years</h3>
+        </div>
+        <div>
+            <h2>Premium Amount : {{ bill.amount }}</h2>
+        </div>
+    </div>
+    <div>
+        <form (ngSubmit)="makePayment()">
+            <div>
+                <label for="paymentMode">Chose Payment mode</label>
+                <select name="paymentMode" [(ngModel)]="payment.paymentMode">
+                    <option value="credit card">credit card</option>
+                    <option value="debit card">debit card</option>
+                    <option value="paytm">paytm</option>
+                    <option value="UPI">UPI</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">make payment</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
