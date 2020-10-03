@@ -15,6 +15,7 @@ import { VehicleDetailsComponent } from '../app/vehicle-details/vehicle-details.
 import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.component';
 import { PaymentSuccessfulComponent } from './payment-successful/payment-successful.component';
 import { PaymentComponent } from './payment/payment.component';
+import { RenewPaymentComponent } from './renew-payment/renew-payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home-page', pathMatch: 'full' },
@@ -32,7 +33,8 @@ const routes: Routes = [
   { path: 'vehicle-details', component: VehicleDetailsComponent },
   { path:'claim-successful',component:ClaimSuccessfulComponent},
   { path:'make-payment',component:PaymentComponent},
-  { path: 'payment-successful',component:PaymentSuccessfulComponent}
+  { path: 'payment-successful',component:PaymentSuccessfulComponent},
+  {path: 'renew-payment',component:RenewPaymentComponent}
 ];
 
 @NgModule({
