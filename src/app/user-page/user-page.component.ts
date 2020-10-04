@@ -7,6 +7,7 @@ import{ UserPageService } from '../services/user-page.service';
 import{ UserVehicle } from '../models/Vehicle';
 import { NewPolicy, UserPolicy } from '../models/new-policy';
 import { UserClaim } from '../models/statusClaim';
+import { CheckPayment, UserPayment } from '../models/payment';
 
 
 @Component({
@@ -18,12 +19,20 @@ export class UserPageComponent implements OnInit {
   claimPageDisplay:any;
   data:any;
   customerId:any;
-  userVehicle:UserVehicle[]=[];
-  userPolicy:UserPolicy[]=[];
+  userClaimVehicle:UserVehicle[]=[];
+  userClaimPolicy:UserPolicy[]=[];
+
+  userPayVehicle:UserVehicle[]=[];
+  userPayPolicy:UserPolicy[]=[];
+
   userClaim:UserClaim[]=[];
+  userPayment:UserPayment[]=[];
+
   customerName:string=sessionStorage.getItem('customerName');
 
   checkClaim:CheckClaim[]=[];
+  checkPayment:CheckPayment[]=[];
+
   constructor(
     private router:Router, private claimService:ClaimService,private userPageService:UserPageService
   ) { }
@@ -32,7 +41,12 @@ export class UserPageComponent implements OnInit {
     this.customerName=sessionStorage.getItem('customerName');
     this.userPageService.fetchClaimForPolicy(parseInt(sessionStorage.getItem('customerId'))).subscribe(data=>{
       this.checkClaim=data;
-      this.getUserDetails();
+      this.getUserClaimDetails();
+    })
+
+    this.userPageService.fetchPaymentForPolicy(parseInt(sessionStorage.getItem('customerId'))).subscribe(payData=>{
+      this.checkPayment=payData;
+      this.getUserPaymentDetails();
     })
   }
 
@@ -52,22 +66,45 @@ export class UserPageComponent implements OnInit {
       this.router.navigate(['/claim']);
   }
 
-  getUserDetails(){
+  getUserClaimDetails(){
     for(let i=0;i<this.checkClaim.length;i++){
 
       if(this.checkClaim[i][0]!=null){
         this.userPageService.fetchUserVehicleDetails(parseInt(this.checkClaim[i][0])).subscribe(vehicleData=>{
-          this.userVehicle.push(vehicleData);
+          this.userClaimVehicle.push(vehicleData);
         })
       }
       if(this.checkClaim[i][1]!=null){
         this.userPageService.fetchUserPolicyDetails(parseInt(this.checkClaim[i][1])).subscribe(policyData=>{
-          this.userPolicy.push(policyData);
+          this.userClaimPolicy.push(policyData);
         })
       }
       if(this.checkClaim[i][2]!=null){
         this.userPageService.fetchUserClaimDetails(parseInt(this.checkClaim[i][2])).subscribe(claimData=>{
           this.userClaim.push(claimData);
+        })
+      }
+     
+    }
+  }
+
+
+  getUserPaymentDetails(){
+    for(let i=0;i<this.checkPayment.length;i++){
+
+      if(this.checkPayment[i][0]!=null){
+        this.userPageService.fetchUserVehicleDetails(parseInt(this.checkPayment[i][0])).subscribe(vehiclePayData=>{
+          this.userPayVehicle.push(vehiclePayData);
+        })
+      }
+      if(this.checkPayment[i][1]!=null){
+        this.userPageService.fetchUserPolicyDetails(parseInt(this.checkPayment[i][1])).subscribe(policyPayData=>{
+          this.userPayPolicy.push(policyPayData);
+        })
+      }
+      if(this.checkPayment[i][2]!=null){
+        this.userPageService.fetchUserPaymentDetails(parseInt(this.checkPayment[i][2])).subscribe(payData=>{
+          this.userPayment.push(payData);
         })
       }
      

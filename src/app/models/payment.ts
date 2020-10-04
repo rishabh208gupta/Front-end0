@@ -17,3 +17,8 @@ export class CheckPayment{
     policyNo:number;
     paymentId:number;
 }
+
+export class UserPayment{
+    paymentId:number;
+    paid:boolean;
+}
