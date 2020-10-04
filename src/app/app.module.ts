@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'; //Needed for reactive form validation
+import { FormsModule } from '@angular/forms'; //Needed for reactive form validation
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +46,7 @@ import { RenewPaymentComponent } from './renew-payment/renew-payment.component';
     PaymentSuccessfulComponent,
     RenewPaymentComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule,FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
