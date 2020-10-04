@@ -21,4 +21,5 @@ export class CheckPayment{
 export class UserPayment{
     paymentId:number;
     paid:boolean;
+    age:number;
 }
