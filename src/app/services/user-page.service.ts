@@ -41,8 +41,8 @@ export class UserPageService {
       return this.http.get<any>(url);
     }
 
-    fetchUserPaymentDetails(claimId:number):Observable<UserPayment>{
-      let url = 'http://localhost:9090/fetch-user-claim-details?claimId='+claimId;
+    fetchUserPaymentDetails(paymentId:number):Observable<UserPayment>{
+      let url = 'http://localhost:9090/fetch-user-payment-details?paymentId='+paymentId;
       return this.http.get<UserPayment>(url);
     }
 }

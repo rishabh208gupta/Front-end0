@@ -41,6 +41,7 @@ export class UserPageComponent implements OnInit {
     this.customerName=sessionStorage.getItem('customerName');
     this.userPageService.fetchClaimForPolicy(parseInt(sessionStorage.getItem('customerId'))).subscribe(data=>{
       this.checkClaim=data;
+      
       this.getUserClaimDetails();
     })
 
