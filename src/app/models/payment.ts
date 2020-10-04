@@ -11,3 +11,9 @@ export class Payment{
 export class PaymentStatus extends Status{
     policyNo:number;
 }
+
+export class CheckPayment{
+    vehicleId:number;
+    policyNo:number;
+    paymentId:number;
+}
