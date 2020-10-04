@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import{RenewPolicy}from '../models/renewPolicy';
 import { Router } from '@angular/router';
 import{RenewPolicyService} from '../services/renew-policy.service';
+import { BuyPolicyService } from '../services/buy-policy.service';
+import { Bill } from '../models/bill-details';
 
 @Component({
   selector: 'app-renew-policy',
@@ -14,7 +16,8 @@ export class RenewPolicyComponent implements OnInit {
   policyDuration:number;
   status:boolean;
   statusMessage:string;
-  constructor( private route: Router,private renewPolicyService:RenewPolicyService) {}
+  bill:Bill;
+  constructor( private route: Router,private renewPolicyService:RenewPolicyService,private buyPolicyService:BuyPolicyService) {}
 
   ngOnInit(): void {
   //this.onClickRenewPolicy();
@@ -27,6 +30,10 @@ export class RenewPolicyComponent implements OnInit {
      this.status=data.status;
      this.statusMessage=data.statusMessage;
      if(data.status==true){
+       this.buyPolicyService.getBillDetails(this.policyNo).subscribe(response=>{
+        this.bill=response;
+        sessionStorage.setItem('billing', JSON.stringify(this.bill));
+       })
       this.route.navigate(['/renew-payment']);
      }
 
