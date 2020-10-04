@@ -25,7 +25,7 @@ export class VehicleDetailsComponent implements OnInit {
       this.vehicleRegistrationStatus=data;
       sessionStorage.setItem('vehicleId',String(this.vehicleRegistrationStatus.vehicleId))
       console.log(this.vehicleRegistrationStatus.vehicleId);
-      this.router.navigate(['new-policy']);
+      this.router.navigate(['/new-policy']);
     })
   }
   
