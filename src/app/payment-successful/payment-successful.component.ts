@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment-successful',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentSuccessfulComponent implements OnInit {
 
-  constructor() { }
+  policyNo:number
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
+    this.policyNo=parseInt(sessionStorage.getItem('policyNo'));
   }
 
+  onHomeClick(){
+    this.router.navigate(['/home-page'])
+  }
 }

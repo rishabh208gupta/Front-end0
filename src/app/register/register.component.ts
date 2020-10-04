@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
   customer: Customer = new Customer();
 
   constructor(
-    private registerService: RegisterService // private router: Router
+    private registerService: RegisterService, private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -43,5 +43,6 @@ export class RegisterComponent implements OnInit {
     this.registerService.regCustomer(this.customer).subscribe((data) => {
       alert(JSON.stringify(data));
     });
+    this.router.navigate(['/login']);
   }
 }
