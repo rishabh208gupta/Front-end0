@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CheckClaim } from '../models/check-policy-claim';
-import { Policy } from '../models/new-policy';
+import { UserPolicy } from '../models/new-policy';
 import { UserClaim } from '../models/statusClaim';
-import { Vehicle } from '../models/Vehicle';
+import { UserVehicle } from '../models/Vehicle';
 
 @Injectable({
   providedIn: 'root'
@@ -20,14 +20,14 @@ export class UserPageService {
       let url = 'http://localhost:9090/fetch-claim-policy?customerId='+customerId;
       return this.http.get<any>(url);
     }
-    fetchUserVehicleDetails(vehicleId:number):Observable<Vehicle>{
+    fetchUserVehicleDetails(vehicleId:number):Observable<UserVehicle>{
       let url = 'http://localhost:9090/fetch-user-vehicle-details?vehicleId='+vehicleId;
-      return this.http.get<Vehicle>(url);
+      return this.http.get<UserVehicle>(url);
     }
 
-    fetchUserPolicyDetails(policyNo:number):Observable<Policy>{
+    fetchUserPolicyDetails(policyNo:number):Observable<UserPolicy>{
       let url = 'http://localhost:9090/fetch-user-policy-details?policyNo='+policyNo;
-      return this.http.get<Policy>(url);
+      return this.http.get<UserPolicy>(url);
     }
 
     fetchUserClaimDetails(claimId:number):Observable<UserClaim>{

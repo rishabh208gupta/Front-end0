@@ -4,8 +4,8 @@ import { CheckClaim } from '../models/check-policy-claim';
 import {ClaimPageDisplay} from '../models/claimPageDisplay';
 import{ClaimService} from '../services/claim.service';
 import{ UserPageService } from '../services/user-page.service';
-import{ Vehicle } from '../models/Vehicle';
-import { NewPolicy, Policy } from '../models/new-policy';
+import{ UserVehicle } from '../models/Vehicle';
+import { NewPolicy, UserPolicy } from '../models/new-policy';
 import { UserClaim } from '../models/statusClaim';
 
 
@@ -18,9 +18,10 @@ export class UserPageComponent implements OnInit {
   claimPageDisplay:any;
   data:any;
   customerId:any;
-  vehicle:Vehicle[]=[];
-  policy:Policy[]=[];
+  userVehicle:UserVehicle[]=[];
+  userPolicy:UserPolicy[]=[];
   userClaim:UserClaim[]=[];
+  customerName:string=sessionStorage.getItem('customerName');
 
   checkClaim:CheckClaim[]=[];
   constructor(
@@ -28,6 +29,7 @@ export class UserPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.customerName=sessionStorage.getItem('customerName');
     this.userPageService.fetchClaimForPolicy(parseInt(sessionStorage.getItem('customerId'))).subscribe(data=>{
       this.checkClaim=data;
       this.getUserDetails();
@@ -53,16 +55,16 @@ export class UserPageComponent implements OnInit {
   getUserDetails(){
     for(let i=0;i<this.checkClaim.length;i++){
 
-      // if(this.checkClaim[i][0]!=null){
-      //   this.userPageService.fetchUserVehicleDetails(parseInt(this.checkClaim[i][0])).subscribe(vehicleData=>{
-      //     this.vehicle.push(vehicleData);
-      //   })
-      // }
-      // if(this.checkClaim[i][1]!=null){
-      //   this.userPageService.fetchUserPolicyDetails(parseInt(this.checkClaim[i][1])).subscribe(policyData=>{
-      //     this.policy.push(policyData);
-      //   })
-      // }
+      if(this.checkClaim[i][0]!=null){
+        this.userPageService.fetchUserVehicleDetails(parseInt(this.checkClaim[i][0])).subscribe(vehicleData=>{
+          this.userVehicle.push(vehicleData);
+        })
+      }
+      if(this.checkClaim[i][1]!=null){
+        this.userPageService.fetchUserPolicyDetails(parseInt(this.checkClaim[i][1])).subscribe(policyData=>{
+          this.userPolicy.push(policyData);
+        })
+      }
       if(this.checkClaim[i][2]!=null){
         this.userPageService.fetchUserClaimDetails(parseInt(this.checkClaim[i][2])).subscribe(claimData=>{
           this.userClaim.push(claimData);

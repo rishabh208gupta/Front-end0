@@ -17,3 +17,9 @@ export class Policy{
 export class PolicyRegistrationStatus extends Status{
     policyNo:number;
 }
+
+export class UserPolicy{
+    policyNo:number;
+    policyType:string;
+    policyDuration:number;
+}

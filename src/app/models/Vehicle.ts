@@ -18,3 +18,9 @@ export class VehicleRegistrationStatus extends Status{
 
     vehicleId:number;
 }
+
+export class UserVehicle{
+    vehicleId:number;
+    vehicleType:string;
+    chasisNo:number;
+}

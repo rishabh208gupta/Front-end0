@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-<h1>Welcome</h1>
+<h1>Welcome {{customerName}}</h1>
 <div style="display: flex">
   <div class="card">
     <a [routerLink]="['/vehicle-details']">
@@ -35,10 +35,10 @@
   </div>
 </div>
 
-<div *ngFor="let v of vehicle">
+<div *ngFor="let v of userVehicle">
 <p>{{v.vehicleType}}</p>
 </div>
-<div *ngFor="let p of policy">
+<div *ngFor="let p of userPolicy">
   <p>{{p.policyType}}</p>
 </div>
 <div *ngFor="let c of userClaim">
