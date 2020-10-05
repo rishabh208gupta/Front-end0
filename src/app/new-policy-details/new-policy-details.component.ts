@@ -29,10 +29,7 @@ export class NewPolicyDetailsComponent implements OnInit {
        this.policyRegistrationStatus=data;
        sessionStorage.setItem('policyNo',String(this.policyRegistrationStatus.policyNo))
        console.log(this.policyRegistrationStatus.policyNo);
-       this.buyPolicyService.getBillDetails(this.policyRegistrationStatus.policyNo).subscribe(obj=>{
-         this.bill=obj;
-         sessionStorage.setItem('billing', JSON.stringify(this.bill));
-       })
+     
 
        this.router.navigate(['/make-payment']);
      })
