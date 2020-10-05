@@ -1,2 +1,29 @@
 <app-nav></app-nav>
-<p>admin-page works!</p>
+<div class="adminlogin">
+    <form (ngSubmit)="adminCheck()">
+      <div>
+        <input
+          name="userName"
+          type="text"
+          placeholder="userName"
+          class="log1"
+          [(ngModel)]="admin.username"
+        />
+      </div>
+  
+      <div>
+        <input
+          name="password"
+          type="password"
+          placeholder="password"
+          class="log2"
+          [(ngModel)]="admin.password"
+        />
+      </div>
+  
+      <div>
+        <button type="submit" class="log3"  >Login</button>
+      </div>
+    </form>
+  </div>
+  
