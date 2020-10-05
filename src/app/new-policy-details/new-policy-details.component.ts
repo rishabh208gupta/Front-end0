@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { BuyPolicyService } from '../services/buy-policy.service';
+import { CalculatePremiumService } from '../services/calculate-premium.service';
 
 @Component({
   selector: 'app-new-policy-details',
@@ -16,10 +17,21 @@ export class NewPolicyDetailsComponent implements OnInit {
   newPolicy:NewPolicy = new NewPolicy();
   policyRegistrationStatus :PolicyRegistrationStatus= new PolicyRegistrationStatus();
   bill:Bill=new Bill();
-  constructor(private router:Router, private buyPolicyService:BuyPolicyService) { }
+
+  vehicleType:string;
+  purchaseDate:Date;
+  vehiclePrice:number;
+  premiumRate:number;
+  planYear:number;
+  idv:number;
+  estimatedValue:number;
+
+  constructor(private router:Router, private buyPolicyService:BuyPolicyService, private calculatePremiumService:CalculatePremiumService) { }
 
   ngOnInit(): void {
     this.newPolicy.vehicle.vehicleId=parseInt(sessionStorage.getItem('vehicleId'));
+    this.vehicleType=sessionStorage.getItem('vehicleType');
+    this.purchaseDate=new Date(sessionStorage.getItem('purchaseDate'));
   }
   
    
@@ -33,6 +45,36 @@ export class NewPolicyDetailsComponent implements OnInit {
 
        this.router.navigate(['/make-payment']);
      })
+  }
+
+  onAmountClick(){
+    if(this.vehicleType=='2-wheeler'){
+      this.vehiclePrice=50000;
+    }
+    else if(this.vehicleType=='4-wheeler'){
+      this.vehiclePrice=400000;
+    }
+
+    if(this.newPolicy.policy.policyType=='comprehensive'){
+      this.premiumRate=7;
+    }
+    else if(this.newPolicy.policy.policyType=='third party liability'){
+      this.premiumRate=6.5;
+    }
+
+    if(this.newPolicy.policy.policyDuration==1){
+      this.planYear=1;
+    }
+    else if(this.newPolicy.policy.policyDuration==2){
+      this.planYear=2;
+    }
+    else if(this.newPolicy.policy.policyDuration==3){
+      this.planYear=3;
+    }
+
+    [this.idv,this.estimatedValue]=this.calculatePremiumService.calculatePremium(this.vehiclePrice,this.purchaseDate,this.premiumRate,this.planYear);
+
+
   }
 
 }
