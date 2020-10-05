@@ -10,7 +10,6 @@ export class CalculatePremiumService {
   age:number;
   timeDiff:any;
   depreciatonRate:any;
-  depreciatedValue:any;
   idv:number;
   estimatedValue:number;
  
@@ -21,34 +20,24 @@ export class CalculatePremiumService {
   
   calculatePremium( vehiclePrice:number,purchaseDate:Date,premiumRate:number,planYear:number){
     this.depreciatonRate=11;
-    this.depreciatedValue=(vehiclePrice*this.age*this.depreciatonRate)/100;
     if(purchaseDate){
       const pdate = new Date(purchaseDate);
       this.timeDiff = Math.abs(Date.now()-pdate.getTime());
       //Used Math.floor instead of Math.ceil
       //so 26 years and 140 days would be considered as 26, not 27.
       this.age = Math.floor((this.timeDiff / (1000 * 3600 * 24))/365);
-    if(vehiclePrice==50000 && (this.age>8 || this.depreciatedValue>vehiclePrice)){
+    if(this.age>8 && vehiclePrice==50000){
       this.idv=10000;
-      if(planYear==1)
-        this.estimatedValue=400;
-      else if(planYear==2)
-        this.estimatedValue=800;
-      else if(planYear==3)
-        this.estimatedValue=1200;
+      this.estimatedValue=400;
     }
-    else if(vehiclePrice==400000 && (this.age>8 || this.depreciatedValue>vehiclePrice)){
+    else if(this.age>8 && vehiclePrice==400000){
       this.idv=25000;
-    if(planYear==1)
-      this.estimatedValue=2500;
-    else if(planYear==2)
-      this.estimatedValue=5000;
-    else if(planYear==3)
-      this.estimatedValue=7500;
+      this.estimatedValue=2000;
     }
     else{
-      this.idv=+vehiclePrice- +this.depreciatedValue;
+      this.idv=+vehiclePrice- +(vehiclePrice*this.age*this.depreciatonRate)/100;
       this.estimatedValue=+(this.idv*premiumRate*planYear)/100;
+
     }
     return [this.idv,this.estimatedValue];
     
