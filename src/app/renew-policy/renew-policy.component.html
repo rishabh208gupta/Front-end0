@@ -1,4 +1,39 @@
 <app-nav></app-nav>
+
+<button type="button" (click)="clickPolicyDetails()" id="button1">See all your policies</button>
+<div *ngIf="toggle">
+<div *ngIf="claimPageDisplay[0].status">
+  <table border="1" >
+    <div *ngFor="let c of claimPageDisplay">
+      <tr>
+      <th>Policy Number</th>
+      <th>Policy Id </th>
+      <th>Policy Type</th>
+      <th>Vehicle Type</th>
+      <th>Manufacturer</th>
+      <th>Car Model</th>
+      <th>Registration Number</th>
+     </tr>
+    
+      <tr>
+        <td>{{c.policyNo}}</td>
+       <td>{{c.policyId}}</td>
+        <td>{{c.policyType}}</td>
+        <td>{{c.vehicleType}}</td>
+        <td>{{c.manufacturer}}</td>
+        <td>{{c.model}}</td>
+        <td>{{c.registrationNo}}</td>
+      </tr>
+    </div>
+    </table>
+  </div>
+  <div *ngIf="!claimPageDisplay[0].status">
+    <h3>There is no policy associated with this account...</h3>
+  </div>
+</div>
+
+
+
 <div>
   <form (ngSubmit)="onClickRenewPolicy()">
     <div><h1>Renew Policy</h1></div>

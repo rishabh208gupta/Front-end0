@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import{RenewPolicyService} from '../services/renew-policy.service';
 import { BuyPolicyService } from '../services/buy-policy.service';
 import { Bill } from '../models/bill-details';
+import { UserPageService } from '../services/user-page.service';
+import { ClaimService } from '../services/claim.service';
+import { ClaimPageDisplay } from '../models/claimPageDisplay';
 
 @Component({
   selector: 'app-renew-policy',
@@ -17,11 +20,26 @@ export class RenewPolicyComponent implements OnInit {
   status:boolean;
   statusMessage:string;
   bill:Bill;
-  constructor( private route: Router,private renewPolicyService:RenewPolicyService,private buyPolicyService:BuyPolicyService) {}
+  customerId:any;
+  claimPageDisplay:any;
+  toggle:boolean=false;
+  constructor( private route: Router,private renewPolicyService:RenewPolicyService
+    ,private buyPolicyService:BuyPolicyService,private claimService:ClaimService) {}
 
   ngOnInit(): void {
-  //this.onClickRenewPolicy();
+    this.customerId=sessionStorage.getItem('customerId');
   }
+  clickPolicyDetails(){
+    this.toggle=true;
+    this.claimService.displayOnClaimPage(this.customerId).subscribe(data=>{
+      this.claimPageDisplay=JSON.parse(JSON.stringify(data)||'[]');
+    })
+    }
+  
+      
+    
+   
+    
 
   onClickRenewPolicy(): void {
     sessionStorage.setItem('policyDuration',String(this.policyDuration));
