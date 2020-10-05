@@ -8,6 +8,7 @@ import{ UserVehicle } from '../models/Vehicle';
 import { NewPolicy, UserPolicy } from '../models/new-policy';
 import { UserClaim } from '../models/statusClaim';
 import { CheckPayment, UserPayment } from '../models/payment';
+import { UserDetails } from '../models/user-details';
 
 
 @Component({
@@ -19,14 +20,23 @@ export class UserPageComponent implements OnInit {
   claimPageDisplay:any;
   data:any;
   customerId:any;
-  userClaimVehicle:UserVehicle[]=[];
-  userClaimPolicy:UserPolicy[]=[];
-
-  userPayVehicle:UserVehicle[]=[];
-  userPayPolicy:UserPolicy[]=[];
-
+  userVehicle:UserVehicle[]=[];
+  userPolicy:UserPolicy[]=[];
   userClaim:UserClaim[]=[];
   userPayment:UserPayment[]=[];
+  // userPayVehicle:UserVehicle[]=[];
+  // userPayPolicy:UserPolicy[]=[];
+
+  hasPolicy:boolean[]=[];
+  hasClaim:boolean[]=[];
+  hasPayment:boolean[]=[];
+
+  noPolicyUserDetails:UserDetails[]=[];
+  noPaymentUserDetails:UserDetails[]=[];
+  noClaimUserDetails:UserDetails[]=[];
+  ClaimUserDetails:UserDetails[]=[];
+
+  
 
   customerName:string=sessionStorage.getItem('customerName');
 
@@ -49,6 +59,9 @@ export class UserPageComponent implements OnInit {
       this.checkPayment=payData;
       this.getUserPaymentDetails();
     })
+
+    this.fillBool();
+    this.fillView();
   }
 
   onBuyPolicyClick(){
@@ -72,12 +85,12 @@ export class UserPageComponent implements OnInit {
 
       if(this.checkClaim[i][0]!=null){
         this.userPageService.fetchUserVehicleDetails(parseInt(this.checkClaim[i][0])).subscribe(vehicleData=>{
-          this.userClaimVehicle.push(vehicleData);
+          this.userVehicle.push(vehicleData);
         })
       }
       if(this.checkClaim[i][1]!=null){
         this.userPageService.fetchUserPolicyDetails(parseInt(this.checkClaim[i][1])).subscribe(policyData=>{
-          this.userClaimPolicy.push(policyData);
+          this.userPolicy.push(policyData);
         })
       }
       if(this.checkClaim[i][2]!=null){
@@ -93,22 +106,90 @@ export class UserPageComponent implements OnInit {
   getUserPaymentDetails(){
     for(let i=0;i<this.checkPayment.length;i++){
 
-      if(this.checkPayment[i][0]!=null){
-        this.userPageService.fetchUserVehicleDetails(parseInt(this.checkPayment[i][0])).subscribe(vehiclePayData=>{
-          this.userPayVehicle.push(vehiclePayData);
-        })
-      }
-      if(this.checkPayment[i][1]!=null){
-        this.userPageService.fetchUserPolicyDetails(parseInt(this.checkPayment[i][1])).subscribe(policyPayData=>{
-          this.userPayPolicy.push(policyPayData);
-        })
-      }
+      // if(this.checkPayment[i][0]!=null){
+      //   this.userPageService.fetchUserVehicleDetails(parseInt(this.checkPayment[i][0])).subscribe(vehiclePayData=>{
+      //     this.userPayVehicle.push(vehiclePayData);
+      //   })
+      // }
+      // if(this.checkPayment[i][1]!=null){
+      //   this.userPageService.fetchUserPolicyDetails(parseInt(this.checkPayment[i][1])).subscribe(policyPayData=>{
+      //     this.userPayPolicy.push(policyPayData);
+      //   })
+      // }
       if(this.checkPayment[i][2]!=null){
         this.userPageService.fetchUserPaymentDetails(parseInt(this.checkPayment[i][2])).subscribe(payData=>{
           this.userPayment.push(payData);
         })
       }
      
+    }
+  }
+
+  fillBool(){
+    for(let i=0;i<this.userVehicle.length;i++){
+      if(this.userPolicy[i]!=null){
+        this.hasPolicy.push(true);
+      }
+      else{
+        this.hasPolicy.push(false);
+      }
+
+      if(this.userClaim[i]!=null){
+        this.hasClaim.push(true);
+      }
+      else{
+        this.hasClaim.push(false);
+      }
+
+      if(this.userPolicy[i]!=null){
+        this.hasPayment.push(true);
+      }
+      else{
+        this.hasPayment.push(false);
+      }
+    }
+  }
+
+  fillView(){
+    for(let i=0;i<this.userVehicle.length;i++){
+      if(this.hasPolicy[i]==false){
+       let userDetails= new UserDetails();
+       userDetails.vehicleType=this.userVehicle[i].vehicleType;
+       userDetails.chasisNo=this.userVehicle[i].chasisNo;
+       this.noPolicyUserDetails.push(userDetails);
+      }
+      else{
+        if(this.hasPayment[i]==false){
+          let userDetails= new UserDetails();
+          userDetails.vehicleType=this.userVehicle[i].vehicleType;
+          userDetails.chasisNo=this.userVehicle[i].chasisNo;
+          userDetails.policyType=this.userPolicy[i].policyType;
+          userDetails.policyDuration=this.userPolicy[i].policyDuration;
+          this.noPaymentUserDetails.push(userDetails);
+        }
+        else{
+          if(this.hasClaim[i]==false){
+            let userDetails= new UserDetails();
+            userDetails.vehicleType=this.userVehicle[i].vehicleType;
+            userDetails.chasisNo=this.userVehicle[i].chasisNo;
+            userDetails.policyType=this.userPolicy[i].policyType;
+            userDetails.policyDuration=this.userPolicy[i].policyDuration;
+            userDetails.age=this.userPayment[i].age;
+            this.noClaimUserDetails.push(userDetails);
+          }
+          else{
+            let userDetails= new UserDetails();
+            userDetails.vehicleType=this.userVehicle[i].vehicleType;
+            userDetails.chasisNo=this.userVehicle[i].chasisNo;
+            userDetails.policyType=this.userPolicy[i].policyType;
+            userDetails.policyDuration=this.userPolicy[i].policyDuration;
+            userDetails.age=this.userPayment[i].age;
+            userDetails.claimed=this.userClaim[i].claimed;
+            userDetails.claimAmount=this.userClaim[i].claimAmount;
+            this.ClaimUserDetails.push(userDetails);
+          }
+        }
+      }
     }
   }
 }
