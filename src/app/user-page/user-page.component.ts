@@ -53,15 +53,16 @@ export class UserPageComponent implements OnInit {
       this.checkClaim=data;
       
       this.getUserClaimDetails();
+     // alert(JSON.stringify(this.checkClaim));
     })
 
     this.userPageService.fetchPaymentForPolicy(parseInt(sessionStorage.getItem('customerId'))).subscribe(payData=>{
       this.checkPayment=payData;
       this.getUserPaymentDetails();
+      //alert(JSON.stringify(this.checkPayment));
+      
     })
-
-    this.fillBool();
-    this.fillView();
+    
   }
 
   onBuyPolicyClick(){
@@ -85,21 +86,38 @@ export class UserPageComponent implements OnInit {
 
       if(this.checkClaim[i][0]!=null){
         this.userPageService.fetchUserVehicleDetails(parseInt(this.checkClaim[i][0])).subscribe(vehicleData=>{
-          this.userVehicle.push(vehicleData);
+          // let uv = new UserVehicle();
+          // uv=vehicleData;
+          //alert(JSON.stringify(vehicleData));
+         // this.userVehicle.push({'vehicleId':vehicleData.vehicleId,'vehicleType':vehicleData.vehicleType,'chasisNo':vehicleData.chasisNo});
+         this.userVehicle.push(vehicleData);
+         //alert(JSON.stringify(this.userVehicle));
         })
       }
       if(this.checkClaim[i][1]!=null){
         this.userPageService.fetchUserPolicyDetails(parseInt(this.checkClaim[i][1])).subscribe(policyData=>{
-          this.userPolicy.push(policyData);
+          this.userPolicy[i]=policyData;
+        // alert(JSON.stringify(this.userPolicy));
         })
+      }
+      else if(this.checkClaim[i][1]==null){
+        this.userPolicy[i]=null;
+       // alert(JSON.stringify(this.userPolicy));
       }
       if(this.checkClaim[i][2]!=null){
         this.userPageService.fetchUserClaimDetails(parseInt(this.checkClaim[i][2])).subscribe(claimData=>{
           this.userClaim.push(claimData);
+         // alert(JSON.stringify(this.userClaim));
         })
+      }
+      else if(this.checkClaim[i][2]==null){
+        this.userClaim[i]=null;
       }
      
     }
+    //alert(JSON.stringify(this.userPolicy));
+    // alert(JSON.stringify(this.userVehicle));
+    // alert(JSON.stringify(this.userPolicy));
   }
 
 
@@ -118,12 +136,19 @@ export class UserPageComponent implements OnInit {
       // }
       if(this.checkPayment[i][2]!=null){
         this.userPageService.fetchUserPaymentDetails(parseInt(this.checkPayment[i][2])).subscribe(payData=>{
-          this.userPayment.push(payData);
+          this.userPayment[i]=payData;
+        // alert(JSON.stringify(this.userPayment));
         })
+      }
+      else if(this.checkPayment[i][2]==null){
+        this.userPayment[i]=null;
       }
      
     }
+   // alert(JSON.stringify(this.userPayment));
   }
+
+  
 
   fillBool(){
     for(let i=0;i<this.userVehicle.length;i++){
@@ -141,13 +166,17 @@ export class UserPageComponent implements OnInit {
         this.hasClaim.push(false);
       }
 
-      if(this.userPolicy[i]!=null){
+      if(this.userPayment[i]!=null){
         this.hasPayment.push(true);
       }
       else{
         this.hasPayment.push(false);
       }
     }
+
+    //  alert(JSON.stringify(this.hasPolicy));
+    //  alert(JSON.stringify(this.hasPayment));
+    //  alert(JSON.stringify(this.hasClaim));
   }
 
   fillView(){
@@ -156,6 +185,7 @@ export class UserPageComponent implements OnInit {
        let userDetails= new UserDetails();
        userDetails.vehicleType=this.userVehicle[i].vehicleType;
        userDetails.chasisNo=this.userVehicle[i].chasisNo;
+      // alert(JSON.stringify(userDetails));
        this.noPolicyUserDetails.push(userDetails);
       }
       else{
@@ -165,6 +195,7 @@ export class UserPageComponent implements OnInit {
           userDetails.chasisNo=this.userVehicle[i].chasisNo;
           userDetails.policyType=this.userPolicy[i].policyType;
           userDetails.policyDuration=this.userPolicy[i].policyDuration;
+         // alert(JSON.stringify(userDetails));
           this.noPaymentUserDetails.push(userDetails);
         }
         else{
@@ -175,7 +206,9 @@ export class UserPageComponent implements OnInit {
             userDetails.policyType=this.userPolicy[i].policyType;
             userDetails.policyDuration=this.userPolicy[i].policyDuration;
             userDetails.age=this.userPayment[i].age;
+          //  alert(JSON.stringify(userDetails));
             this.noClaimUserDetails.push(userDetails);
+
           }
           else{
             let userDetails= new UserDetails();
@@ -186,10 +219,17 @@ export class UserPageComponent implements OnInit {
             userDetails.age=this.userPayment[i].age;
             userDetails.claimed=this.userClaim[i].claimed;
             userDetails.claimAmount=this.userClaim[i].claimAmount;
+          //  alert(JSON.stringify(userDetails));
             this.ClaimUserDetails.push(userDetails);
           }
         }
       }
     }
+  }
+
+  onButtonClick(){
+   
+   this.fillBool();
+    this.fillView();
   }
 }
