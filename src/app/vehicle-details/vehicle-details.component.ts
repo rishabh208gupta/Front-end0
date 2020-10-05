@@ -21,6 +21,9 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
   onBuyInsuranceClick(){
+    sessionStorage.setItem('purchaseDate',String(this.vehicle.purchaseDate));
+    sessionStorage.setItem('vehicleType',this.vehicle.vehicleType);
+    
     this.buyPolicyService.registerVehicle(this.vehicle).subscribe(data=>{
       this.vehicleRegistrationStatus=data;
       sessionStorage.setItem('vehicleId',String(this.vehicleRegistrationStatus.vehicleId))
