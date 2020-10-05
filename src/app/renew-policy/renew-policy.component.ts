@@ -26,7 +26,7 @@ export class RenewPolicyComponent implements OnInit {
   onClickRenewPolicy(): void {
     sessionStorage.setItem('policyDuration',String(this.policyDuration));
     this.renewPolicyService.renewPolicy(this.policyNo,this.policyDuration).subscribe(data=>{
-     sessionStorage.setItem('policyNo',String(data.policyNo));
+      sessionStorage.setItem('policyNo',String(data.policyNo));
      this.status=data.status;
      this.statusMessage=data.statusMessage;
      if(data.status==true){
