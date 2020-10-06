@@ -23,5 +23,9 @@ export class AdminService {
     return this.http.get<any>(url);
 
   }
+  fetchUserInfo(claimId:number):Observable<any>{
+    let url="http://localhost:9090/userdetails?"+claimId;
+    return this.http.get(url);
+  }
   
 }

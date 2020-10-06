@@ -25,6 +25,7 @@ import { PaymentSuccessfulComponent } from './payment-successful/payment-success
 import { RenewPaymentComponent } from './renew-payment/renew-payment.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { AdminUserDetailsComponent } from './admin-user-details/admin-user-details.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     RenewPaymentComponent,
     DashboardComponent,
     AboutUsComponent,
+    AdminUserDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

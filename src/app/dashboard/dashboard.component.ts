@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Admin } from '../admin-page/admin-page.component';
+import { Customer } from '../models/Customer';
 import { NewPolicy } from '../models/new-policy';
 import { Vehicle } from '../models/Vehicle';
 import { AdminService } from '../services/admin.service';
@@ -16,6 +17,7 @@ export class DashboardComponent implements OnInit {
   vehicle:Vehicle = new Vehicle();
   claims: any;
   claimId:number;
+  customer:Customer;
  
   constructor(private adminservice: AdminService, private router: Router) { }
 
@@ -29,11 +31,10 @@ export class DashboardComponent implements OnInit {
   }
 
   getUser(){
-
+    this.adminservice.fetchUserInfo(this.claimId).subscribe((data)=>{
+      sessionStorage.setItem("customer",String(data));
+    })
   }
-
-  
-
   
 }
 export class Claim{
