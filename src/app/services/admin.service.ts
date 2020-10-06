@@ -8,7 +8,7 @@ import { Admin, AdminStatus } from '../admin-page/admin-page.component';
   providedIn: 'root'
 })
 export class AdminService {
-
+  
   constructor(private http: HttpClient) { }
 
   adminUrl: string = 'http://localhost:9090/adminpage';
@@ -16,4 +16,12 @@ export class AdminService {
   adminLogin(admin: Admin): Observable<AdminStatus>{
     return this.http.post<AdminStatus>(this.adminUrl,admin);
   }
+
+
+  fetchAllClaims(admin: Admin):Observable<any>{
+    let url='http://localhost:9090/fetchallclaims';
+    return this.http.get<any>(url);
+
+  }
+  
 }

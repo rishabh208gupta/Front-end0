@@ -1,4 +1,17 @@
 <app-nav></app-nav>
 <p>dashboard works!</p>
+<div class="dash">
+        <div *ngFor="let c of claims">
+          <ul>
+            <li>claim id : {{claim.claimId}}</li>
+            <li>claim status : {{claim.status}}</li>
+            <li>claim reason : {{claim.reason}}</li>
+          </ul>
+        </div>
+        Enter claim id:
+        <input type="number" name="claimid" placeholder="claim-id"/>
+        
+        <button>Submit</button>
+</div>
 
 
