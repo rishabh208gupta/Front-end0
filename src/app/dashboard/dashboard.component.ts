@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   admin: Admin=new Admin();
   vehicle:Vehicle = new Vehicle();
   claims: any;
+  claimId:number;
  
   constructor(private adminservice: AdminService, private router: Router) { }
 
@@ -25,6 +26,10 @@ export class DashboardComponent implements OnInit {
     // alert(JSON.stringify(data));
 
     })
+  }
+
+  getUser(){
+
   }
 
   
