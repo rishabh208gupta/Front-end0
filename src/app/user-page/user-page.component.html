@@ -53,17 +53,18 @@
       <li>policy type : {{ nopay.policyType }}</li>
       <li>policy duration : {{ nopay.policyDuration }} years</li>
     </ul>
-    <button>make payment</button>
+    <button (click)="onMakePaymentClick(nopay.policyNo)">make payment</button>
   </div>
   <div *ngFor="let nocl of noClaimUserDetails">
     <ul>
       <li>vehicle : {{ nocl.vehicleType }}</li>
       <li>chassis number : {{ nocl.chasisNo }}</li>
+      <li>policy number : {{ nocl.policyNo }}</li>
       <li>policy type : {{ nocl.policyType }}</li>
       <li>policy duration : {{ nocl.policyDuration }} years</li>
       <li>policy age : {{ nocl.age }} days</li>
     </ul>
-    <button>claim</button>
+    <button (click)="onClaimNowClick()">claim now</button>
   </div>
   <div *ngFor="let cl of ClaimUserDetails">
     <ul>

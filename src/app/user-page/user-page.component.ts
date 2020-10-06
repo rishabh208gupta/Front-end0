@@ -196,6 +196,7 @@ export class UserPageComponent implements OnInit {
           userDetails.chasisNo=this.userVehicle[i].chasisNo;
           userDetails.policyType=this.userPolicy[i].policyType;
           userDetails.policyDuration=this.userPolicy[i].policyDuration;
+          userDetails.policyNo=this.userPolicy[i].policyNo;
          // alert(JSON.stringify(userDetails));
           this.noPaymentUserDetails.push(userDetails);
         }
@@ -237,5 +238,14 @@ export class UserPageComponent implements OnInit {
   onSelectPolicyClick(val:any){
    sessionStorage.setItem('vehicleId',val);
    this.router.navigate(['/new-policy']); 
+  }
+
+  onMakePaymentClick(val:any){
+    sessionStorage.setItem('policyNo',val);
+    this.router.navigate(['/make-payment']);
+  }
+
+  onClaimNowClick(){
+    this.router.navigate(['/claim'])
   }
 }
