@@ -7,17 +7,29 @@ import { CalculatePremiumService } from '../services/calculate-premium.service'
   styleUrls: ['./calculate-premium.component.css'],
 })
 export class CalculatePremiumComponent implements OnInit {
-  vehiclePrice:number;
-  purchaseDate:Date;
-  premiumRate:number;
-  planYear:number;
-  idv:number;
-  estimatedValue:number;
-  
+
+  premiumDetails :PremiumDetails= new PremiumDetails() ;
+  premiumAnswer : PremiumAnswer=new PremiumAnswer();
   constructor(private router: Router,private calculatePremiumService:CalculatePremiumService) {}
 
   ngOnInit(): void {}
   calculatePremium(){
-    [this.idv,this.estimatedValue]=this.calculatePremiumService.calculatePremium(this.vehiclePrice,this.purchaseDate,this.premiumRate,this.planYear);
+    this.calculatePremiumService.calculatePremium(this.premiumDetails).subscribe((data)=>{
+      console.log(data);
+      sessionStorage.setItem('idv',String(data.idv));
+      sessionStorage.setItem('estimatedValue',String(data.estimatedValue));
+      
+    });
   }
+}
+
+export class PremiumDetails{
+  vehiclePrice:number;
+  purchaseDate:Date;
+  premiumRate:number;
+  planYear:number;
+}
+export class PremiumAnswer{
+  idv:number;
+  estimatedValue:number;
 }

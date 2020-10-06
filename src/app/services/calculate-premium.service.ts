@@ -1,25 +1,39 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PremiumAnswer, PremiumDetails } from '../calculate-premium/calculate-premium.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CalculatePremiumService {
  
- 
-  age:number;
-  timeDiff:any;
-  depreciatonRate:any;
-  idv:number;
-  estimatedValue:number;
- 
+
   constructor(
     private http:HttpClient
   ) { }
   
-  
-  calculatePremium(vehiclePrice:number,purchaseDate:Date,premiumRate:number,planYear:number){
-    this.depreciatonRate=11;
+  calculatePremium(premiumDetails:PremiumDetails):Observable<PremiumAnswer>{
+   let url="http://localhost:9090/premium";
+   return this.http.post<PremiumAnswer>(url,premiumDetails);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*this.depreciatonRate=11;
     if(purchaseDate){
       const pdate = new Date(purchaseDate);
       this.timeDiff = Math.abs(Date.now()-pdate.getTime());
@@ -40,6 +54,4 @@ export class CalculatePremiumService {
 
       }
     return [this.idv,this.estimatedValue];  
-    }
-  }
-}
+    }*/
