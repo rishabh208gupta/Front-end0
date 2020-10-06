@@ -15,6 +15,10 @@ input{
     
     
 }
+#payment{
+    margin-top: 150px;
+    margin-left:540px;
+}
 
 select{
     display:block;
@@ -41,4 +45,8 @@ button{
 
 .error{
     color: red;
+}
+.t1{
+    color: red;
+    font-size: 30px;
 }
