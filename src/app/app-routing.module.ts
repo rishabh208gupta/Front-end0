@@ -13,6 +13,7 @@ import { ResetPasswordComponent } from '../app/reset-password/reset-password.com
 import { UserPageComponent } from '../app/user-page/user-page.component';
 import { VehicleDetailsComponent } from '../app/vehicle-details/vehicle-details.component';
 import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { PaymentSuccessfulComponent } from './payment-successful/payment-successful.component';
 import { PaymentComponent } from './payment/payment.component';
 import { RenewPaymentComponent } from './renew-payment/renew-payment.component';
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path:'claim-successful',component:ClaimSuccessfulComponent},
   { path:'make-payment',component:PaymentComponent},
   { path: 'payment-successful',component:PaymentSuccessfulComponent},
-  {path: 'renew-payment',component:RenewPaymentComponent}
+  {path: 'renew-payment',component:RenewPaymentComponent},
+  { path: 'dashboard', component:DashboardComponent}
 ];
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service'
 
 @Component({
@@ -9,7 +10,8 @@ import { AdminService } from 'src/app/services/admin.service'
 export class AdminPageComponent implements OnInit {
   admin : Admin = new Admin();
   constructor(
-    private adminService: AdminService
+    private adminService: AdminService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,7 @@ export class AdminPageComponent implements OnInit {
         sessionStorage.setItem('username', data.username);
         
       }
-     
+      this.router.navigate(['/dashboard']);
     });
   }
 }
