@@ -22,6 +22,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   onSubmitClick() {
     //this.forgotensMail.mailid = this.mailId;
+    sessionStorage.setItem('userMailId', this.forgotensMail.mailid);
     this.forgotService.forgotpassword(this.forgotensMail).subscribe((data) => {
       if (data.status == 100) {
         this.errMessage = data.message;
