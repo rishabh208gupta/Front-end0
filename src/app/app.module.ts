@@ -24,6 +24,7 @@ import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.co
 import { PaymentSuccessfulComponent } from './payment-successful/payment-successful.component';
 import { RenewPaymentComponent } from './renew-payment/renew-payment.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     PaymentSuccessfulComponent,
     RenewPaymentComponent,
     DashboardComponent,
+    AboutUsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
