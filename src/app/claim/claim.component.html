@@ -1,4 +1,5 @@
 <app-nav></app-nav>
+<div class="body">
 <button type="button" (click)="displayOnClaimPage()" class="button1">See all your policies</button>
 <div *ngIf="toggle">
 <div *ngIf="claimPageDisplay[0].status">
@@ -56,4 +57,5 @@
       <button type="submit" class="button2" >Claim</button>
     </div>
   </form>
+</div>
 </div>
