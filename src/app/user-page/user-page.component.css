@@ -30,12 +30,39 @@
 
   .historybtn button{
    
-    margin: 16px 675px;
+    margin: 16px 685px;
     padding: 10px 24px;
     border-radius: 12px;
+    background-color: rgb(206, 233, 224);
+    color: black;
     
   }
   .historybtn button:hover{
-    background-color: rgb(206, 233, 224); /* Green */
-    color: rgb(8, 8, 8);
+    background-color: #0d405f; /* Green */
+    color: rgb(255, 255, 255);
+  }
+
+  .box{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  }
+
+  ul{
+    list-style-type: none;
+  }
+
+  li{
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .btn{
+    background-color:  #0d405f;
+    color: rgb(255, 255, 255);
+    padding: 4px;
+    border-radius: 4px;
   }
