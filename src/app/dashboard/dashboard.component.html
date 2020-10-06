@@ -1,6 +1,5 @@
 <app-nav></app-nav>
-<p>dashboard works!</p>
-<div class="dash">
+<!--<div class="dash">
         <div *ngFor="let c of claims">
           <ul>
             <li>claim id : {{claim.claimId}}</li>
@@ -13,5 +12,26 @@
         
         <button>Submit</button>
 </div>
+-->
+<div *ngFor="let c of claims">
+  <table border="1"> 
+    <tr>
+    <th>Claim Id</th>
+    <th>Reason </th>
+    <th>Status </th>
+    <th>Date of Application</th>
+    <th>Admin amount</th>
+    <th>Policy No</th>
+  </tr>
+  <tr>
+    <th>{{c.claimId}}</th>
+    <th>{{c.reason}}</th>
+    <th>{{c.status}}</th>
+    <th>{{c.dateApplied}}</th>
+    <th>{{c.adminAmount}}</th>
+    <th>{{c.policyNo}}</th>
+  </tr>
+  </table>
 
-
+  
+</div>

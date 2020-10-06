@@ -18,7 +18,7 @@ export class AdminService {
   }
 
 
-  fetchAllClaims(admin: Admin):Observable<any>{
+  fetchAllClaims():Observable<any>{
     let url='http://localhost:9090/fetchallclaims';
     return this.http.get<any>(url);
 

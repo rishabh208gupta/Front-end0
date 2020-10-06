@@ -14,15 +14,20 @@ export class DashboardComponent implements OnInit {
 
   admin: Admin=new Admin();
   vehicle:Vehicle = new Vehicle();
-  claims: Claim[]=[];
+  claims: any;
  
   constructor(private adminservice: AdminService, private router: Router) { }
 
   ngOnInit(): void {
-    this.adminservice.fetchAllClaims(this.admin).subscribe((data)=>{
-      console.log(data);
+    this.adminservice.fetchAllClaims().subscribe((data)=>{
+      //console.log(data);
+     this.claims= JSON.parse(JSON.stringify(data)||'[]');
+    // alert(JSON.stringify(data));
+
     })
   }
+
+  
 
   
 }
@@ -32,5 +37,5 @@ export class Claim{
   reason: string; 
   dateApplied: Date;
   adminAmount: number;
-  newPolicy: NewPolicy;
+  newPolicy: NewPolicy=new NewPolicy;
 }
