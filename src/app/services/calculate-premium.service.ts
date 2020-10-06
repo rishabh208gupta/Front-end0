@@ -18,7 +18,7 @@ export class CalculatePremiumService {
   ) { }
   
   
-  calculatePremium( vehiclePrice:number,purchaseDate:Date,premiumRate:number,planYear:number){
+  calculatePremium(vehiclePrice:number,purchaseDate:Date,premiumRate:number,planYear:number){
     this.depreciatonRate=11;
     if(purchaseDate){
       const pdate = new Date(purchaseDate);
