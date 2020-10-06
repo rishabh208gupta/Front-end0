@@ -34,7 +34,7 @@
 
 
 
-<div>
+<div id="container">
   <form (ngSubmit)="onClickRenewPolicy()">
     <div><h1>Renew Policy</h1></div>
     <div>
@@ -50,7 +50,7 @@
       </select>
     </div>
     <div>
-      <button type="submit" >Make Payment</button>
+      <button type="submit" class="button2">Make Payment</button>
     </div>
   </form>
   <div *ngIf=!status class="status">
