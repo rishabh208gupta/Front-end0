@@ -14,12 +14,16 @@ export class CalculatePremiumComponent implements OnInit {
 
   ngOnInit(): void {}
   calculatePremium(){
+    console.log(JSON.stringify(this.premiumDetails));
     this.calculatePremiumService.calculatePremium(this.premiumDetails).subscribe((data)=>{
       console.log(data);
+      this.premiumAnswer.idv=data.idv;
+      this.premiumAnswer.estimatedValue=data.estimatedValue;
       sessionStorage.setItem('idv',String(data.idv));
       sessionStorage.setItem('estimatedValue',String(data.estimatedValue));
       
     });
+
   }
 }
 
