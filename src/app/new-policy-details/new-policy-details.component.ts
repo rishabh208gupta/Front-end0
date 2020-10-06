@@ -26,7 +26,7 @@ export class NewPolicyDetailsComponent implements OnInit {
   idv:number;
   estimatedValue:number;
 
-  constructor(private router:Router, private buyPolicyService:BuyPolicyService, private calculatePremiumService:CalculatePremiumService) { }
+  constructor(private router:Router, private buyPolicyService:BuyPolicyService) { }
 
   ngOnInit(): void {
     this.newPolicy.vehicle.vehicleId=parseInt(sessionStorage.getItem('vehicleId'));
@@ -47,34 +47,6 @@ export class NewPolicyDetailsComponent implements OnInit {
      })
   }
 
-  onAmountClick(){
-    if(this.vehicleType=='2-wheeler'){
-      this.vehiclePrice=50000;
-    }
-    else if(this.vehicleType=='4-wheeler'){
-      this.vehiclePrice=400000;
-    }
-
-    if(this.newPolicy.policy.policyType=='comprehensive'){
-      this.premiumRate=7;
-    }
-    else if(this.newPolicy.policy.policyType=='third party liability'){
-      this.premiumRate=6.5;
-    }
-
-    if(this.newPolicy.policy.policyDuration==1){
-      this.planYear=1;
-    }
-    else if(this.newPolicy.policy.policyDuration==2){
-      this.planYear=2;
-    }
-    else if(this.newPolicy.policy.policyDuration==3){
-      this.planYear=3;
-    }
-
-    [this.idv,this.estimatedValue]=this.calculatePremiumService.calculatePremium(this.vehiclePrice,this.purchaseDate,this.premiumRate,this.planYear);
-
-
-  }
+ 
 
 }
