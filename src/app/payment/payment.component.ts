@@ -27,7 +27,7 @@ export class PaymentComponent implements OnInit {
     
    
     this.payment.newPolicy.policyNo=parseInt(sessionStorage.getItem('policyNo'));
-   // this.payment.amount=this.bill.amount;
+    this.payment.amount=this.bill.amount;
    
   }
 
