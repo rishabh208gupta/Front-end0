@@ -20,19 +20,21 @@
 <button type="submit">Get user Details</button>
 </form>
 </div>
-
-
+<table>
+<tr>
+  <th>Claim Id</th>
+  <th> Reason </th>
+  <th>Status </th>
+  <th>Date of Application</th>
+  <th>Admin amount</th>
+  <th>Policy No</th>
+</tr>
+</table>
 
 <div *ngFor="let c of claims">
   <table border="1"> 
-    <tr>
-    <th>Claim Id</th>
-    <th> Reason </th>
-    <th>Status </th>
-    <th>Date of Application</th>
-    <th>Admin amount</th>
-    <th>Policy No</th>
-  </tr>
+
+  
   <tr>
     <th>{{c.claimId}}</th>
     <th>{{c.reason}}</th>
