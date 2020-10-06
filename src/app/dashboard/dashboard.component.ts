@@ -35,7 +35,8 @@ export class DashboardComponent implements OnInit {
   }
   approval(){
     this.adminservice.claimApproval(this.adminApproval).subscribe((response)=>{
-      alert(JSON.stringify(response));
+      sessionStorage.setItem("statusMessage",response.statusMessage)
+      this.router.navigate(['/claim-successful']);
     })
   }
 

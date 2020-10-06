@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./approval-confirmation.component.css']
 })
 export class ApprovalConfirmationComponent implements OnInit {
-
+  statusMessage:any;
   constructor() { }
 
   ngOnInit(): void {
+    this.statusMessage=sessionStorage.getItem("statusMessage");
   }
 
 }
