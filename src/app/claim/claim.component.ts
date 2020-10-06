@@ -8,7 +8,8 @@ import{StatusClaim} from '../models/statusClaim';
   styleUrls: ['./claim.component.css']
 })
 export class ClaimComponent implements OnInit {
-
+  displayOnEmailSent:any;
+  chat:boolean=false;
   err:boolean=false;
   fun:string="error";
   policyNo:number;
@@ -16,10 +17,13 @@ export class ClaimComponent implements OnInit {
   claimPageDisplay:any;
   toggle:boolean=false;
   customerName:any;
+  concerns:string;
+  customerId;number;
   constructor(private router:Router,private claimService:ClaimService) { }
 
   ngOnInit(): void {
     this.customerName=sessionStorage.getItem('customerName');
+    this.customerId=sessionStorage.getItem('customerId');
   }
 
   onClaimClick(){
@@ -37,5 +41,14 @@ export class ClaimComponent implements OnInit {
   displayOnClaimPage(){
     this.toggle=true;
     this.claimPageDisplay=JSON.parse(sessionStorage.getItem(this.claimPageDisplay) || '[]');
+  }
+  onChatSubmit(){
+    this.claimService.onClickChatSubmit(this.concerns,this.customerId).subscribe(data=>{
+      this.displayOnEmailSent=data.statusMessage;
+    })
+  }
+
+  onChatClick(){
+    this.chat=true;
   }
 }

@@ -16,4 +16,8 @@ export class ClaimService {
     let url="http://localhost:9090/claimstatus?policyNo="+policyNo+"&reason="+reason;
     return this.http.get<StatusClaim>(url);
   }
+  onClickChatSubmit(concern:string,customerId:number):Observable<any>{
+    let url="http://localhost:9090/claim-email?chatMail="+concern+"&customerId="+customerId;
+    return this.http.get(url);
+  }
 }

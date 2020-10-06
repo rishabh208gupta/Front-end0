@@ -33,7 +33,7 @@
 </div>
 
 <div id="t1">
-  Welcome {{customerName}}! We are here to help you with any assistance!
+  Welcome {{customerName}}! We are here to help you out.
 </div>
 <div id="container">
   <form (ngSubmit)="onClaimClick()">
@@ -58,4 +58,21 @@
     </div>
   </form>
 </div>
+</div>
+
+
+<div class="t2" >
+  <button type="submit" (click)="onChatClick()" class="button1">Chat</button>
+   {{displayOnEmailSent}}
+</div>
+<div class="chat" *ngIf="chat">
+  <form (ngSubmit)="onChatSubmit()" >
+    <label for="chat">Chat with us</label>
+    <textarea id="chat" name="chat" rows="4" cols="50" [(ngModel)]="concerns"> 
+      
+      </textarea>
+      <br><br>
+      <button type="submit" class="button1">Send</button>
+    </form>
+    
 </div>
