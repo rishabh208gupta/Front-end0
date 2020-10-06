@@ -15,9 +15,11 @@ export class ClaimComponent implements OnInit {
   reason:string;
   claimPageDisplay:any;
   toggle:boolean=false;
+  customerName:any;
   constructor(private router:Router,private claimService:ClaimService) { }
 
   ngOnInit(): void {
+    this.customerName=sessionStorage.getItem('customerName');
   }
 
   onClaimClick(){

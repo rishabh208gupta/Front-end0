@@ -1,33 +1,33 @@
 <app-nav></app-nav>
 
-<div>
-    <div>
-        <h2>{{ bill.customerName }}</h2>
-    </div>
-    <div>
-        <h3>Phone Number : {{ bill.phoneNo }}</h3>
-    </div>
-    <div>
-        <h3>vehicle type : {{ bill.vehicleType }}</h3>
-    </div>
-    <div>
-        <h3>vehicle manufacturer : {{ bill.manufacturer }}</h3>
-    </div>
-    <div>
-        <h3>vehicle chasis number : {{ bill.chasisNo }}</h3>
-    </div>
-    <div>
-        <h3>policy type : {{ bill.policyType }}</h3>
-    </div>
-    <div>
-        <h3>policy duration : {{ bill.policyDuration }} years</h3>
-    </div>
-    <div>
-        <h2>Premium Amount : {{ bill.amount }}</h2>
-    </div>
-</div>
+<table border="1">
+    <tr>
+        <th>Customer Name</th>
+        <th>Phone Number</th>
+        <th>Vehicle Type</th>
+        <th>Vehicle Manufacturer</th>
+        <th>Vehicle Chasis Number</th>
+        <th>Policy Type</th>
+        <th>Policy Duration</th>
+        <th>Premium Amount</th>
 
-<div>
+    </tr>
+    <tr>
+        <td>{{ bill.customerName }}</td>
+        <td>{{ bill.phoneNo }}</td>
+        <td>{{ bill.vehicleType }}</td>
+        <td>{{ bill.manufacturer }}</td>
+        <td>{{ bill.chasisNo }}</td>
+        <td>{{ bill.policyType }}</td>
+        <td>{{ bill.policyDuration }} years</td>
+        <td> {{ bill.amount }}</td>
+    </tr>
+</table>
+
+<div id="payment">
+    <div class="t1">
+        Make Your Payment
+    </div>
 <form (ngSubmit)="renewPolicyPayment()">
     <div>
         <label for="paymentMode">Chose Payment mode</label>
