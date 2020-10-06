@@ -53,13 +53,13 @@ export class UserPageComponent implements OnInit {
       this.checkClaim=data;
       
       this.getUserClaimDetails();
-     // alert(JSON.stringify(this.checkClaim));
+     alert(JSON.stringify(this.checkClaim));
     })
 
     this.userPageService.fetchPaymentForPolicy(parseInt(sessionStorage.getItem('customerId'))).subscribe(payData=>{
       this.checkPayment=payData;
       this.getUserPaymentDetails();
-      //alert(JSON.stringify(this.checkPayment));
+      alert(JSON.stringify(this.checkPayment));
       
     })
     
@@ -185,6 +185,7 @@ export class UserPageComponent implements OnInit {
        let userDetails= new UserDetails();
        userDetails.vehicleType=this.userVehicle[i].vehicleType;
        userDetails.chasisNo=this.userVehicle[i].chasisNo;
+       userDetails.vehicleId=this.userVehicle[i].vehicleId;
       // alert(JSON.stringify(userDetails));
        this.noPolicyUserDetails.push(userDetails);
       }
@@ -231,5 +232,10 @@ export class UserPageComponent implements OnInit {
    
    this.fillBool();
     this.fillView();
+  }
+
+  onSelectPolicyClick(val:any){
+   sessionStorage.setItem('vehicleId',val);
+   this.router.navigate(['/new-policy']); 
   }
 }

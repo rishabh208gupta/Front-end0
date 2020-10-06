@@ -44,7 +44,7 @@
       <li>vehicle : {{ nopol.vehicleType }}</li>
       <li>chassis number : {{ nopol.chasisNo }}</li>
     </ul>
-    <button>select policy</button>
+    <button (click)="onSelectPolicyClick( nopol.vehicleId )">select policy</button>
   </div>
   <div *ngFor="let nopay of noPaymentUserDetails">
     <ul>

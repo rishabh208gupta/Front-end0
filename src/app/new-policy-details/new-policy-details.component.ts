@@ -30,8 +30,8 @@ export class NewPolicyDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.newPolicy.vehicle.vehicleId=parseInt(sessionStorage.getItem('vehicleId'));
-    this.vehicleType=sessionStorage.getItem('vehicleType');
-    this.purchaseDate=new Date(sessionStorage.getItem('purchaseDate'));
+   // this.vehicleType=sessionStorage.getItem('vehicleType');
+   // this.purchaseDate=new Date(sessionStorage.getItem('purchaseDate'));
   }
   
    
