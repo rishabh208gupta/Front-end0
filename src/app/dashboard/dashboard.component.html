@@ -1,25 +1,32 @@
 <app-nav></app-nav>
-<!--<div class="dash">
-        <div *ngFor="let c of claims">
-          <ul>
-            <li>claim id : {{claim.claimId}}</li>
-            <li>claim status : {{claim.status}}</li>
-            <li>claim reason : {{claim.reason}}</li>
-          </ul>
-        </div>
-        Enter claim id:
-        <input type="number" name="claimid" placeholder="claim-id"/>
-        
-        <button>Submit</button>
-</div>
--->
+
 <div>
 <form (ngSubmit)="getUser()">
   Enter claim id:<br>
-<input type="number" placeholder="claimId" [(ngModel)]="claimId" name="claimId">
+<input type="number" placeholder="claimId" [(ngModel)]="claimId1" name="claimId">
 <button type="submit">Get user Details</button>
 </form>
 </div>
+
+<div>
+  <br><br>
+  <form (ngSubmit)="approval()"> 
+    Claim Id:
+    <input type="number" placeholder="Claim Id" [(ngModel)]="adminApproval.claimId" name="claim"/> 
+    status:
+    <select name="status" [(ngModel)]="adminApproval.status" >
+      <option value="reject">Reject</option>
+      <option value="Approved">Approve</option>
+    </select>
+    amount:
+    <input type="number" placeholder="amount" [(ngModel)]="adminApproval.amount" name="amount">
+  <button type="submit">Claim approval</button>
+  </form>
+</div>
+
+
+
+<br><br><br>
 <table>
 <tr>
   <th>Claim Id</th>
@@ -47,3 +54,4 @@
 
   
 </div>
+

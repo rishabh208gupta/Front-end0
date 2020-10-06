@@ -26,6 +26,7 @@ import { RenewPaymentComponent } from './renew-payment/renew-payment.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AdminUserDetailsComponent } from './admin-user-details/admin-user-details.component';
+import { ApprovalConfirmationComponent } from './approval-confirmation/approval-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { AdminUserDetailsComponent } from './admin-user-details/admin-user-detai
     DashboardComponent,
     AboutUsComponent,
     AdminUserDetailsComponent,
+    ApprovalConfirmationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

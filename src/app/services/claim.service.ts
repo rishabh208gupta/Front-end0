@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import{StatusClaim} from '../models/statusClaim'
+import{StatusClaim} from '../models/statusClaim';
+import{AdminApproval} from '../models/AdminApproval';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,4 +21,5 @@ export class ClaimService {
     let url="http://localhost:9090/claim-email?chatMail="+concern+"&customerId="+customerId;
     return this.http.get(url);
   }
+ 
 }

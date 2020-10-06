@@ -5,7 +5,7 @@ import { Customer } from '../models/Customer';
 import { NewPolicy } from '../models/new-policy';
 import { Vehicle } from '../models/Vehicle';
 import { AdminService } from '../services/admin.service';
-
+import {AdminApproval} from '../models/AdminApproval';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -16,8 +16,12 @@ export class DashboardComponent implements OnInit {
   admin: Admin=new Admin();
   vehicle:Vehicle = new Vehicle();
   claims: any;
-  claimId:number;
+  claimId1:number;
   customer:Customer;
+  claim:number;
+  status:string;
+  amount:number;
+  adminApproval:AdminApproval=new AdminApproval();
  
   constructor(private adminservice: AdminService, private router: Router) { }
 
@@ -29,19 +33,23 @@ export class DashboardComponent implements OnInit {
 
     })
   }
+  approval(){
+    this.adminservice.claimApproval(this.adminApproval).subscribe((response)=>{
+      alert(JSON.stringify(response));
+    })
+  }
 
   getUser(){
-    this.adminservice.fetchUserInfo(this.claimId).subscribe((data)=>{
-      sessionStorage.setItem("customer",String(data));
+    this.adminservice.fetchUserInfo(this.claimId1).subscribe((data)=>{
+      //alert(JSON.stringify(data));
+      sessionStorage.setItem("customerId",data.customerId);
+      sessionStorage.setItem('customerName',data.customerName);
+      sessionStorage.setItem('customerPhone',data.phoneNo);
+      sessionStorage.setItem('email',data.email);
+      sessionStorage.setItem('dateOfBirth',data.dateOfBirth);
+      sessionStorage.setItem('address',data.address);
+      this.router.navigate(['/admin-user-details']);
     })
   }
   
-}
-export class Claim{
-  claimId: number;
-  status: string;
-  reason: string; 
-  dateApplied: Date;
-  adminAmount: number;
-  newPolicy: NewPolicy=new NewPolicy;
 }

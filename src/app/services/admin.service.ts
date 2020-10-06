@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Admin, AdminStatus } from '../admin-page/admin-page.component';
-
+import{AdminApproval} from '../models/AdminApproval';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +24,13 @@ export class AdminService {
 
   }
   fetchUserInfo(claimId:number):Observable<any>{
-    let url="http://localhost:9090/userdetails?"+claimId;
+    let url="http://localhost:9090/userdetails?claimId="+claimId;
     return this.http.get(url);
+  }
+  claimApproval(adminApproval:AdminApproval):Observable<any>{
+    let url="http://localhost:9090/adminapproval";
+    return this.http.post(url,adminApproval);
+
   }
   
 }
