@@ -4,16 +4,19 @@
 <div *ngIf="toggle">
 <div *ngIf="claimPageDisplay[0].status">
   <table border="1" >
+  <tr>
+    <th>Policy Number</th>
+    <th>Policy Id </th>
+    <th>Policy Type</th>
+    <th>Vehicle Type</th>
+    <th>Manufacturer</th>
+    <th>Car Model</th>
+    <th>Registration Number</th>
+   </tr>
+  </table>
+  <table border="1" >
     <div *ngFor="let c of claimPageDisplay">
-      <tr>
-      <th>Policy Number</th>
-      <th>Policy Id </th>
-      <th>Policy Type</th>
-      <th>Vehicle Type</th>
-      <th>Manufacturer</th>
-      <th>Car Model</th>
-      <th>Registration Number</th>
-     </tr>
+     
     
       <tr>
         <td>{{c.policyNo}}</td>
@@ -61,18 +64,4 @@
 </div>
 
 
-<div class="t2" >
-  <button type="submit" (click)="onChatClick()" class="button3">Chat</button>
-   {{displayOnEmailSent}}
-</div>
-<div class="chat" *ngIf="chat">
-  <form (ngSubmit)="onChatSubmit()" >
-    <label for="chat">Chat with us</label>
-    <textarea id="chat" name="chat" rows="4" cols="50" [(ngModel)]="concerns"> 
-      
-      </textarea>
-      <br><br>
-      <button type="submit" class="button1">Send</button>
-    </form>
-    
-</div>
+

@@ -3,9 +3,8 @@
 <button type="button" (click)="clickPolicyDetails()" id="button1">See all your policies</button>
 <div *ngIf="toggle">
 <div *ngIf="claimPageDisplay[0].status">
-  <table border="1" >
-    <div *ngFor="let c of claimPageDisplay">
-      <tr>
+  <table border="1">
+    <tr>
       <th>Policy Number</th>
       <th>Policy Id </th>
       <th>Policy Type</th>
@@ -14,6 +13,10 @@
       <th>Car Model</th>
       <th>Registration Number</th>
      </tr>
+  </table>
+  <table border="1" >
+    <div *ngFor="let c of claimPageDisplay">
+     
     
       <tr>
         <td>{{c.policyNo}}</td>
