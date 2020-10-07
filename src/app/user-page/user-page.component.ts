@@ -53,13 +53,13 @@ export class UserPageComponent implements OnInit {
       this.checkClaim=data;
       
       this.getUserClaimDetails();
-     alert(JSON.stringify(this.checkClaim));
+    // alert(JSON.stringify(this.checkClaim));
     })
 
     this.userPageService.fetchPaymentForPolicy(parseInt(sessionStorage.getItem('customerId'))).subscribe(payData=>{
       this.checkPayment=payData;
       this.getUserPaymentDetails();
-      alert(JSON.stringify(this.checkPayment));
+    //  alert(JSON.stringify(this.checkPayment));
       
     })
     
@@ -91,7 +91,7 @@ export class UserPageComponent implements OnInit {
           //alert(JSON.stringify(vehicleData));
          // this.userVehicle.push({'vehicleId':vehicleData.vehicleId,'vehicleType':vehicleData.vehicleType,'chasisNo':vehicleData.chasisNo});
          this.userVehicle.push(vehicleData);
-         //alert(JSON.stringify(this.userVehicle));
+        // alert(JSON.stringify(this.userVehicle));
         })
       }
       if(this.checkClaim[i][1]!=null){
@@ -106,8 +106,8 @@ export class UserPageComponent implements OnInit {
       }
       if(this.checkClaim[i][2]!=null){
         this.userPageService.fetchUserClaimDetails(parseInt(this.checkClaim[i][2])).subscribe(claimData=>{
-          this.userClaim.push(claimData);
-         // alert(JSON.stringify(this.userClaim));
+          this.userClaim[i]=claimData;
+        //  alert(JSON.stringify(this.userClaim));
         })
       }
       else if(this.checkClaim[i][2]==null){
@@ -117,7 +117,7 @@ export class UserPageComponent implements OnInit {
     }
     //alert(JSON.stringify(this.userPolicy));
     // alert(JSON.stringify(this.userVehicle));
-    // alert(JSON.stringify(this.userPolicy));
+    //alert(JSON.stringify(this.userPolicy));
   }
 
 
@@ -151,6 +151,7 @@ export class UserPageComponent implements OnInit {
   
 
   fillBool(){
+    
     for(let i=0;i<this.userVehicle.length;i++){
       if(this.userPolicy[i]!=null){
         this.hasPolicy.push(true);
@@ -174,9 +175,9 @@ export class UserPageComponent implements OnInit {
       }
     }
 
-    //  alert(JSON.stringify(this.hasPolicy));
-    //  alert(JSON.stringify(this.hasPayment));
-    // alert(JSON.stringify(this.hasClaim));
+    //   alert(JSON.stringify(this.hasPolicy));
+    //   alert(JSON.stringify(this.hasPayment));
+    //  alert(JSON.stringify(this.hasClaim));
   }
 
   fillView(){
@@ -222,7 +223,7 @@ export class UserPageComponent implements OnInit {
             userDetails.age=this.userPayment[i].age;
             userDetails.claimed=this.userClaim[i].claimed;
             userDetails.claimAmount=this.userClaim[i].claimAmount;
-           alert(JSON.stringify(userDetails));
+         //  alert(JSON.stringify(userDetails));
             this.ClaimUserDetails.push(userDetails);
           }
         }
