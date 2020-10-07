@@ -1,5 +1,9 @@
 <app-nav></app-nav>
 
+<div class="allclaims">
+  <button class="btn" (click)="getUser()">Get all claims</button>
+</div>
+
 <div>
 <form (ngSubmit)="getUser()">
   Enter claim id:<br>
@@ -25,7 +29,7 @@
 </div>
 
 
-
+<div class="claimsTable">
 <br><br><br>
 <table>
 <tr>
@@ -39,9 +43,7 @@
 </table>
 
 <div *ngFor="let c of claims">
-  <table border="1"> 
-
-  
+  <table border="1">  
   <tr>
     <td>{{c.claimId}}</td>
     <td>{{c.reason}}</td>
@@ -51,7 +53,6 @@
     <td>{{c.policyNo}}</td>
   </tr>
   </table>
-
   
 </div>
-
+</div>
