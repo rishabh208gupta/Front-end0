@@ -10,7 +10,7 @@ export class Vehicle{
     purchaseDate:Date;
     registrationNo:number;
     engineNo:number;
-    chasisNo:number;
+    chasisNo:string;
     customer:Customer = new Customer();
 }
 
@@ -22,5 +22,5 @@ export class VehicleRegistrationStatus extends Status{
 export class UserVehicle{
     vehicleId:number;
     vehicleType:string;
-    chasisNo:number;
+    chasisNo:string;
 }

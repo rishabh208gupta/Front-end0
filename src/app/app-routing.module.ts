@@ -14,6 +14,7 @@ import { UserPageComponent } from '../app/user-page/user-page.component';
 import { VehicleDetailsComponent } from '../app/vehicle-details/vehicle-details.component';
 import { AdminCustomerLoginComponent } from './admin-customer-login/admin-customer-login.component';
 import { AdminUserDetailsComponent } from './admin-user-details/admin-user-details.component';
+import { AdminVehicleDetailsComponent } from './admin-vehicle-details/admin-vehicle-details.component';
 import { ApprovalConfirmationComponent } from './approval-confirmation/approval-confirmation.component';
 import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -42,7 +43,8 @@ const routes: Routes = [
   { path: 'dashboard', component:DashboardComponent},
   {path:'admin-user-details',component:AdminUserDetailsComponent},
   {path:'approval-confirmation',component:ApprovalConfirmationComponent},
-  {path: 'admin-customer-login',component:AdminCustomerLoginComponent}
+  {path: 'admin-customer-login',component:AdminCustomerLoginComponent},
+  {path:'admin-vehicle-details',component:AdminVehicleDetailsComponent}
 ];
 
 @NgModule({

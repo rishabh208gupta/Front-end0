@@ -3,8 +3,13 @@
     background-image: url(../../assets/images/Ferrari-3.jpg);
     background-size: cover;
 }
+form{
+    
+    padding:8px;
+}
 .ins4{
-    width: 30%;
+    width: 70%;
+    display: block;
     padding:12px 20px;
     margin:8px;
     border:1px solid #dfe1e6;
@@ -12,7 +17,7 @@
     position: relative;
 
 }
-.ins5{
+/* .ins5{
     background: #0065ff;
     color: #fff;
     margin: 20px 0 13px;
@@ -23,15 +28,40 @@
     box-shadow: 0 10px 5px -9px rgba(0,0,0,.3);
     padding: 20px;
     width: 33%;
-}
+} */
 
 
-input{
-    display:block;
-}
-
+/* input[text]{
+    display: block;
+} */
+.header{
+    text-align: center;
+      padding: 24px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      background-color: rgb(206, 233, 224);
+  }
 .container{
-    width: max-content;
+    width: 30%;
     margin: auto;
     background:rgb(243 247 243 / 80%);
+    padding-top: 16px;
+}
+
+form div{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    
+}
+
+label{
+    font-size: small;
+}
+button{
+    
+    padding: 10px 24px;
+    border-radius: 12px;
+    background-color: rgb(206, 233, 224);
+    color: black;
+    margin-left: 25%;
 }

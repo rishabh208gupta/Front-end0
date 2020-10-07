@@ -13,6 +13,15 @@
 </div>
 
 <div>
+  <form (ngSubmit)="getVehicle()">
+    Enter Claim id:<br>
+    <input type="number" placeholder="claimId" [(ngModel)]="claimId2" name="claimId2">
+    <button type="submit">Fetch Vehicle Details</button>
+  </form>
+</div>
+
+
+<div>
   <br><br>
   <form (ngSubmit)="approval()"> 
     Claim Id:

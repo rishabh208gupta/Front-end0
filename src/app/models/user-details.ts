@@ -1,7 +1,7 @@
 export class UserDetails{
     vehicleId:number;
     vehicleType:string;
-    chasisNo:number;
+    chasisNo:string;
     policyNo:number;
     policyType:string;
     policyDuration:number;
