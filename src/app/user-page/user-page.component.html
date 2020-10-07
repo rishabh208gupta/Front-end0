@@ -54,7 +54,7 @@
   </div>
   
   <div class="column">
-    <div *ngFor="let nopay of noPaymentUserDetails" class="box">
+    <div *ngFor="let nopay of noPaymentUserDetails" class="box" style="background: #D5F5E3">
       <ul>
         <li><h1>Payment due</h1></li>
         <li>vehicle : {{ nopay.vehicleType }}</li>
@@ -67,7 +67,7 @@
   </div>
   
   <div class="column">
-    <div *ngFor="let nocl of noClaimUserDetails" class="box">
+    <div *ngFor="let nocl of noClaimUserDetails" class="box" style="background: #EBDEF0;">
       <ul>
         <li><h1>Not Yet Claimed</h1></li>
         <li>vehicle : {{ nocl.vehicleType }}</li>
@@ -82,7 +82,7 @@
   </div>
  
   <div class="column">
-    <div *ngFor="let cl of ClaimUserDetails" class="box">
+    <div *ngFor="let cl of ClaimUserDetails" class="box" style="background: #FADBD8;">
       <ul>
         <li><h1>Claimed</h1></li>
         <li>vehicle : {{ cl.vehicleType }}</li>
