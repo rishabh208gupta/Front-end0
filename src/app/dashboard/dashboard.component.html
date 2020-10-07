@@ -37,8 +37,8 @@
   </form>
 </div>
 
-
-<div class="claimsTable">
+<button type="button" (click)="fetchClaims()">Get All Claims</button>
+<div class="claimsTable" *ngIf="user">
 <br><br><br>
 <table>
 <tr>
