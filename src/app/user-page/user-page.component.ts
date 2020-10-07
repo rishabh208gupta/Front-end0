@@ -176,7 +176,7 @@ export class UserPageComponent implements OnInit {
 
     //  alert(JSON.stringify(this.hasPolicy));
     //  alert(JSON.stringify(this.hasPayment));
-    //  alert(JSON.stringify(this.hasClaim));
+    // alert(JSON.stringify(this.hasClaim));
   }
 
   fillView(){
@@ -222,7 +222,7 @@ export class UserPageComponent implements OnInit {
             userDetails.age=this.userPayment[i].age;
             userDetails.claimed=this.userClaim[i].claimed;
             userDetails.claimAmount=this.userClaim[i].claimAmount;
-          //  alert(JSON.stringify(userDetails));
+           alert(JSON.stringify(userDetails));
             this.ClaimUserDetails.push(userDetails);
           }
         }
