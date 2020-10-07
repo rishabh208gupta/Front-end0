@@ -14,6 +14,7 @@ export class RenewPaymentComponent implements OnInit {
   bill:Bill;
   payment:Payment=new Payment();
   toggleBill:boolean=false;
+  polDuration:any;
   constructor(private renewPolicyService:RenewPolicyService, private router:Router) { }
 
   ngOnInit(): void {
@@ -22,12 +23,16 @@ export class RenewPaymentComponent implements OnInit {
    // this.payment.amount=this.bill.amount;
      this.bill.amount=Number(sessionStorage.getItem('renewAmount'));
      this.payment.amount=Number(this.bill.amount.toFixed(2));
+     this.polDuration=Number(sessionStorage.getItem('polDuration'));
+
   }
   renewPolicyPayment(){
     this.renewPayment.newPolicy.policyNo=Number(sessionStorage.getItem('policyNo'));
-    this.renewPayment.policyDuration=Number(sessionStorage.getItem('policyDuration'));
+    this.polDuration=Number(sessionStorage.getItem('polDuration'));
+    sessionStorage.setItem("paymentMode",this.renewPayment.paymentMode);
     this.renewPayment.statusConfirmation=true;
     this.renewPayment.amount=this.payment.amount;
+    this.renewPayment.policyDuration=this.polDuration;
     //this.renewPayment.paymentMode="card";
     //this.renewPayment.newPolicy.policyNo=4;
     //this.renewPayment.policyDuration=3;
