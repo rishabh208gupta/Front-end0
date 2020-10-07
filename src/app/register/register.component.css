@@ -1,13 +1,15 @@
-.register {
+/*.register {
   text-align: center;
   padding-top: 20px;
-  border: 5px solid #a7a4a4;
   width: 80%;
   margin: auto;
   margin-top: 20px;
   background-color: #d4d4d4;
+}*/
+.register {
+  text-align: center;
+  padding-top: 20px;
 }
-
 .input-div {
   display: inline;
   padding: 20px;
@@ -29,12 +31,12 @@
 }
 
 .sp-alert {
-  color: red;
+  color: yellow;
   font-size: medium;
 }
 
 .reg8 {
-  background: #0065ff;
+  background: #009353;
   color: #fff;
   margin: 20px 0 13px;
   text-align: center;
@@ -44,4 +46,15 @@
   box-shadow: 0 10px 5px -9px rgba(0, 0, 0, 0.3);
   padding: 20px;
   width: 33%;
+}
+
+body{
+  background: url(C:\Users\Rhyddhad\Desktop\new-project\Front-end0\src\assets\images\adminlogin.jpg);
+}
+
+.l{
+    padding-top: 4%;
+}
+.h2{
+  text-align: center;
 }

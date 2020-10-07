@@ -1,10 +1,13 @@
 <app-navbar></app-navbar>
+<body>
+<div class="h2">
+  <h2>Register Yourself !</h2>
+</div>
+
 <div class="register">
-  <div>
-    <h2>Register Yourself</h2>
-  </div>
+  <div id="image-container">
   <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
-    <div class="input-div" style="color: red">All are required field</div>
+    <div class="input-div" style="color: yellow">All fields are required.</div>
     <div>
       <input
         name="name"
@@ -172,3 +175,5 @@
     <div><button class="reg8" type="submit">Submit</button><br /></div>
   </form>
 </div>
+</div>
+</body>
