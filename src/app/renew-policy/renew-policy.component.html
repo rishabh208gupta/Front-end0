@@ -44,13 +44,13 @@ Renew in 2 minutes
 <div id="image-container">
 <div id="container">
   <form (ngSubmit)="onClickRenewPolicy()">
-    <div><h1>Renew Policy</h1></div>
+    <div class="t2"><h1>Renew Policy</h1></div>
     <div>
-      <label for="policyNo">Policy number</label>
-      <input type="number" id="pol" [(ngModel)]="policyNo" name="policyNo"/>
+      <label for="policyNo" class="t2">Policy number</label>
+      <input type="number" id="pol" [(ngModel)]="policyNo" name="policyNo" placeholder="policy number"/>
     </div>
     <div>
-      <label for="year">Year</label>
+      <label for="year" class="t2">Year</label>
       <select name="year" [(ngModel)]="policyDuration">
         <option value="1">One year</option>
         <option value="2">Two year</option>

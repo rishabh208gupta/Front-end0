@@ -44,16 +44,17 @@
 <div id="image-container">
 <div id="container">
   <div>
+    <h2 class="t2">Claim Insurance</h2>
   <form (ngSubmit)="onClaimClick()">
     <div class="form">
-      <label for="policyNo">Policy number</label>
-      <input name="policyNo" type="number" id="pol" placeholder="policy number" [(ngModel)]="policyNo"/>
+      <label for="policyNo" class="t2">Policy number</label>
+      <input name="policyNo" type="number" id="pol" placeholder="policy number" [(ngModel)]="policyNo" />
 
     </div>
   
     <div>
-      <label for="reason">Reason</label>
-      <select name="reason" [(ngModel)]="reason"> 
+      <label for="reason" class="t2">Reason</label>
+      <select name="reason" [(ngModel)]="reason" > 
         <option value="natural disaster">Natural Disaster</option>
         <option value="man made disaster">Man Made Disaster</option>
         <option value="road accident">Road Accident</option>

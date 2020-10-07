@@ -35,16 +35,14 @@ export class RenewPolicyComponent implements OnInit {
       this.claimPageDisplay=JSON.parse(JSON.stringify(data)||'[]');
     })
     }
-  
-      
-    
-   
-    
+
 
   onClickRenewPolicy(): void {
     sessionStorage.setItem('policyDuration',String(this.policyDuration));
     this.renewPolicyService.renewPolicy(this.policyNo,this.policyDuration).subscribe(data=>{
       sessionStorage.setItem('policyNo',String(data.policyNo));
+      //alert(JSON.stringify(data));
+      sessionStorage.setItem('renewAmount',String(data.amount));
      this.status=data.status;
      this.statusMessage=data.statusMessage;
      if(data.status==true){

@@ -19,7 +19,9 @@ export class RenewPaymentComponent implements OnInit {
   ngOnInit(): void {
     this.bill=JSON.parse(sessionStorage.getItem('billing'));
     this.payment.newPolicy.policyNo=parseInt(sessionStorage.getItem('policyNo'));
-    this.payment.amount=this.bill.amount;
+   // this.payment.amount=this.bill.amount;
+     this.bill.amount=Number(sessionStorage.getItem('renewAmount'));
+     this.payment.amount=Number(this.bill.amount.toFixed(2));
   }
   renewPolicyPayment(){
     this.renewPayment.newPolicy.policyNo=Number(sessionStorage.getItem('policyNo'));

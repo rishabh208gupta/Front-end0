@@ -13,5 +13,6 @@ export class UserClaim{
 }
 export class RenewStatus extends Status{
     policyNo:number;
+    amount:number;
 
 }
