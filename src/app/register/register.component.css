@@ -1,11 +1,13 @@
-/*.register {
+/*
+.register {
   text-align: center;
   padding-top: 20px;
   width: 80%;
   margin: auto;
   margin-top: 20px;
   background-color: #d4d4d4;
-}*/
+}
+*/
 .register {
   text-align: center;
   padding-top: 20px;
@@ -30,11 +32,6 @@
   position: relative;
 }
 
-.sp-alert {
-  color: yellow;
-  font-size: medium;
-}
-
 .reg8 {
   background: #009353;
   color: #fff;
@@ -48,13 +45,13 @@
   width: 33%;
 }
 
-body{
+body {
   background: url(src\assets\images\adminlogin.jpg);
 }
 
-.l{
-    padding-top: 4%;
+.l {
+  padding-top: 4%;
 }
-.h2{
+.h2 {
   text-align: center;
 }

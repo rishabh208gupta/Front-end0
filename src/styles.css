@@ -8,3 +8,13 @@
 body {
   font-family: "Raleway", sans-serif;
 }
+.sp-alert {
+  color: red;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #ffe8e6;
+  color: #db2828;
+  box-shadow: 0 0 0 1px #db2828 inset, 0 0 0 0 transparent;
+  border-radius: 8px;
+  padding: 4px 6px;
+}
