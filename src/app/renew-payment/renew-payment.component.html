@@ -1,6 +1,8 @@
 <app-nav></app-nav>
-
-<table border="1">
+<div>
+<button type="button" (click)="generateBill()">Generate Bill</button>
+</div>
+<table border="1" *ngIf="toggleBill">
     <tr>
         <th>Customer Name</th>
         <th>Phone Number</th>

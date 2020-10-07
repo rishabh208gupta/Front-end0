@@ -12,6 +12,7 @@ export class RenewPaymentComponent implements OnInit {
   renewPayment:RenewPayment=new RenewPayment();
   bill:Bill;
   payment:Payment=new Payment();
+  toggleBill:boolean=false;
   constructor(private renewPolicyService:RenewPolicyService) { }
 
   ngOnInit(): void {
@@ -31,9 +32,9 @@ export class RenewPaymentComponent implements OnInit {
     this.renewPolicyService.makePayment(this.renewPayment).subscribe(data=>{
       alert(JSON.stringify(data));
     })
-
-
-
+  }
+  generateBill(){
+    this.toggleBill=true;
   }
 
 }

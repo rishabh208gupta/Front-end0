@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
     this.adminservice.fetchUserInfo(this.claimId1).subscribe((data)=>{
       //alert(JSON.stringify(data));
       sessionStorage.setItem("customerId",data.customerId);
-      sessionStorage.setItem('customerName',data.customerName);
+      sessionStorage.setItem('customerName',data.name);
       sessionStorage.setItem('customerPhone',data.phoneNo);
       sessionStorage.setItem('email',data.email);
       sessionStorage.setItem('dateOfBirth',data.dateOfBirth);
