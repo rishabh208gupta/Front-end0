@@ -1,32 +1,71 @@
 <app-navbar></app-navbar>
 <div class="register">
-  <form  (ngSubmit)="register()">
+  <div>
+    <h2>Register Yourself</h2>
+  </div>
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+    <div class="input-div" style="color: red">All are required field</div>
     <div>
       <input
-        name ="name"
+        name="name"
         class="reg1"
-        placeholder="Name.."
+        placeholder="Enter your name.."
+        required
+        minlength="4"
         type="text"
         [(ngModel)]="customer.name"
-      /><br />
+        #username="ngModel"
+      />
+
+      <div *ngIf="registerForm.submitted && username.invalid">
+        <div class="input-div" *ngIf="username.errors.required">
+          <span class="sp-alert">Name is required.</span>
+        </div>
+        <div class="input-div" *ngIf="username.errors.minlength">
+          <span class="sp-alert">Name must be at least 4 characters long.</span>
+        </div>
+        <br />
+      </div>
     </div>
     <div>
       <input
         name="email"
         class="reg2"
-        placeholder="Email"
+        placeholder="Enter your Email Id"
         type="email"
+        required
+        email
         [(ngModel)]="customer.email"
-      /><br />
+        #usremail="ngModel"
+      />
+
+      <div *ngIf="registerForm.submitted && usremail.invalid">
+        <div class="input-div" *ngIf="usremail.errors.required">
+          <span class="sp-alert">Email is required.</span>
+        </div>
+        <div class="input-div" *ngIf="usremail.errors?.email">
+          <span class="sp-alert">Email not valid.</span>
+        </div>
+        <br />
+      </div>
+
+      <br />
     </div>
     <div>
       <input
         name="dateOfBirth"
         class="reg3"
-        placeholder="Date of Birth"
+        placeholder="Enter Date of Birth"
         type="date"
+        required
         [(ngModel)]="customer.dateOfBirth"
-      /><br />
+        #dob="ngModel"
+      />
+      <div *ngIf="registerForm.submitted && dob.invalid">
+        <div class="input-div" *ngIf="dob.errors.required">
+          <span class="sp-alert">Date Of Birth is required.</span>
+        </div>
+      </div>
     </div>
     <div>
       <input
@@ -34,8 +73,21 @@
         class="reg4"
         placeholder="Contact Number"
         type="number"
+        required
+        minlength="10"
+        maxlength="10"
         [(ngModel)]="customer.phoneNo"
-      /><br />
+        #contactNo="ngModel"
+      />
+      <div *ngIf="registerForm.submitted && contactNo.invalid">
+        <div class="input-div" *ngIf="contactNo.errors.required">
+          <span class="sp-alert">Contact number is required.</span>
+        </div>
+        <div class="input-div" *ngIf="contactNo.errors.minlength">
+          <span class="sp-alert">Contact number must be of 10 digits.</span>
+        </div>
+        <br />
+      </div>
     </div>
     <div>
       <input
@@ -43,26 +95,80 @@
         class="reg5"
         placeholder="Address"
         type="text"
+        required
         [(ngModel)]="customer.address"
-      /><br />
+        #address="ngModel"
+      />
+      <div *ngIf="registerForm.submitted && address.invalid">
+        <div class="input-div" *ngIf="address.errors.required">
+          <span class="sp-alert">Address is required.</span>
+        </div>
+      </div>
     </div>
     <div>
       <input
         name="password"
         class="reg6"
-        placeholder="Password"
+        placeholder="Enter Password"
         type="password"
+        required
+        minlength="6"
+        maxlength="10"
         [(ngModel)]="customer.password"
-      /><br />
+        #password="ngModel"
+      />
+      <div *ngIf="registerForm.submitted && password.invalid">
+        <div class="input-div" *ngIf="password.errors.required">
+          <span class="sp-alert">Password is required.</span>
+        </div>
+        <div class="input-div" *ngIf="password.errors.minlength">
+          <span class="sp-alert">Password must be of minimum of 6 digits.</span>
+        </div>
+        <div class="input-div" *ngIf="password.errors.maxlength">
+          <span class="sp-alert"
+            >Password must be of maximum of 10 digits.</span
+          >
+        </div>
+
+        <br />
+      </div>
     </div>
-    <!-- <div>
+
+    <div>
       <input
-        formControlName="confirmPassword"
-        class="reg7"
+        name="cnfpassword"
+        class="reg6"
         placeholder="Confirm Password"
         type="password"
-      /><br />
-    </div> -->
+        required
+        minlength="6"
+        maxlength="10"
+        [(ngModel)]="confirmPass"
+        #cnfpassword="ngModel"
+      />
+      <div *ngIf="registerForm.submitted && cnfpassword.invalid">
+        <div class="input-div" *ngIf="cnfpassword.errors.required">
+          <span class="sp-alert">Password is required.</span>
+        </div>
+        <div class="input-div" *ngIf="cnfpassword.errors.minlength">
+          <span class="sp-alert">Password must be of minimum of 6 digits.</span>
+        </div>
+        <div class="input-div" *ngIf="cnfpassword.errors.maxlength">
+          <span class="sp-alert"
+            >Password must be of maximum of 10 digits.</span
+          >
+        </div>
+
+        <br />
+      </div>
+      <br />
+      <div class="input-div" *ngIf="passErr" style="color: red">
+        {{ passErr }}
+      </div>
+    </div>
+    <div class="input-div" *ngIf="errMessage" style="color: red">
+      {{ errMessage }}
+    </div>
     <div><button class="reg8" type="submit">Submit</button><br /></div>
   </form>
 </div>

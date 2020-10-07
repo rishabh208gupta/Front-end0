@@ -1,25 +1,47 @@
-.register{
-    text-align: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
+.register {
+  text-align: center;
+  padding-top: 20px;
+  border: 5px solid #a7a4a4;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #d4d4d4;
 }
-.reg1,.reg2,.reg3,.reg4,.reg5,.reg6,.reg7{
-    width: 30%;
-    padding:12px 20px;
-    margin:8px;
-    border:1px solid #dfe1e6;
-    border-radius: 4px;
-    position: relative;
+
+.input-div {
+  display: inline;
+  padding: 20px;
 }
-.reg8{
-    background: #0065ff;
-    color: #fff;
-    margin: 20px 0 13px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 4px;
-    box-shadow: 0 10px 5px -9px rgba(0,0,0,.3);
-    padding: 20px;
-    width: 33%;
+
+.reg1,
+.reg2,
+.reg3,
+.reg4,
+.reg5,
+.reg6,
+.reg7 {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px;
+  border: 1px solid #dfe1e6;
+  border-radius: 4px;
+  position: relative;
+}
+
+.sp-alert {
+  color: red;
+  font-size: medium;
+}
+
+.reg8 {
+  background: #0065ff;
+  color: #fff;
+  margin: 20px 0 13px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  box-shadow: 0 10px 5px -9px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 33%;
 }
