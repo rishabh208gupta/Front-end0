@@ -5,6 +5,7 @@ import { NewPolicy, PolicyRegistrationStatus } from '../models/new-policy';
 import { Vehicle, VehicleRegistrationStatus } from '../models/Vehicle';
 import { Bill } from '../models/bill-details';
 import { Payment,PaymentStatus } from '../models/payment';
+import { PremiumStatus } from '../models/premium';
 @Injectable({
   providedIn: 'root'
 })
@@ -33,5 +34,10 @@ export class BuyPolicyService {
     makePayment(payment:Payment):Observable<PaymentStatus>{
       let url = 'http://localhost:9090/make-payment';
       return this.http.post<PaymentStatus>(url,payment);
+    }
+
+    calculatePremium(vehicleId:number):Observable<PremiumStatus>{
+      let url = 'http://localhost:9090/buy-policy-calculate-premium?vehicleId='+vehicleId;
+      return this.http.get<PremiumStatus>(url);
     }
 }
