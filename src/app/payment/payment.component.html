@@ -1,46 +1,127 @@
 <app-nav></app-nav>
-<div>
-    <div>
-        <div>
-            <h2>{{ bill.customerName }}</h2>
-        </div>
-        <div>
-            <h3>Phone Number : {{ bill.phoneNo }}</h3>
-        </div>
-        <div>
-            <h3>vehicle type : {{ bill.vehicleType }}</h3>
-        </div>
-        <div>
-            <h3>vehicle manufacturer : {{ bill.manufacturer }}</h3>
-        </div>
-        <div>
-            <h3>vehicle chasis number : {{ bill.chasisNo }}</h3>
-        </div>
-        <div>
-            <h3>policy type : {{ bill.policyType }}</h3>
-        </div>
-        <div>
-            <h3>policy duration : {{ bill.policyDuration }} years</h3>
-        </div>
-        <div>
-            <h2>Premium Amount : {{ payment.amount }}</h2>
-        </div>
+<body>
+  <div class="outter-div">
+    <div class="inner-div">
+      <div style="display: inline">
+        <h2>{{ bill.customerName }}</h2>
+      </div>
+      <div style="display: inline">
+        <h3>
+          <div
+            style="
+              float: left;
+              margin-left: 220px;
+              margin-right: 20px;
+              display: block;
+            "
+          >
+            Phone Number :
+          </div>
+          <div style="float: left; margin-right: 20px">{{ bill.phoneNo }}</div>
+        </h3>
+      </div>
+      <div style="display: inline; width: 100%; margin: 30px">
+        <h3>
+          <div
+            style="
+              float: left;
+              margin-left: 220px;
+              margin-right: 20px;
+              display: block;
+            "
+          >
+            Vehicle type :
+          </div>
+          <div style="float: left; margin-right: 20px">
+            {{ bill.vehicleType }}
+          </div>
+        </h3>
+      </div>
+      <div style="display: inline; width: 100%; margin: 30px">
+        <h3>
+          <div
+            style="
+              float: left;
+              margin-left: 220px;
+              margin-right: 20px;
+              display: block;
+            "
+          >
+            Vehicle manufacturer :
+          </div>
+          <div style="float: left; margin-right: 20px">
+            {{ bill.manufacturer }}
+          </div>
+        </h3>
+      </div>
+      <div style="display: inline; width: 100%; margin: 30px">
+        <h3>
+          <div
+            style="
+              float: left;
+              margin-left: 220px;
+              margin-right: 20px;
+              display: block;
+            "
+          >
+            Vehicle chasis number :
+          </div>
+          <div style="float: left; margin-right: 20px">{{ bill.chasisNo }}</div>
+        </h3>
+      </div>
+      <div style="display: inline; width: 100%; margin: 30px">
+        <h3>
+          <div
+            style="
+              float: left;
+              margin-left: 220px;
+              margin-right: 20px;
+              display: block;
+            "
+          >
+            Policy type :
+          </div>
+          <div style="float: left; margin-right: 20px">
+            {{ bill.policyType }}
+          </div>
+        </h3>
+      </div>
+      <div style="display: inline; width: 100%; margin: 30px">
+        <h3>
+          <div
+            style="
+              float: left;
+              margin-left: 220px;
+              margin-right: 20px;
+              display: block;
+            "
+          >
+            Policy duration :
+          </div>
+          <div style="float: left; margin-right: 20px">
+            {{ bill.policyDuration }} years
+          </div>
+        </h3>
+      </div>
+      <div style="display: inline; width: 100%; margin: 30px">
+        <h2>Premium Amount : {{ payment.amount }}</h2>
+      </div>
     </div>
-    <div>
-        <form (ngSubmit)="makePayment()">
-            <div>
-                <label for="paymentMode">Chose Payment mode</label>
-                <select name="paymentMode" [(ngModel)]="payment.paymentMode">
-                    <option value="credit card">credit card</option>
-                    <option value="debit card">debit card</option>
-                    <option value="paytm">paytm</option>
-                    <option value="UPI">UPI</option>
-                </select>
-            </div>
-            <div>
-                <button type="submit">make payment</button>
-            </div>
-            
-        </form>
+    <div style="display: inline">
+      <form (ngSubmit)="makePayment()">
+        <div class="input-div">
+          <label for="paymentMode"><h2>Chose Payment mode</h2></label>
+          <select name="paymentMode" [(ngModel)]="payment.paymentMode">
+            <option value="credit card">Credit card</option>
+            <option value="debit card">Debit card</option>
+            <option value="paytm">Paytm</option>
+            <option value="UPI">UPI</option>
+          </select>
+        </div>
+        <div class="btn-div">
+          <button class="btn-success" type="submit">Make payment</button>
+        </div>
+      </form>
     </div>
-</div>
+  </div>
+</body>

@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  width: 100%;
+  text-align: center;
+  height: auto;
+  padding: 100px;
+  background: #f1f1f1;
+}
+
+.input-div select {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  height: 40px;
+}
+
+.input-div:focus {
+  outline: none !important;
+  border-color: #2a4d70;
+  box-shadow: 0 0 10px #8ac1f5;
+}
+
+.outter-div {
+  text-align: center;
+  border: 5px solid #a7a4a4;
+  width: 80%;
+  margin: auto;
+  background-color: #d4d4d4;
+}
+
+button {
+  background-color: #2f7004;
+  color: white;
+  width: 60%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-div {
+  width: 50%;
+  height: 30%;
+  margin-left: 220px;
+}
+
+.btn-success {
+  outline: none !important;
+  border-color: #2a4d70;
+  box-shadow: 0 0 10px #36638d;
+}
