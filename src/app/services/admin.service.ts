@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Admin, AdminStatus } from '../admin-page/admin-page.component';
 import{AdminApproval} from '../models/AdminApproval';
+import{Vehicle} from '../models/Vehicle';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,11 @@ export class AdminService {
   claimApproval(adminApproval:AdminApproval):Observable<any>{
     let url="http://localhost:9090/adminapproval";
     return this.http.post(url,adminApproval);
+
+  }
+  fetchVehicle(claimId:number):Observable<Vehicle>{
+    let url="http://localhost:9090/";
+    return this.http.get<Vehicle>(url);
 
   }
   

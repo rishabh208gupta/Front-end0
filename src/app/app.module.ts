@@ -28,6 +28,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AdminUserDetailsComponent } from './admin-user-details/admin-user-details.component';
 import { ApprovalConfirmationComponent } from './approval-confirmation/approval-confirmation.component';
 import { AdminCustomerLoginComponent } from './admin-customer-login/admin-customer-login.component';
+import { AdminVehicleDetailsComponent } from './admin-vehicle-details/admin-vehicle-details.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { AdminCustomerLoginComponent } from './admin-customer-login/admin-custom
     AdminUserDetailsComponent,
     ApprovalConfirmationComponent,
     AdminCustomerLoginComponent,
+    AdminVehicleDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

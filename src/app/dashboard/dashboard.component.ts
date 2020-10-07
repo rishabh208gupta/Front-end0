@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
   claim:number;
   status:string;
   amount:number;
+  claimId2:number;
   adminApproval:AdminApproval=new AdminApproval();
  
   constructor(private adminservice: AdminService, private router: Router) { }
@@ -50,6 +51,12 @@ export class DashboardComponent implements OnInit {
       sessionStorage.setItem('dateOfBirth',data.dateOfBirth);
       sessionStorage.setItem('address',data.address);
       this.router.navigate(['/admin-user-details']);
+    })
+  }
+
+  getVehicle(){
+    this.adminservice.fetchVehicle(this.claimId2).subscribe((data)=>{
+      
     })
   }
   
