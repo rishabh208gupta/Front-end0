@@ -1,5 +1,12 @@
 <app-nav></app-nav>
 <div class="buy1">
+  <div>
+    <h2>{{ vehicleType }}</h2>
+    <h2>{{ purchaseDate }}</h2>
+    <h2>{{ chasisNo }}</h2>
+    <h2>{{ manufacturer }}</h2>
+    <h2>{{ registrationNo }}</h2>
+  </div>
   <form  (ngSubmit)="onClickPayment()" #policyForm = "ngForm">
     <div class="buy3"><h1>Plans</h1></div>
     <div><h3>Choose your Plan</h3></div>

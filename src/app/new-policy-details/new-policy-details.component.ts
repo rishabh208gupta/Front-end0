@@ -21,9 +21,10 @@ export class NewPolicyDetailsComponent implements OnInit {
 
   vehicleType:string;
   purchaseDate:Date;
-  vehiclePrice:number;
-  premiumRate:number;
-  planYear:number;
+  chasisNo:string;
+  manufacturer:string;
+  registrationNo:number;
+
   idv:number;
   estimatedValue:number;
   premiumStatus:PremiumStatus = new PremiumStatus();
@@ -38,6 +39,11 @@ export class NewPolicyDetailsComponent implements OnInit {
    this.buyPolicyService.calculatePremium(parseInt(sessionStorage.getItem('vehicleId'))).subscribe(data=>{
     this.premiumStatus=data;
     alert(JSON.stringify(this.premiumStatus));
+    this.vehicleType=sessionStorage.getItem('vehicleType');
+    this.manufacturer=sessionStorage.getItem('manufacturer');
+    this.purchaseDate= new Date(sessionStorage.getItem('purchaseDate'));
+    this.chasisNo=sessionStorage.getItem('chasisNo');
+    this.registrationNo=parseInt(sessionStorage.getItem('registrationNo'));
 
    })
   }
