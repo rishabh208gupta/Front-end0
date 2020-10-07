@@ -12,6 +12,7 @@ import { RenewPolicyComponent } from '../app/renew-policy/renew-policy.component
 import { ResetPasswordComponent } from '../app/reset-password/reset-password.component';
 import { UserPageComponent } from '../app/user-page/user-page.component';
 import { VehicleDetailsComponent } from '../app/vehicle-details/vehicle-details.component';
+import { AdminCustomerLoginComponent } from './admin-customer-login/admin-customer-login.component';
 import { AdminUserDetailsComponent } from './admin-user-details/admin-user-details.component';
 import { ApprovalConfirmationComponent } from './approval-confirmation/approval-confirmation.component';
 import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.component';
@@ -40,7 +41,8 @@ const routes: Routes = [
   {path: 'renew-payment',component:RenewPaymentComponent},
   { path: 'dashboard', component:DashboardComponent},
   {path:'admin-user-details',component:AdminUserDetailsComponent},
-  {path:'approval-confirmation',component:ApprovalConfirmationComponent}
+  {path:'approval-confirmation',component:ApprovalConfirmationComponent},
+  {path: 'admin-customer-login',component:AdminCustomerLoginComponent}
 ];
 
 @NgModule({

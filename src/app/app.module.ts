@@ -27,6 +27,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AdminUserDetailsComponent } from './admin-user-details/admin-user-details.component';
 import { ApprovalConfirmationComponent } from './approval-confirmation/approval-confirmation.component';
+import { AdminCustomerLoginComponent } from './admin-customer-login/admin-customer-login.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ApprovalConfirmationComponent } from './approval-confirmation/approval-
     AboutUsComponent,
     AdminUserDetailsComponent,
     ApprovalConfirmationComponent,
+    AdminCustomerLoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

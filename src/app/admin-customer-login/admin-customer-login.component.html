@@ -1,0 +1,12 @@
+<div class="signin">
+<form (ngSubmit)="signIn()">
+    <span>
+        <input type="radio" class="s1" value="admin-page" name="loginType"  [(ngModel)]="option"/>
+        <label for="admin">Continue as admin</label>
+        <input type="radio" class="s2" value="login" name="loginType" [(ngModel)]="option"/>
+        <label for="customer">Continue as customer</label>
+      </span>
+
+      <button type="submit" class="s3" >Submit</button>
+</form>
+</div>
