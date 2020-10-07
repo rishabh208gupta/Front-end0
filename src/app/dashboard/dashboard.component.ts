@@ -56,8 +56,19 @@ export class DashboardComponent implements OnInit {
 
   getVehicle(){
     this.adminservice.fetchVehicle(this.claimId2).subscribe((data)=>{
-      
+     // alert(JSON.stringify(data));
+      sessionStorage.setItem('chasisNo',data.chasisNo);
+      //sessionStorage.setItem('customerId',String(data.customer.customerId));
+      sessionStorage.setItem('dlNo',String(data.dlNo));
+      sessionStorage.setItem("engineNo",String(data.engineNo));
+      sessionStorage.setItem('manufacturer',data.manufacturer);
+      sessionStorage.setItem('model',data.model);
+      sessionStorage.setItem('purchaseDate',String(data.purchaseDate));
+      sessionStorage.setItem('registrationNo',String(data.registrationNo));
+      sessionStorage.setItem('vehicleId',String(data.vehicleId));
+      sessionStorage.setItem('vehicleType',data.vehicleType);
     })
+    this.router.navigate(['/admin-vehicle-details']);
   }
   
 }

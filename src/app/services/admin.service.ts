@@ -34,7 +34,7 @@ export class AdminService {
 
   }
   fetchVehicle(claimId:number):Observable<Vehicle>{
-    let url="http://localhost:9090/";
+    let url="http://localhost:9090/vehiclebyclaimid?claimId="+claimId;
     return this.http.get<Vehicle>(url);
 
   }

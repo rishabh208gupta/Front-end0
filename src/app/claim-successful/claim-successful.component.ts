@@ -9,7 +9,7 @@ export class ClaimSuccessfulComponent implements OnInit {
   claimId:any;
   statusMessage:any;
   status:boolean;
-
+ // claimPageDisplay
   name:any;
   constructor() { }
 
@@ -18,7 +18,7 @@ export class ClaimSuccessfulComponent implements OnInit {
     this.statusMessage=sessionStorage.getItem('statusMessage');
     this.status=JSON.parse(sessionStorage.getItem('status'));
 
-    
+    //this.claimPageDisplay=JSON.parse(sessionStorage.getItem(this.claimPageDisplay) || '[]');
 
   }
 
