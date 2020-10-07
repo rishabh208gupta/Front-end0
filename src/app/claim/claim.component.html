@@ -43,9 +43,9 @@
 
 <div id="image-container">
 <div id="container">
-  
+  <div>
   <form (ngSubmit)="onClaimClick()">
-    <div>
+    <div class="form">
       <label for="policyNo">Policy number</label>
       <input name="policyNo" type="number" id="pol" placeholder="policy number" [(ngModel)]="policyNo"/>
 
@@ -65,6 +65,8 @@
       <button type="submit" class="button2" >Claim</button>
     </div>
   </form>
+  </div>
+
 </div>
 </div>
 </div>
