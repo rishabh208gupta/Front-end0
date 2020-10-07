@@ -1,3 +1,4 @@
+/*
 .register {
   text-align: center;
   padding-top: 20px;
@@ -6,6 +7,7 @@
   margin-top: 20px;
   background-color: #d4d4d4;
 }
+*/
 .register {
   text-align: center;
   padding-top: 20px;
@@ -28,11 +30,6 @@
   border: 1px solid #dfe1e6;
   border-radius: 4px;
   position: relative;
-}
-
-.sp-alert {
-  color: yellow;
-  font-size: medium;
 }
 
 .reg8 {
