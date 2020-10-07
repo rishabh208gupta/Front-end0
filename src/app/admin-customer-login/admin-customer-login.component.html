@@ -4,8 +4,8 @@
     
     <div class="signin">
     
-    <form class="s" (ngSubmit)="signIn()">
-    <div>
+    <form (ngSubmit)="signIn()">
+        <div class="s">
         <div class="s5">
         <input type="radio"  class="s1" value="admin-page" name="loginType"  [(ngModel)]="option"/>
         <label for="admin">Continue as admin</label>
@@ -14,8 +14,9 @@
         <input type="radio" class="s2"  value="login" name="loginType" [(ngModel)]="option"/>
         <label for="customer">Continue as customer</label>
         </div>
-        </div>
+        
         <button type="submit" class="s3" >Submit</button>
+        </div>
     </form>
     </div>
 </div>

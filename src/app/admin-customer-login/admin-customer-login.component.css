@@ -4,21 +4,24 @@
     
   }
 .signin{
-    text-align: center;
-    margin-top: 2%;
+    text-align: left;
+    margin-top: 4%;
 }
 
 .s1,.s2{
-    margin:4%;
+    margin:2%;
+    margin-left:10%;
 }
 
 
 .s3{
-    margin:4%;
-    margin-left: 6%;
+    margin-top: 1%;
+    margin:2%;
     width:35%;
-    padding:1%;
+    padding:2%;
     background-color: #009353;
+    color: black;
+    font-size: large;
  }
 
   .s4{
@@ -28,4 +31,5 @@
   }
   .s6,.s5{
       color: white;
+      margin:2%;
   }

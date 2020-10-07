@@ -1,67 +1,76 @@
 <app-nav></app-nav>
-
-<div class="allclaims">
-  <button class="btn" (click)="getUser()">Get all claims</button>
+<div class="header">
+  <h1>Welcome {{username}} </h1>
+</div>
+<div class="claims">
+  <h3 class="text">Get details of all the claims requests : 
+    <button class="b1" type="button" (click)="fetchClaims()">Get All Claims</button>
+  </h3>
 </div>
 
-<div>
-<form (ngSubmit)="getUser()">
-  Enter claim id:<br>
-<input type="number" placeholder="claimId" [(ngModel)]="claimId1" name="claimId">
-<button type="submit">Get user Details</button>
-</form>
+<div class="claimsTable" *ngIf="user">
+  <br><br><br>
+  <table>
+  <tr>
+    <th>Claim Id</th>
+    <th> Reason </th>
+    <th>Status </th>
+    <th>Date of Application</th>
+    <th>Admin amount</th>
+    <th>Policy No</th>
+  </tr>
+  </table>
+
+  <div *ngFor="let c of claims">
+    <table border="1">  
+    <tr>
+      <td>{{c.claimId}}</td>
+      <td>{{c.reason}}</td>
+      <td>{{c.status}}</td>
+      <td>{{c.dateApplied}}</td>
+      <td>{{c.adminAmount}}</td>
+      <td>{{c.policyNo}}</td>
+    </tr>
+    </table>  
+  </div>
 </div>
 
-<div>
-  <form (ngSubmit)="getVehicle()">
-    Enter Claim id:<br>
-    <input type="number" placeholder="claimId" [(ngModel)]="claimId2" name="claimId2">
-    <button type="submit">Fetch Vehicle Details</button>
-  </form>
-</div>
 
 
-<div>
+<div class="d4">
+  <h3 class="text">Update the Pending claim requests : <button class="b1" type="submit">Claim approval</button></h3>
   <br><br>
   <form (ngSubmit)="approval()"> 
     Claim Id:
     <input type="number" placeholder="Claim Id" [(ngModel)]="adminApproval.claimId" name="claim"/> 
-    status:
+    Status:
     <select name="status" [(ngModel)]="adminApproval.status" >
       <option value="reject">Reject</option>
       <option value="Approved">Approve</option>
     </select>
-    amount:
+    Amount:
     <input type="number" placeholder="amount" [(ngModel)]="adminApproval.amount" name="amount">
-  <button type="submit">Claim approval</button>
+  
   </form>
 </div>
 
-<button type="button" (click)="fetchClaims()">Get All Claims</button>
-<div class="claimsTable" *ngIf="user">
-<br><br><br>
-<table>
-<tr>
-  <th>Claim Id</th>
-  <th> Reason </th>
-  <th>Status </th>
-  <th>Date of Application</th>
-  <th>Admin amount</th>
-  <th>Policy No</th>
-</tr>
-</table>
 
-<div *ngFor="let c of claims">
-  <table border="1">  
-  <tr>
-    <td>{{c.claimId}}</td>
-    <td>{{c.reason}}</td>
-    <td>{{c.status}}</td>
-    <td>{{c.dateApplied}}</td>
-    <td>{{c.adminAmount}}</td>
-    <td>{{c.policyNo}}</td>
-  </tr>
-  </table>
-  
+<div class="d1">
+  <span class="d2">
+    <form (ngSubmit)="getUser()">
+      <h3 class="text2">Fetch User Details:</h3><br>
+      <input type="number" placeholder="Enter claimId" [(ngModel)]="claimId1" name="claimId">
+      <button class="b2" type="submit">Submit</button>
+    </form>
+  </span>
+
+  <span class="d3">
+    <form (ngSubmit)="getVehicle()">
+      <h3 class="text2">Fetch Vehicle Details:</h3><br>
+      <input type="number" placeholder="Enter claimId" [(ngModel)]="claimId2" name="claimId2">
+      <button class="b2" type="submit">Submit</button>
+    </form>
+  </span>
 </div>
-</div>
+
+

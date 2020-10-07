@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Admin } from '../admin-page/admin-page.component';
-import { Customer } from '../models/Customer';
 import { NewPolicy } from '../models/new-policy';
 import { Vehicle } from '../models/Vehicle';
 import { AdminService } from '../services/admin.service';
@@ -17,7 +16,6 @@ export class DashboardComponent implements OnInit {
   vehicle:Vehicle = new Vehicle();
   claims: any;
   claimId1:number;
-  customer:Customer;
   claim:number;
   status:string;
   amount:number;
@@ -25,9 +23,11 @@ export class DashboardComponent implements OnInit {
   adminApproval:AdminApproval=new AdminApproval();
   user:boolean=false;
  
+  username:string
   constructor(private adminservice: AdminService, private router: Router) { }
 
   ngOnInit(): void {
+    this.username=sessionStorage.getItem('username');
     this.adminservice.fetchAllClaims().subscribe((data)=>{
       //console.log(data);
      this.claims= JSON.parse(JSON.stringify(data)||'[]');

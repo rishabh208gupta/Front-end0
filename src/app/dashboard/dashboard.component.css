@@ -26,3 +26,36 @@ th{
    
     
 }
+.header{
+    text-align: center;
+    color: darkcyan;
+    margin: 2%;
+}
+.claims,.d3,.d2{
+    text-align: center;
+    position: relative;
+}
+.b1{
+    background-color: darkcyan;
+    padding: 6px;
+}
+.b2{
+    background-color: darkcyan;
+}
+.claimsTable{
+    text-align: center;
+    margin-left:15%;
+}
+.d1{
+    text-align: center;
+    display: flex;
+    position: relative;
+    margin-left:25%;
+}
+.d2,.d3,.d4{
+    text-align: center;
+    margin:6%;
+}
+.text2{
+    color: rgb(219, 216, 21);
+}
