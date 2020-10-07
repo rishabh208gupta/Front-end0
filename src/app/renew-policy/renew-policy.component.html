@@ -35,11 +35,13 @@
   </div>
 </div>
 
+
 <div class="t1">
 Save upto 80%+ on car insurance
 Renew in 2 minutes
 </div>
 
+<div id="image-container">
 <div id="container">
   <form (ngSubmit)="onClickRenewPolicy()">
     <div><h1>Renew Policy</h1></div>
@@ -62,4 +64,5 @@ Renew in 2 minutes
   <div *ngIf=!status class="status">
     {{statusMessage}}
   </div>
+</div>
 </div>
