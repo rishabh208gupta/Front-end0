@@ -29,6 +29,7 @@ import { AdminUserDetailsComponent } from './admin-user-details/admin-user-detai
 import { ApprovalConfirmationComponent } from './approval-confirmation/approval-confirmation.component';
 import { AdminCustomerLoginComponent } from './admin-customer-login/admin-customer-login.component';
 import { AdminVehicleDetailsComponent } from './admin-vehicle-details/admin-vehicle-details.component';
+import { RenewPaymentSuccessComponent } from './renew-payment-success/renew-payment-success.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { AdminVehicleDetailsComponent } from './admin-vehicle-details/admin-vehi
     ApprovalConfirmationComponent,
     AdminCustomerLoginComponent,
     AdminVehicleDetailsComponent,
+    RenewPaymentSuccessComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

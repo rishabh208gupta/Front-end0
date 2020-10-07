@@ -20,6 +20,7 @@ import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PaymentSuccessfulComponent } from './payment-successful/payment-successful.component';
 import { PaymentComponent } from './payment/payment.component';
+import { RenewPaymentSuccessComponent } from './renew-payment-success/renew-payment-success.component';
 import { RenewPaymentComponent } from './renew-payment/renew-payment.component';
 
 const routes: Routes = [
@@ -44,7 +45,8 @@ const routes: Routes = [
   {path:'admin-user-details',component:AdminUserDetailsComponent},
   {path:'approval-confirmation',component:ApprovalConfirmationComponent},
   {path: 'admin-customer-login',component:AdminCustomerLoginComponent},
-  {path:'admin-vehicle-details',component:AdminVehicleDetailsComponent}
+  {path:'admin-vehicle-details',component:AdminVehicleDetailsComponent},
+  {path:'renew-payment-success',component:RenewPaymentSuccessComponent}
 ];
 
 @NgModule({

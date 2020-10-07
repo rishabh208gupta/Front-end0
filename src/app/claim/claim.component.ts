@@ -42,12 +42,7 @@ export class ClaimComponent implements OnInit {
     this.toggle=true;
     this.claimPageDisplay=JSON.parse(sessionStorage.getItem(this.claimPageDisplay) || '[]');
   }
-  onChatSubmit(){
-    this.claimService.onClickChatSubmit(this.concerns,this.customerId).subscribe(data=>{
-      this.displayOnEmailSent=data.statusMessage;
-    })
-  }
-
+  
   onChatClick(){
     this.chat=true;
   }
