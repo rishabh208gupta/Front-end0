@@ -26,3 +26,12 @@ th{
    
     
 }
+.claimsTable{
+    text-align: center;
+    margin-left:3%;
+}
+.header{
+    margin-top: 5%;
+    text-align: center;
+    color:yellowgreen;
+}
