@@ -24,6 +24,7 @@ export class NewPolicyDetailsComponent implements OnInit {
   chasisNo:string;
   manufacturer:string;
   registrationNo:number;
+  trueWheeler:boolean;
 
   idv:number;
   estimatedValue:number;
@@ -44,6 +45,12 @@ export class NewPolicyDetailsComponent implements OnInit {
     this.purchaseDate= new Date(sessionStorage.getItem('purchaseDate'));
     this.chasisNo=sessionStorage.getItem('chasisNo');
     this.registrationNo=parseInt(sessionStorage.getItem('registrationNo'));
+    if(this.vehicleType=='2-wheeler'){
+      this.trueWheeler=true;
+    }
+    else{
+      this.trueWheeler=false;
+    }
 
    })
   }

@@ -1,12 +1,29 @@
 <app-nav></app-nav>
-<div class="buy1">
-  <div>
-    <h2>{{ vehicleType }}</h2>
-    <h2>{{ purchaseDate }}</h2>
-    <h2>{{ chasisNo }}</h2>
-    <h2>{{ manufacturer }}</h2>
-    <h2>{{ registrationNo }}</h2>
+<div class="header">
+  <h1>Policy Selection</h1>
+</div>
+<div class="container">
+  <div class="card">
+    <h2 style="text-align: center; color: black;margin-bottom: 8px;">{{vehicleType}}</h2>
+    <img *ngIf="trueWheeler"
+        src="../../assets/images/bike.jpg"
+        alt="Avatar"
+        style="width: 100%; height: 90%;"
+      />
+      <img *ngIf="!trueWheeler"
+        src="../../assets/images/car.jpg"
+        alt="Avatar"
+        style="width: 100%; height: 90%;"
+      />
+      
+      <h4 style="text-align: center; color: black;margin-bottom: 8px;">manufacturer : {{manufacturer}}</h4>
+      <h4 style="text-align: center; color: black; margin-bottom: 8px;">purchasae date : {{purchaseDate | date}}</h4>
+      <h4 style="text-align: center; color: black;margin-bottom: 8px;">registration number : {{registrationNo}}</h4>
+      <h3 style="text-align: center; color: brown;margin-bottom: 8px;">chassis number : {{chasisNo}}</h3>
   </div>
+</div>
+
+<div class="buy1">
   <form  (ngSubmit)="onClickPayment()" #policyForm = "ngForm">
     <div class="buy3"><h1>Plans</h1></div>
     <div><h3>Choose your Plan</h3></div>
