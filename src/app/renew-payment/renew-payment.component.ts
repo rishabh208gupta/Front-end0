@@ -41,7 +41,7 @@ export class RenewPaymentComponent implements OnInit {
      // alert(JSON.stringify(data));
       sessionStorage.setItem("statusMessage",data.statusMessage);
       sessionStorage.setItem("policyNo",String(data.policyNo));
-      this.router.navigate(['/payment-successful']);
+      this.router.navigate(['/renew-payment-success']);
     })
   }
   generateBill(){

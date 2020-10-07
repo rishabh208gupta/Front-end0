@@ -22,7 +22,7 @@ select{
 }
 
 .status{
-    color: red;
+    color:white;
 }
 
 #button1{
@@ -95,6 +95,7 @@ th{
     
   }
   .t2{
-    color:blue;
+    color:white;
     font-weight: bold;
+    
 }

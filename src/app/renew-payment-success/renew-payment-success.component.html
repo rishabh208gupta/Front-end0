@@ -1,1 +1,45 @@
-<p>renew-payment-success works!</p>
+<app-nav></app-nav>
+
+
+
+<div class="t1"> 
+    <h1>{{statusMessage}}</h1>
+    <table border="2">
+        <tr>
+            <td>Customer Name</td>
+            <td>{{name}}</td>
+        </tr>
+        <tr>
+            <td>Policy Number</td>
+            <td>{{policyNo}}</td>
+        </tr>
+        <tr>
+            <td>Phone Number</td>
+            <td>{{bill.phoneNo}}</td>
+        </tr>
+        <tr>
+            <td>Vehicle Type</td>
+            <td>{{bill.vehicleType}}</td>
+        </tr>
+        <tr>
+            <td>Manufacturer</td>
+            <td>{{bill.manufacturer}}</td>
+        </tr>
+        <tr>
+            <td>Chasis Number</td>
+            <td>{{bill.chasisNo}}</td>
+        </tr>
+        <tr>
+            <td>Policy Type</td>
+            <td>{{bill.policyType}}</td>
+        </tr>
+        <tr>
+            <td>Policy Duration</td>
+            <td>{{polDuration}}</td>
+        </tr>
+        <tr  class="t2">
+            <td>Payment Amount</td>
+            <td>{{payment.amount}}</td>
+        </tr>
+    </table>
+</div>
