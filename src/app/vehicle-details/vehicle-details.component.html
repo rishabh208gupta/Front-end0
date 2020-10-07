@@ -4,7 +4,7 @@
 </div>
 <div class="ins1">
   <div class="container">
-    <form>
+    <form (ngSubmit)="onBuyInsuranceClick()">
       <label for="wheeler"><h3>Select whether vehicle is 2 or 4 wheeler</h3></label>
       <span>
         <input
@@ -93,8 +93,8 @@
         />
       </div>
       <div>
-        <button type="button" class="ins5" (click)="onBuyInsuranceClick()" >
-          Submit
+        <button type="submit" class="ins5">
+          choose policy
         </button>
       </div>
     </form>
