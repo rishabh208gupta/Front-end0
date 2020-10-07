@@ -1,7 +1,10 @@
 <app-navbar></app-navbar>
+<div class="login">
+  <h1>Log In to Your Account</h1>
+</div>
 <div id="image-container">
   <div class="log6">
-    <form (ngSubmit)="loginCheck()">
+    <form #loginForm="ngForm" (ngSubmit)="loginCheck()">
       <div class="l">
         <div>
           <input
