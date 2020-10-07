@@ -53,16 +53,16 @@ export class UserPageComponent implements OnInit {
       this.checkClaim=data;
       
       this.getUserClaimDetails();
-    // alert(JSON.stringify(this.checkClaim));
+     //alert(JSON.stringify(this.checkClaim));
     })
 
     this.userPageService.fetchPaymentForPolicy(parseInt(sessionStorage.getItem('customerId'))).subscribe(payData=>{
       this.checkPayment=payData;
       this.getUserPaymentDetails();
-    //  alert(JSON.stringify(this.checkPayment));
+     // alert(JSON.stringify(this.checkPayment));
       
     })
-    
+    //alert('welcome'+sessionStorage.getItem('customerName'));
   }
 
   onBuyPolicyClick(){
@@ -90,7 +90,7 @@ export class UserPageComponent implements OnInit {
           // uv=vehicleData;
           //alert(JSON.stringify(vehicleData));
          // this.userVehicle.push({'vehicleId':vehicleData.vehicleId,'vehicleType':vehicleData.vehicleType,'chasisNo':vehicleData.chasisNo});
-         this.userVehicle.push(vehicleData);
+         this.userVehicle[i]=vehicleData;
         // alert(JSON.stringify(this.userVehicle));
         })
       }
