@@ -1,4 +1,5 @@
 <app-nav></app-nav>
+<body>
 <div class="pre">
   <h1 class="pre1">Calculate Vechile Premium</h1>
   <form class="pre2" (ngSubmit)="calculatePremium()" >
@@ -29,6 +30,7 @@
     </span>
 
     <div >
+      <label for="date"><h3>Select the date of purchase of your vehicle :</h3></label>
       <input type="date" name="dateOfPurchase" placeholder="Enter date of purchase" class="pre6" [(ngModel)]="premiumDetails.purchaseDate"/>
     </div>
     
@@ -38,11 +40,11 @@
       </button>
     </div>
     <br>
-    Your IDV is:<b>{{premiumAnswer.idv}}</b>
+    <h3 class="a">YOUR IDV (INSURED DECLARED VALUE) IS:<b>{{premiumAnswer.idv}}</b></h3>
     <br>
     <br>
-    Your Estimated Premium Value is:<b>{{premiumAnswer.estimatedValue}}</b>
+    <h3 class="a">YOUR ESTIMATED PREMIUM VALUE IS:<b>{{premiumAnswer.estimatedValue}}</b></h3>
     <br>
   </form>
 </div>
-
+</body>
