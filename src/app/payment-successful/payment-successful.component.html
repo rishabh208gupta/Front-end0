@@ -1,4 +1,150 @@
-<p>payment-successful</p>
-<h2>your policy number is {{ policyNo }}</h2>
-<button  (click)="onHomeClick()">home</button>
+<app-nav></app-nav>
+<div class = "header">
+    <h2>Congratulations {{ bill.customerName }}, payment successful</h2>
+</div>
+<div class="outter-div">
+<div class="inner-div">
+  
+  <div style="display: inline-flex; width: 100%; margin: 30px">
+    <h3>
+      <div
+        style="
+          float: left;
+          margin-left: 220px;
+          margin-right: 20px;
+          display: block;
+        "
+      >
+        Phone Number :
+      </div>
+      <div style="float: left; margin-right: 20px">{{ bill.phoneNo }}</div>
+    </h3>
+  </div>
+  <div style="display: inline-flex; width: 100%; margin: 30px">
+    <h3>
+      <div
+        style="
+          float: left;
+          margin-left: 220px;
+          margin-right: 20px;
+          display: block;
+        "
+      >
+        Vehicle type :
+      </div>
+      <div style="float: left; margin-right: 20px">
+        {{ bill.vehicleType }}
+      </div>
+    </h3>
+  </div>
+  <div style="display: inline-flex; width: 100%; margin: 30px">
+    <h3>
+      <div
+        style="
+          float: left;
+          margin-left: 220px;
+          margin-right: 20px;
+          display: block;
+        "
+      >
+        Vehicle manufacturer :
+      </div>
+      <div style="float: left; margin-right: 20px">
+        {{ bill.manufacturer }}
+      </div>
+    </h3>
+  </div>
+  <div style="display: inline-flex; width: 100%; margin: 30px">
+    <h3>
+      <div
+        style="
+          float: left;
+          margin-left: 220px;
+          margin-right: 20px;
+          display: block;
+        "
+      >
+        Vehicle chasis number :
+      </div>
+      <div style="float: left; margin-right: 20px">{{ bill.chasisNo }}</div>
+    </h3>
+  </div>
+  <div style="display: inline-flex; width: 100%; margin: 30px">
+    <h3>
+      <div
+        style="
+          float: left;
+          margin-left: 220px;
+          margin-right: 20px;
+          display: block;
+          color: brown;
+        "
+      >
+        Policy type :
+      </div>
+      <div style="float: left; margin-right: 20px;color: brown;">
+        {{ bill.policyType }}
+      </div>
+    </h3>
+  </div>
+  <div style="display: inline-flex; width: 100%; margin: 30px">
+    <h3>
+      <div
+        style="
+          float: left;
+          margin-left: 220px;
+          margin-right: 20px;
+          display: block;
+          color: brown;
+        "
+      >
+        Policy duration :
+      </div>
+      <div style="float: left; margin-right: 20px;color: brown;">
+        {{ bill.policyDuration }} years
+      </div>
+    </h3>
+  </div>
+  <div style="display: inline-flex; width: 100%; margin: 30px">
+    <h3>
+      <div
+        style="
+          float: left;
+          margin-left: 220px;
+          margin-right: 20px;
+          display: block;
+          color: brown;
+        "
+      >
+        Amount Paid :
+      </div>
+      <div style="float: left; margin-right: 20px;color: brown;">
+        {{ payment.amount }} 
+      </div>
+    </h3>
+  </div>
+  <div style="display: inline-flex; width: 100%; margin: 30px">
+    <h3>
+      <div
+        style="
+          float: left;
+          margin-left: 220px;
+          margin-right: 20px;
+          display: block;
+        "
+      >
+        Payment Mode :
+      </div>
+      <div style="float: left; margin-right: 20px">
+        {{ payment.paymentMode }} 
+      </div>
+    </h3>
+  </div>
+  
+  <div class="btn-div">
+    <button class="btn-success" type="button" [routerLink]="['/user-page']">home</button>
+  </div>
+</div>
+
+</div>
 

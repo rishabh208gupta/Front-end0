@@ -38,6 +38,9 @@ export class PaymentComponent implements OnInit {
       console.log(this.paymentStatus.policyNo);
       this.router.navigate(['/payment-successful']);
     })
+
+    sessionStorage.setItem('bill-details',JSON.stringify(this.bill));
+    sessionStorage.setItem('payment-details',JSON.stringify(this.payment));
   }
 
   
