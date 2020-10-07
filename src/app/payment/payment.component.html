@@ -1,11 +1,12 @@
 <app-nav></app-nav>
 <body>
+    <div class = "header">
+        <h2>Thank you for choosing us {{ bill.customerName }}</h2>
+    </div>
   <div class="outter-div">
     <div class="inner-div">
-      <div style="display: inline">
-        <h2>{{ bill.customerName }}</h2>
-      </div>
-      <div style="display: inline">
+      
+      <div style="display: inline-flex; width: 100%; margin: 30px">
         <h3>
           <div
             style="
@@ -20,7 +21,7 @@
           <div style="float: left; margin-right: 20px">{{ bill.phoneNo }}</div>
         </h3>
       </div>
-      <div style="display: inline; width: 100%; margin: 30px">
+      <div style="display: inline-flex; width: 100%; margin: 30px">
         <h3>
           <div
             style="
@@ -37,7 +38,7 @@
           </div>
         </h3>
       </div>
-      <div style="display: inline; width: 100%; margin: 30px">
+      <div style="display: inline-flex; width: 100%; margin: 30px">
         <h3>
           <div
             style="
@@ -54,7 +55,7 @@
           </div>
         </h3>
       </div>
-      <div style="display: inline; width: 100%; margin: 30px">
+      <div style="display: inline-flex; width: 100%; margin: 30px">
         <h3>
           <div
             style="
@@ -69,7 +70,7 @@
           <div style="float: left; margin-right: 20px">{{ bill.chasisNo }}</div>
         </h3>
       </div>
-      <div style="display: inline; width: 100%; margin: 30px">
+      <div style="display: inline-flex; width: 100%; margin: 30px">
         <h3>
           <div
             style="
@@ -86,7 +87,7 @@
           </div>
         </h3>
       </div>
-      <div style="display: inline; width: 100%; margin: 30px">
+      <div style="display: inline-flex; width: 100%; margin: 30px">
         <h3>
           <div
             style="
@@ -103,8 +104,8 @@
           </div>
         </h3>
       </div>
-      <div style="display: inline; width: 100%; margin: 30px">
-        <h2>Premium Amount : {{ payment.amount }}</h2>
+      <div style="display: inline-flex; width: 100%; margin: 30px">
+        <h2 style="color: brown;">Premium Amount : {{ payment.amount }}</h2>
       </div>
     </div>
     <div style="display: inline">

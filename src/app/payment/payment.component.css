@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+.header{
+  text-align: center;
+    padding: 24px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgb(206, 233, 224);
+}
+
 body {
   font-family: Arial;
   width: 100%;
