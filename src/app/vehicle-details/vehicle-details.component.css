@@ -1,68 +1,89 @@
-.ins1{
-   
-    background-image: url(../../assets/images/Ferrari-3.jpg);
-    background-size: cover;
-}
-form{
-    
-    padding:8px;
-    padding-left: 96px;
-}
-.ins4{
-    width: 70%;
-    display: block;
-    padding:12px 20px;
-    margin:8px;
-    border:1px solid #dfe1e6;
-    border-radius: 4px;
-    position: relative;
-
-}
-/* .ins5{
-    background: #0065ff;
-    color: #fff;
-    margin: 20px 0 13px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 4px;
-    box-shadow: 0 10px 5px -9px rgba(0,0,0,.3);
-    padding: 20px;
-    width: 33%;
-} */
-
-
-/* input[text]{
-    display: block;
-} */
-.header{
-    text-align: center;
-      padding: 24px;
-      margin-top: 16px;
-      margin-bottom: 16px;
-      background-color: rgb(206, 233, 224);
-  }
-.container{
-    width: 30%;
-    margin: auto;
-    background:rgb(243 247 243 / 80%);
-    padding-top: 16px;
+.container {
+  min-height: 100vh;
 }
 
-form div{
-    margin-top: 24px;
-    margin-bottom: 24px;
-    
+.details {
+  display: flex;
+  width: 100%;
 }
-
-label{
-    font-size: small;
+.details h2 {
+  margin: 2rem 0rem;
+  text-align-last: center;
+  color: #f05050;
 }
-button{
-    
-    padding: 10px 24px;
-    border-radius: 12px;
-    background-color: rgb(206, 233, 224);
-    color: black;
-    margin-left: 10%;
+.details .col {
+  width: 50%;
+}
+.image {
+  background-image: url(../../assets/images/vd.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 85vh;
+  background-position: center;
+}
+form {
+  border: 2px solid #f05050;
+  padding: 16px;
+  margin: 0rem 2rem;
+  border-radius: 8px;
+}
+label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.form-group {
+  display: flex;
+  margin: 10px 0px;
+}
+.radio {
+  margin-top: 8px;
+}
+.radio-group .radio {
+  width: 50% !important;
+}
+.radio input[type="radio"] {
+  margin-right: 6px;
+}
+input:focus {
+  background-color: #ffe8e6;
+  border: 2px solid #f05050;
+}
+.form label,
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+}
+.form input[type="text"],
+input[type="number"] {
+  margin: 8px 0px;
+  padding: 11px 8px;
+  border: 2px solid #f05050;
+  border-radius: 4px;
+  outline: none;
+}
+.form input[type="date"] {
+  width: 100%;
+  border: 2px solid #f05050;
+  margin: 8px 0px;
+  padding: 8px;
+  border-radius: 4px;
+  outline: none;
+}
+.form:nth-child(odd) {
+  margin-right: 8px;
+}
+.form button {
+  width: 100%;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  background-color: #f05050;
+  color: #fff;
+  border: 2px solid#f05050;
+}
+.form button:hover {
+  opacity: 0.9;
 }
