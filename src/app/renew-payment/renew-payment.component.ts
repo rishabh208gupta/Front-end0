@@ -3,6 +3,7 @@ import { Bill } from '../models/bill-details';
 import { RenewPayment } from '../models/renewPolicy';
 import {RenewPolicyService} from '../services/renew-policy.service';
 import { Payment,PaymentStatus } from '../models/payment';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-renew-payment',
   templateUrl: './renew-payment.component.html',
@@ -13,7 +14,7 @@ export class RenewPaymentComponent implements OnInit {
   bill:Bill;
   payment:Payment=new Payment();
   toggleBill:boolean=false;
-  constructor(private renewPolicyService:RenewPolicyService) { }
+  constructor(private renewPolicyService:RenewPolicyService, private router:Router) { }
 
   ngOnInit(): void {
     this.bill=JSON.parse(sessionStorage.getItem('billing'));
@@ -30,7 +31,10 @@ export class RenewPaymentComponent implements OnInit {
     //this.renewPayment.policyDuration=3;
 
     this.renewPolicyService.makePayment(this.renewPayment).subscribe(data=>{
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
+      sessionStorage.setItem("statusMessage",data.statusMessage);
+      sessionStorage.setItem("policyNo",String(data.policyNo));
+      this.router.navigate(['/payment-successful']);
     })
   }
   generateBill(){
