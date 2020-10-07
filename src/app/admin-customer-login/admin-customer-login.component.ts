@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-customer-login.component.css']
 })
 export class AdminCustomerLoginComponent implements OnInit {
-  option:any;
+  option:string;
   
   constructor(private router: Router) { }
 
@@ -15,6 +15,10 @@ export class AdminCustomerLoginComponent implements OnInit {
 
   }
   signIn(){
-    this.router.navigate(['/option']);
+    if(this.option=="login")
+      this.router.navigate(['/login']);
+    else
+      this.router.navigate(['/admin-page']);
+
   }
 }
