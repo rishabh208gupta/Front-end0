@@ -1,5 +1,7 @@
 .ins1{
-    text-align: center;
+   
+    background-image: url(../../assets/images/Ferrari-3.jpg);
+    background-size: cover;
 }
 .ins4{
     width: 30%;
@@ -22,6 +24,14 @@
     padding: 20px;
     width: 33%;
 }
-.ins6{
-    color: #0065ff;
+
+
+input{
+    display:block;
+}
+
+.container{
+    width: max-content;
+    margin: auto;
+    background:rgb(243 247 243 / 80%);
 }

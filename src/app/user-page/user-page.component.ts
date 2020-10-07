@@ -207,6 +207,7 @@ export class UserPageComponent implements OnInit {
             userDetails.chasisNo=this.userVehicle[i].chasisNo;
             userDetails.policyType=this.userPolicy[i].policyType;
             userDetails.policyDuration=this.userPolicy[i].policyDuration;
+            userDetails.policyNo=this.userPolicy[i].policyNo;
             userDetails.age=this.userPayment[i].age;
           //  alert(JSON.stringify(userDetails));
             this.noClaimUserDetails.push(userDetails);

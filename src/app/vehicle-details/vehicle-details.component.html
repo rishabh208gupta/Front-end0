@@ -1,98 +1,104 @@
 <app-navbar></app-navbar>
+<div>
+  <h1>BUY INSURANCE</h1>
+</div>
 <div class="ins1">
-  <h1 class="ins6">BUY INSURANCE</h1>
-  <form class="ins2">
-    <label for="wheeler"
-      ><h3>Select whether vehicle is 2 or 4 wheeler</h3></label
-    >
-    <span>
-      <input
-        type="radio"
-        
-        class="ins3"
-        value="2-wheeler"
-        name="vehicleType"
-        [(ngModel)]="vehicle.vehicleType"
-      />
-      <label for="2-wheeler">2 Wheeler</label>
-      <input
-        type="radio"
-        
-        class="ins3"
-        value="4-wheeler"
-        name="vehicleType"
-        [(ngModel)]="vehicle.vehicleType"
-      />
-      <label for="4-wheeler">4 Wheeler</label>
-    </span>
-    <div>
-      <input
-        type="text"
-        name="manufacturer"
-        placeholder="Enter car/bike manufacturer"
-        class="ins4"
-        [(ngModel)]="vehicle.manufacturer"
-      />
-    </div>
-    <div>
-      <input
-        type="text"
-        name="model"
-        placeholder="Enter car/bike model"
-        class="ins4"
-        [(ngModel)]="vehicle.model"
-      />
-    </div>
-    <div>
-      <input
-        type="number"
-        name="dlNo"
-        placeholder="Enter driving licence"
-        class="ins4"
-        [(ngModel)]="vehicle.dlNo"
-      />
-    </div>
-    <div>
-      <label for="purchaseDate">enter date of purchase: </label>
-      <input
-        type="date"
-        name="purchaseDate"
-        placeholder="Enter purchase date"
-        class="ins4"
-        [(ngModel)]="vehicle.purchaseDate"
-      />
-    </div>
-    <div>
-      <input
-        type="number"
-        name="registrationNo"
-        placeholder="Enter Registration number"
-        class="ins4"
-        [(ngModel)]="vehicle.registrationNo"
-      />
-    </div>
-    <div>
-      <input
-        type="number"
-        name="engineNo"
-        placeholder="Enter Engine number"
-        class="ins4"
-        [(ngModel)]="vehicle.engineNo"
-      />
-    </div>
-    <div>
-      <input
-        type="text"
-        name="chasisNo"
-        placeholder="Enter Chassis number"
-        class="ins4"
-        [(ngModel)]="vehicle.chasisNo"
-      />
-    </div>
-    <div>
-      <button type="button" class="ins5" (click)="onBuyInsuranceClick()" >
-        Submit
-      </button>
-    </div>
-  </form>
+  <div class="container">
+    <form>
+      <label for="wheeler"><h3>Select whether vehicle is 2 or 4 wheeler</h3></label>
+      <span>
+        <input
+          type="radio"
+          value="2-wheeler"
+          name="vehicleType"
+          [(ngModel)]="vehicle.vehicleType"
+        />
+        <label for="2-wheeler">2 Wheeler</label>
+        <input
+          type="radio"
+          value="4-wheeler"
+          name="vehicleType"
+          [(ngModel)]="vehicle.vehicleType"
+        />
+        <label for="4-wheeler">4 Wheeler</label>
+      </span>
+      <div>
+        <label for="manufacturer">Enter car/bike manufacturer</label>
+        <input
+          type="text"
+          name="manufacturer"
+          placeholder="manufacturer"
+          class="ins4"
+          [(ngModel)]="vehicle.manufacturer"
+        />
+      </div>
+      <div>
+        <label for="model">enter car/bike model</label>
+        <input
+          type="text"
+          name="model"
+          placeholder="model"
+          class="ins4"
+          [(ngModel)]="vehicle.model"
+        />
+      </div>
+      <div>
+        <label for="dlNo">Enter driving licence number</label>
+        <input
+          type="number"
+          name="dlNo"
+          placeholder="driving licence number"
+          class="ins4"
+          [(ngModel)]="vehicle.dlNo"
+        />
+      </div>
+      <div>
+        <label for="purchaseDate">enter date of purchase: </label>
+        <input
+          type="date"
+          name="purchaseDate"
+          placeholder="Enter purchase date"
+          class="ins4"
+          [(ngModel)]="vehicle.purchaseDate"
+        />
+      </div>
+      <div>
+        <label for="registrationNo">Enter Registration number</label>
+        <input
+          type="number"
+          name="registrationNo"
+          placeholder="Registration number"
+          class="ins4"
+          [(ngModel)]="vehicle.registrationNo"
+        />
+      </div>
+      <div>
+        <label for="engineNo">Enter Engine number</label>
+        <input
+          type="number"
+          name="engineNo"
+          placeholder="Engine number"
+          class="ins4"
+          [(ngModel)]="vehicle.engineNo"
+        />
+      </div>
+      <div>
+        <label for="chasisNo">Enter Chassis number</label>
+        <input
+          type="text"
+          name="chasisNo"
+          placeholder="Chassis number"
+          class="ins4"
+          [(ngModel)]="vehicle.chasisNo"
+        />
+      </div>
+      <div>
+        <button type="button" class="ins5" (click)="onBuyInsuranceClick()" >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+  
+  
 </div>
