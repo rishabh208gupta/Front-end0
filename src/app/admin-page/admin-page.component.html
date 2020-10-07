@@ -1,7 +1,9 @@
 <app-nav></app-nav>
+<div id="image-container">
 <div class="adminlogin">
     <form (ngSubmit)="adminCheck()">
-      <div>
+      <div class="a">
+      <div class="a1">
         <input
           name="userName"
           type="text"
@@ -11,7 +13,7 @@
         />
       </div>
   
-      <div>
+      <div class="a2">
         <input
           name="password"
           type="password"
@@ -21,9 +23,10 @@
         />
       </div>
   
-      <div>
+      <div class="a3">
         <button type="submit" class="log3" [routerLink]="['/dashboard']" >Login</button>
       </div>
+    </div>
     </form>
   </div>
-  
+</div> 
