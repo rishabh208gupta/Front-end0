@@ -1,12 +1,16 @@
 <div class="signin">
-<form (ngSubmit)="signIn()">
-    <span>
-        <input type="radio" class="s1" value="admin-page" name="loginType"  [(ngModel)]="option"/>
+    <h1> Welcome to LTI Insurance</h1>
+<form class="s" (ngSubmit)="signIn()">
+    <div>
+        <div>
+        <input type="radio"  class="s1" value="admin-page" name="loginType"  [(ngModel)]="option"/>
         <label for="admin">Continue as admin</label>
-        <input type="radio" class="s2" value="login" name="loginType" [(ngModel)]="option"/>
+        </div>
+        <div>
+        <input type="radio" class="s2"  value="login" name="loginType" [(ngModel)]="option"/>
         <label for="customer">Continue as customer</label>
-      </span>
-
-      <button type="submit" class="s3" >Submit</button>
+        </div>
+    </div>
+    <button type="submit" class="s3" >Submit</button>
 </form>
 </div>
