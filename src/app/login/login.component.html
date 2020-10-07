@@ -1,41 +1,49 @@
-<app-nav></app-nav>
+<app-navbar></app-navbar>
 <div id="image-container">
-<div class="log6">
-  <form (ngSubmit)="loginCheck()">
-    <div class="l">
-    <div>
-      <input
-        name="email"
-        type="text"
-        placeholder="Email"
-        class="log1"
-        [(ngModel)]="login.email"
-      />
-    </div>
+  <div class="log6">
+    <form (ngSubmit)="loginCheck()">
+      <div class="l">
+        <div>
+          <input
+            name="email"
+            type="text"
+            placeholder="Email"
+            class="log1"
+            [(ngModel)]="login.email"
+          />
+        </div>
 
-    <div>
-      <input
-        name="password"
-        type="password"
-        placeholder="password"
-        class="log2"
-        [(ngModel)]="login.password"
-      />
-    </div>
+        <div>
+          <input
+            name="password"
+            type="password"
+            placeholder="password"
+            class="log2"
+            [(ngModel)]="login.password"
+          />
+        </div>
 
-    <div>
-      <button type="submit" class="log3" >Login</button>
-    </div>
+        <div>
+          <button type="submit" class="log3">Login</button>
+        </div>
 
-    <span >
-      <button type="button" class="log4" [routerLink]="['/forgot-password']" >
-        forgot password
-      </button>
-      <button type="button " class="log5" [routerLink]="['/reset-password']" >
-        reset password
-      </button>
-    </span>
+        <span>
+          <button
+            type="button"
+            class="log4"
+            [routerLink]="['/forgot-password']"
+          >
+            forgot password
+          </button>
+          <button
+            type="button "
+            class="log5"
+            [routerLink]="['/reset-password']"
+          >
+            reset password
+          </button>
+        </span>
+      </div>
+    </form>
   </div>
-  </form>
-</div>
 </div>
