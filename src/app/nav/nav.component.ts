@@ -11,10 +11,4 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  goBack() {
-    // window.history.back();
-    this.location.back();
-
-    console.log( 'goBack()...' );
-  }
 }
