@@ -24,6 +24,7 @@ export class RenewPaymentComponent implements OnInit {
     this.policyNo=sessionStorage.getItem('policyNo');
     this.buyPolicyService.getBillDetails(this.policyNo).subscribe(response=>{
       this.bill=response;
+      sessionStorage.setItem('billing', JSON.stringify(this.bill));
     })
    
   
