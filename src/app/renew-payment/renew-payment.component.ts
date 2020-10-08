@@ -27,12 +27,9 @@ export class RenewPaymentComponent implements OnInit {
       sessionStorage.setItem('billing', JSON.stringify(this.bill));
     })
    
-  
-    //this.bill=JSON.parse(sessionStorage.getItem('billing'));
-    this.payment.newPolicy.policyNo=this.policyNo;//parseInt(sessionStorage.getItem('policyNo'));
-     //this.bill.amount=Number(sessionStorage.getItem('renewAmount'));
+    this.payment.newPolicy.policyNo=this.policyNo;
     this.payDummy=Number(sessionStorage.getItem('renewAmount'));
-     this.payment.amount=Number(this.payDummy.toFixed(2));//Number(this.bill.amount.toFixed(2));
+     this.payment.amount=Number(this.payDummy.toFixed(2));
      this.polDuration=Number(sessionStorage.getItem('polDuration'));
 
   }

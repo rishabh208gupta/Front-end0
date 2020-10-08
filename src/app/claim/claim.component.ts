@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import{ClaimService}from '../services/claim.service';
-import{StatusClaim} from '../models/statusClaim';
 @Component({
   selector: 'app-claim',
   templateUrl: './claim.component.html',
@@ -32,7 +31,6 @@ export class ClaimComponent implements OnInit {
       sessionStorage.setItem('claimId',String(data.claimId));
       sessionStorage.setItem('statusMessage',data.statusMessage);
       sessionStorage.setItem('status',String(data.status));
-      // console.log(this.statusClaim[0]);
       this.router.navigate(['/claim-successful']);
     })
     

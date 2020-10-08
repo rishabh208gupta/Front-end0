@@ -15,7 +15,6 @@ export class AdminUserDetailsComponent implements OnInit {
    this.customer.name= sessionStorage.getItem("customerName");
     this.customer.phoneNo=Number(sessionStorage.getItem("customerPhone"));
     this.customer.email=(sessionStorage.getItem('email'));
-   // this.customer.dateOfBirth=Date(sessionStorage.getItem("dateOfBirth"));
     this.customer.address=sessionStorage.getItem('address');
   }
 
