@@ -2,6 +2,9 @@ export class UserDetails{
     vehicleId:number;
     vehicleType:string;
     chasisNo:string;
+    manufacturer:string;
+    purchaseDate:Date;
+    registrationNo:number;
     policyNo:number;
     policyType:string;
     policyDuration:number;
@@ -11,4 +14,6 @@ export class UserDetails{
     claimId:number;
     claimed:boolean;
     claimAmount:number;
+    premiumAmount:number;
+
 }

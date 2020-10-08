@@ -23,4 +23,7 @@ export class UserVehicle{
     vehicleId:number;
     vehicleType:string;
     chasisNo:string;
+    manufacturer:string;
+    purchaseDate:Date;
+    registrationNo:number;
 }

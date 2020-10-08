@@ -49,7 +49,7 @@
         <li>vehicle : {{ nopol.vehicleType }}</li>
         <li>chassis number : {{ nopol.chasisNo }}</li>
       </ul>
-      <button class="btn" (click)="onSelectPolicyClick( nopol.vehicleId )">select policy</button>
+      <button class="btn" (click)="onSelectPolicyClick( nopol.vehicleId,nopol.vehicleType,nopol.manufacturer,nopol.purchaseDate,nopol.registrationNo,nopol.chasisNo)">select policy</button>
     </div>
   </div>
   
@@ -61,8 +61,9 @@
         <li>chassis number : {{ nopay.chasisNo }}</li>
         <li>policy type : {{ nopay.policyType }}</li>
         <li>policy duration : {{ nopay.policyDuration }} years</li>
+        <li>Premium Amount : {{nopay.premiumAmount }}</li>
       </ul>
-      <button class="btn" (click)="onMakePaymentClick(nopay.policyNo)">make payment</button>
+      <button class="btn" (click)="onMakePaymentClick(nopay.policyNo,nopay.premiumAmount)">make payment</button>
     </div>
   </div>
   
@@ -77,7 +78,7 @@
         <li>policy duration : {{ nocl.policyDuration }} years</li>
         <li>policy age : {{ nocl.age }} days</li>
       </ul>
-      <button class="btn" (click)="onClaimNowClick()">claim now</button>
+      <button class="btn" (click)="onClaimNowClick(nocl.policyNo)">claim now</button>
     </div>
   </div>
  
