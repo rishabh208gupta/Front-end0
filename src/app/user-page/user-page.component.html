@@ -41,7 +41,7 @@
   <button class="btn" (click)="onButtonClick()">policy history</button>
 </div>
 
-<div class="row">
+<div class="row" *ngIf="toggle">
   <div class="column">
     <div *ngFor="let nopol of noPolicyUserDetails" class="box">
       <ul>
