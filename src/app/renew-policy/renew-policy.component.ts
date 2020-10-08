@@ -41,17 +41,17 @@ export class RenewPolicyComponent implements OnInit {
     sessionStorage.setItem('polDuration',String(this.policyDuration));
     this.renewPolicyService.renewPolicy(this.policyNo,this.policyDuration).subscribe(data=>{
       sessionStorage.setItem('policyNo',String(data.policyNo));
-      //alert(JSON.stringify(data));
       sessionStorage.setItem('renewAmount',String(data.amount));
      this.status=data.status;
      this.statusMessage=data.statusMessage;
      if(data.status==true){
-       this.buyPolicyService.getBillDetails(this.policyNo).subscribe(response=>{
-        this.bill=response;
-        sessionStorage.setItem('billing', JSON.stringify(this.bill));
-       })
+      // this.buyPolicyService.getBillDetails(this.policyNo).subscribe(response=>{
+        //this.bill=response;
+        //sessionStorage.setItem('billing', JSON.stringify(this.bill));
+       //})
       this.route.navigate(['/renew-payment']);
      }
+    // }
 
     })
    

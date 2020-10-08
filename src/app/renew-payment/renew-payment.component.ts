@@ -4,6 +4,7 @@ import { RenewPayment } from '../models/renewPolicy';
 import {RenewPolicyService} from '../services/renew-policy.service';
 import { Payment,PaymentStatus } from '../models/payment';
 import { Router } from '@angular/router';
+import { BuyPolicyService } from '../services/buy-policy.service';
 @Component({
   selector: 'app-renew-payment',
   templateUrl: './renew-payment.component.html',
@@ -15,14 +16,22 @@ export class RenewPaymentComponent implements OnInit {
   payment:Payment=new Payment();
   toggleBill:boolean=false;
   polDuration:any;
-  constructor(private renewPolicyService:RenewPolicyService, private router:Router) { }
+  policyNo:any;
+  payDummy:number;
+  constructor(private renewPolicyService:RenewPolicyService, private router:Router,private buyPolicyService:BuyPolicyService) { }
 
   ngOnInit(): void {
-    this.bill=JSON.parse(sessionStorage.getItem('billing'));
-    this.payment.newPolicy.policyNo=parseInt(sessionStorage.getItem('policyNo'));
-   // this.payment.amount=this.bill.amount;
-     this.bill.amount=Number(sessionStorage.getItem('renewAmount'));
-     this.payment.amount=Number(this.bill.amount.toFixed(2));
+    this.policyNo=sessionStorage.getItem('policyNo');
+    this.buyPolicyService.getBillDetails(this.policyNo).subscribe(response=>{
+      this.bill=response;
+    })
+   
+  
+    //this.bill=JSON.parse(sessionStorage.getItem('billing'));
+    this.payment.newPolicy.policyNo=this.policyNo;//parseInt(sessionStorage.getItem('policyNo'));
+     //this.bill.amount=Number(sessionStorage.getItem('renewAmount'));
+    this.payDummy=Number(sessionStorage.getItem('renewAmount'));
+     this.payment.amount=Number(this.payDummy.toFixed(2));//Number(this.bill.amount.toFixed(2));
      this.polDuration=Number(sessionStorage.getItem('polDuration'));
 
   }
@@ -33,12 +42,8 @@ export class RenewPaymentComponent implements OnInit {
     this.renewPayment.statusConfirmation=true;
     this.renewPayment.amount=this.payment.amount;
     this.renewPayment.policyDuration=this.polDuration;
-    //this.renewPayment.paymentMode="card";
-    //this.renewPayment.newPolicy.policyNo=4;
-    //this.renewPayment.policyDuration=3;
-
+    
     this.renewPolicyService.makePayment(this.renewPayment).subscribe(data=>{
-     // alert(JSON.stringify(data));
       sessionStorage.setItem("statusMessage",data.statusMessage);
       sessionStorage.setItem("policyNo",String(data.policyNo));
       this.router.navigate(['/renew-payment-success']);
