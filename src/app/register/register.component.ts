@@ -19,28 +19,9 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    // this.buildRegisterForm();
-  }
+  ngOnInit(): void {}
 
-  // buildRegisterForm(): void {
-  //   this.registrationForm = this.fb.group({
-  //     name: ['', Validators.required],
-  //     email: ['', Validators.required],
-  //     dateOfBirth: ['', Validators.required],
-  //     contactNumber: ['', Validators.required],
-  //     address: ['', Validators.required],
-  //     password: ['', Validators.required],
-  //     confirmPassword: ['', Validators.required],
-  //   });
-
-  onSubmitClick(): void {
-    // if (this.registrationForm.valid) {
-    //   this.register();
-    // } else {
-    //   alert('Please enter all the fields');
-    // }
-  }
+  onSubmitClick(): void {}
 
   confirmPass: string;
   passErr: string;
@@ -52,9 +33,8 @@ export class RegisterComponent implements OnInit {
         this.registerService.regCustomer(this.customer).subscribe((data) => {
           if (data.status) {
             this.errMessage = '';
-            alert(JSON.stringify(data));
 
-            this.router.navigate(['/login']);
+            this.router.navigate(['/home-page']);
           } else {
             this.errMessage = data.statusMessage;
           }
