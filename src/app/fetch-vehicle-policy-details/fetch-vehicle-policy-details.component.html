@@ -3,6 +3,10 @@
 <div>
 <table border="1">
     <tr>
+        <th>Policy Number</th>
+        <td>{{userPolicyNo}}</td>
+    </tr>
+    <tr>
         <th>Vehicle Id</th>
         <td>{{vehiclePolicyDetails.vehicleId}}</td>
     </tr>
@@ -48,3 +52,21 @@
     </tr>
 </table>
 </div>
+
+<form (ngSubmit)="onClaimClick()">
+    
+  
+    <div>
+      <label for="reason" class="t2">Reason</label>
+      <select name="reason" [(ngModel)]="reason" > 
+        <option value="natural disaster">Natural Disaster</option>
+        <option value="man made disaster">Man Made Disaster</option>
+        <option value="road accident">Road Accident</option>
+        <option value="theft">Theft</option>
+      </select>
+    </div>
+    
+    <div>
+      <button type="submit" class="button2" >Claim</button>
+    </div>
+  </form>
