@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-
+<div class="index">
 <button type="button" (click)="clickPolicyDetails()" id="button1">See all your policies</button>
 <div *ngIf="toggle">
 <div *ngIf="claimPageDisplay[0].status">
@@ -41,7 +41,6 @@ Save upto 80%+ on car insurance
 Renew in 2 minutes
 </div>
 <br><br>
-<div id="image-container">
 <div id="container">
   <br><br><br>
   <form (ngSubmit)="onClickRenewPolicy()">
