@@ -14,7 +14,8 @@ import { PremiumStatus } from '../models/premium';
   styleUrls: ['./new-policy-details.component.css']
 })
 export class NewPolicyDetailsComponent implements OnInit {
- 
+  
+  toggle:boolean=false;
   newPolicy:NewPolicy = new NewPolicy();
   policyRegistrationStatus :PolicyRegistrationStatus= new PolicyRegistrationStatus();
   bill:Bill=new Bill();
@@ -69,6 +70,7 @@ export class NewPolicyDetailsComponent implements OnInit {
   }
 
   onAmountClick(){
+    this.toggle=!this.toggle;
     if(this.newPolicy.policy.policyType=='comprehensive'){
       if(this.newPolicy.policy.policyDuration==1){
         this.idv=this.premiumStatus.idvComp1;
