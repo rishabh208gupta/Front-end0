@@ -30,6 +30,7 @@ import { ApprovalConfirmationComponent } from './approval-confirmation/approval-
 import { AdminCustomerLoginComponent } from './admin-customer-login/admin-customer-login.component';
 import { AdminVehicleDetailsComponent } from './admin-vehicle-details/admin-vehicle-details.component';
 import { RenewPaymentSuccessComponent } from './renew-payment-success/renew-payment-success.component';
+import { FetchVehiclePolicyDetailsComponent } from './fetch-vehicle-policy-details/fetch-vehicle-policy-details.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { RenewPaymentSuccessComponent } from './renew-payment-success/renew-paym
     AdminCustomerLoginComponent,
     AdminVehicleDetailsComponent,
     RenewPaymentSuccessComponent,
+    FetchVehiclePolicyDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

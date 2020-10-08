@@ -18,6 +18,7 @@ import { AdminVehicleDetailsComponent } from './admin-vehicle-details/admin-vehi
 import { ApprovalConfirmationComponent } from './approval-confirmation/approval-confirmation.component';
 import { ClaimSuccessfulComponent } from './claim-successful/claim-successful.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FetchVehiclePolicyDetailsComponent } from './fetch-vehicle-policy-details/fetch-vehicle-policy-details.component';
 import { PaymentSuccessfulComponent } from './payment-successful/payment-successful.component';
 import { PaymentComponent } from './payment/payment.component';
 import { RenewPaymentSuccessComponent } from './renew-payment-success/renew-payment-success.component';
@@ -46,7 +47,8 @@ const routes: Routes = [
   {path:'approval-confirmation',component:ApprovalConfirmationComponent},
   {path: 'admin-customer-login',component:AdminCustomerLoginComponent},
   {path:'admin-vehicle-details',component:AdminVehicleDetailsComponent},
-  {path:'renew-payment-success',component:RenewPaymentSuccessComponent}
+  {path:'renew-payment-success',component:RenewPaymentSuccessComponent},
+  {path:'fetch-vehicle-policy-details',component:FetchVehiclePolicyDetailsComponent}
 ];
 
 @NgModule({
