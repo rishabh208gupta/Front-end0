@@ -28,9 +28,9 @@ export class AdminPageComponent implements OnInit {
         
         sessionStorage.setItem('adminId', String(data.adminId));
         sessionStorage.setItem('username', data.username);
-        
+        this.router.navigate(['/dashboard']);
       }
-      this.router.navigate(['/dashboard']);
+     
     });
   }
   else{

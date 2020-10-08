@@ -25,9 +25,10 @@ export class LoginComponent implements OnInit {
       if (data.status == true) {
         sessionStorage.setItem('customerId', String(data.customerId));
         sessionStorage.setItem('customerName', data.customerName);
+        this.router.navigate(['/forgot-password']);
+        this.router.navigate(['/user-page']);
       }
-      this.router.navigate(['/forgot-password']);
-      this.router.navigate(['/user-page']);
+      
     });
   }
   else{
