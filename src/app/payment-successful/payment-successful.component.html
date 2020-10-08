@@ -1,8 +1,8 @@
 <app-nav></app-nav>
 <div class = "header">
-    <h2>Congratulations {{ bill.customerName }}, payment successful</h2>
+    <h2>Congratulations, payment successful</h2>
 </div>
-<div class="outter-div">
+<!-- <div class="outter-div">
 <div class="inner-div">
   
   <div style="display: inline-flex; width: 100%; margin: 30px">
@@ -146,5 +146,29 @@
   </div>
 </div>
 
+</div> -->
+
+<div class="column">
+  <div
+    
+    class="box"
+    style="background: #d5f5e3"
+  >
+    <ul>
+      <li> name : <b>{{ bill.customerName }}</b></li>
+      
+      <li>Phone Number : {{ bill.phoneNo }}</li>
+      <li>vehicle : {{ bill.vehicleType }}</li>
+      <li>vehicle manufacturer : {{ bill.manufacturer }}</li>
+      <li>chassis number : {{ bill.chasisNo }}</li>
+      <li>policy type : {{ bill.policyType }}</li>
+      <li>policy duration : {{ bill.policyDuration }} years</li>
+      <li>payment Mode : {{ payment.paymentMode }}</li>
+      <li>
+        <h2>Premium Amount : {{ payment.amount }}</h2>
+      </li>
+    </ul>
+    <button class="btn" type="button" [routerLink]="['/user-page']">home</button>
+  </div>
 </div>
 

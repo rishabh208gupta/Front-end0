@@ -1,9 +1,9 @@
 <app-nav></app-nav>
-<body>
+
     <div class = "header">
-        <h2>Thank you for choosing us {{ bill.customerName }}</h2>
+        <h2>Thank you for choosing us</h2>
     </div>
-  <div class="outter-div">
+  <!-- <div class="outter-div">
     <div class="inner-div">
       
       <div style="display: inline-flex; width: 100%; margin: 30px">
@@ -129,5 +129,48 @@
         </div>
       </form>
     </div>
+  </div> -->
+
+
+
+  <div class="column">
+    <div
+      
+      class="box"
+      style="background: #d5f5e3"
+    >
+      <ul>
+        <li> name : <b>{{ bill.customerName }}</b></li>
+        
+        <li>Phone Number : {{ bill.phoneNo }}</li>
+        <li>vehicle : {{ bill.vehicleType }}</li>
+        <li>vehicle manufacturer : {{ bill.manufacturer }}</li>
+        <li>chassis number : {{ bill.chasisNo }}</li>
+        <li>policy type : {{ bill.policyType }}</li>
+        <li>policy duration : {{ bill.policyDuration }} years</li>
+        <li>
+          <h2>Premium Amount : {{ payment.amount }}</h2>
+        </li>
+      </ul>
+      <form (ngSubmit)="payForm.valid && makePayment()" #payForm="ngForm">
+        <div style="margin-top:8px">
+          <label for="paymentMode">Chose Payment mode : </label>
+          <select name="paymentMode" [(ngModel)]="payment.paymentMode" required #mode="ngModel">
+            <option value="credit card">Credit card</option>
+            <option value="debit card">Debit card</option>
+            <option value="paytm">Paytm</option>
+            <option value="UPI">UPI</option>
+          </select>
+        </div>
+        <div *ngIf="payForm.submitted && mode.invalid">
+          <div class="input-div" *ngIf="mode.errors.required">
+            <span class="sp-alert">Required</span>
+          </div>
+          </div>
+        
+          <button class="btn" type="submit">Make payment</button>
+      
+      </form>
+    </div>
   </div>
-</body>
+
