@@ -256,6 +256,7 @@ export class UserPageComponent implements OnInit {
             userDetails.policyDuration=this.userPolicy[i].policyDuration;
             userDetails.age=this.userPayment[i].age;
             userDetails.claimed=this.userClaim[i].claimed;
+            //alert(userDetails.claimed);
             userDetails.claimAmount=this.userClaim[i].claimAmount;
          //  alert(JSON.stringify(userDetails));
             this.ClaimUserDetails.push(userDetails);
