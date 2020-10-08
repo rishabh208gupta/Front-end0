@@ -3,18 +3,22 @@
   <div class="details">
     <div class="col">
       <h2>Please fill Vechile Details</h2>
-      <form #vehicleForm="ngForm"  (ngSubmit)="vehicleForm.valid && onBuyInsuranceClick()">
+      <form
+        #vehicleForm="ngForm"
+        (ngSubmit)="vehicleForm.valid && onBuyInsuranceClick()"
+      >
         <label for="vechileType">Choose Vechile Type</label>
         <div class="form-group radio-group">
           <div class="radio">
             <input
-            #type="ngModel"
+              #type="ngModel"
               type="radio"
               id="2"
               value="2-wheeler"
               name="vehicleType"
               [(ngModel)]="vehicle.vehicleType"
               required
+              #type="ngModel"
             />
             <label for="2">2 Wheeler</label>
           </div>
@@ -25,11 +29,18 @@
               value="4-wheeler"
               name="vehicleType"
               [(ngModel)]="vehicle.vehicleType"
+              required
+              #type="ngModel"
             />
             <label for="4">4 Wheeler</label>
           </div>
+          <div *ngIf="vehicleForm.submitted && type.invalid">
+            <div class="input-div" *ngIf="type.errors.required">
+              <span class="sp-alert">Required</span>
+            </div>
+            </div>
         </div>
-        <small *ngIf="type.invalid && vehicleForm.submitted">vehicle type is required</small>
+        
         <div class="form-group">
           <div class="form">
             <label for="manufacturer">Vechile Manufacturer</label>
@@ -41,8 +52,13 @@
               #manufacturer="ngModel"
               required
             />
+            <div *ngIf="vehicleForm.submitted && manufacturer.invalid">
+              <div class="input-div" *ngIf="manufacturer.errors.required">
+                <span class="sp-alert">Vechile Manufacturer is required.</span>
+              </div>
+              </div>
           </div>
-          
+
           <div class="form">
             <label for="model">Vechile Model</label>
             <input
@@ -53,6 +69,11 @@
               #model="ngModel"
               required
             />
+            <div *ngIf="vehicleForm.submitted && model.invalid">
+              <div class="input-div" *ngIf="model.errors.required">
+                <span class="sp-alert">Vehicle Model is required.</span>
+              </div>
+              </div>
           </div>
         </div>
         <div class="form">
@@ -66,6 +87,11 @@
             #dl="ngModel"
             required
           />
+          <div *ngIf="vehicleForm.submitted && dl.invalid">
+            <div class="input-div" *ngIf="dl.errors.required">
+              <span class="sp-alert">Driving License is required.</span>
+            </div>
+            </div>
         </div>
         <div class="form-group">
           <div class="form">
@@ -78,6 +104,11 @@
               #date="ngModel"
               required
             />
+            <div *ngIf="vehicleForm.submitted && date.invalid">
+              <div class="input-div" *ngIf="date.errors.required">
+                <span class="sp-alert">Date is required.</span>
+              </div>
+              </div>
           </div>
 
           <div class="form">
@@ -90,6 +121,11 @@
               #reg="ngModel"
               required
             />
+            <div *ngIf="vehicleForm.submitted && reg.invalid">
+              <div class="input-div" *ngIf="reg.errors.required">
+                <span class="sp-alert">Registration number is required.</span>
+              </div>
+              </div>
           </div>
         </div>
         <div class="form-group">
@@ -101,9 +137,14 @@
               placeholder="Engine number"
               class="ins4"
               [(ngModel)]="vehicle.engineNo"
-              #eng = "ngModel"
+              #eng="ngModel"
               required
             />
+            <div *ngIf="vehicleForm.submitted && eng.invalid">
+              <div class="input-div" *ngIf="eng.errors.required">
+                <span class="sp-alert">Engine number is required.</span>
+              </div>
+              </div>
           </div>
           <div class="form">
             <label for="chasisNo">Enter Chassis number</label>
@@ -113,9 +154,15 @@
               placeholder="Chassis number"
               class="ins4"
               [(ngModel)]="vehicle.chasisNo"
-              #chasis = "ngModel"
+              #chasis="ngModel"
               required
             />
+            <div *ngIf="vehicleForm.submitted && chasis.invalid">
+              <div class="input-div" *ngIf="chasis.errors.required">
+                <span class="sp-alert">Chassis number is required.</span>
+              </div>
+              </div>
+
           </div>
         </div>
         <div class="form"><button type="submit">Submit</button></div>

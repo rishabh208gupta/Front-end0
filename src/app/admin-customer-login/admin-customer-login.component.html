@@ -4,16 +4,28 @@
     
     <div class="signin">
     
-    <form (ngSubmit)="signIn()">
+    <form #adcusForm="ngForm" (ngSubmit)="signIn()">
         <div class="s">
         <div class="s5">
-        <input type="radio"  class="s1" value="admin-page" name="loginType"  [(ngModel)]="option"/>
+        <input type="radio"  class="s1" value="admin-page" name="loginType"  [(ngModel)]="option"
+        required
+        #type="ngModel"
+        />
         <label for="admin">Continue as admin</label>
         </div>
         <div class="s6">
-        <input type="radio" class="s2"  value="login" name="loginType" [(ngModel)]="option"/>
+        <input type="radio" class="s2"  value="login" name="loginType" [(ngModel)]="option"
+        required
+        #type="ngModel"
+        />
         <label for="customer">Continue as customer</label>
         </div>
+
+        <div *ngIf="adcusForm.submitted && type.invalid">
+            <div class="input-div" *ngIf="type.errors.required">
+              <span class="sp-alert">Required</span>
+            </div>
+            </div>
         
         <button type="submit" class="s3" >Submit</button>
         </div>
