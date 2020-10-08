@@ -31,6 +31,7 @@ import { AdminCustomerLoginComponent } from './admin-customer-login/admin-custom
 import { AdminVehicleDetailsComponent } from './admin-vehicle-details/admin-vehicle-details.component';
 import { RenewPaymentSuccessComponent } from './renew-payment-success/renew-payment-success.component';
 import { FetchVehiclePolicyDetailsComponent } from './fetch-vehicle-policy-details/fetch-vehicle-policy-details.component';
+import { AdnavComponent } from './adnav/adnav.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { FetchVehiclePolicyDetailsComponent } from './fetch-vehicle-policy-detai
     AdminVehicleDetailsComponent,
     RenewPaymentSuccessComponent,
     FetchVehiclePolicyDetailsComponent,
+    AdnavComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
