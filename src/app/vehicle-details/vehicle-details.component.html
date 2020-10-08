@@ -2,12 +2,12 @@
 <div class="container">
   <div class="details">
     <div class="col">
-      <h2>Please fill Vechile Details</h2>
+      <h2>Please fill Vechicle Details</h2>
       <form
         #vehicleForm="ngForm"
         (ngSubmit)="vehicleForm.valid && onBuyInsuranceClick()"
       >
-        <label for="vechileType">Choose Vechile Type</label>
+        <label for="vechileType">Choose Vechicle Type</label>
         <div class="form-group radio-group">
           <div class="radio">
             <input
@@ -43,7 +43,7 @@
         
         <div class="form-group">
           <div class="form">
-            <label for="manufacturer">Vechile Manufacturer</label>
+            <label for="manufacturer">Vechicle Manufacturer</label>
             <input
               type="text"
               name="manufacturer"
@@ -54,13 +54,13 @@
             />
             <div *ngIf="vehicleForm.submitted && manufacturer.invalid">
               <div class="input-div" *ngIf="manufacturer.errors.required">
-                <span class="sp-alert">Vechile Manufacturer is required.</span>
+                <span class="sp-alert">Vechicle Manufacturer is required.</span>
               </div>
               </div>
           </div>
 
           <div class="form">
-            <label for="model">Vechile Model</label>
+            <label for="model">Vechicle Model</label>
             <input
               type="text"
               name="model"
@@ -162,6 +162,11 @@
                 <span class="sp-alert">Chassis number is required.</span>
               </div>
               </div>
+              <div *ngIf="!vehicleRegistrationStatus.status">
+                <div class="input-div" *ngIf="!vehicleRegistrationStatus.status && vehicleForm.submitted">
+                  <span class="sp-alert">{{ vehicleRegistrationStatus.statusMessage }}</span>
+                </div>
+                </div>
 
           </div>
         </div>

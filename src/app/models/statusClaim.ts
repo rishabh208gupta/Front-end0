@@ -10,6 +10,7 @@ export class UserClaim{
     claimId:number;
     claimed:boolean;
     claimAmount:number;
+    adminMessage:string;
 }
 export class RenewStatus extends Status{
     policyNo:number;
