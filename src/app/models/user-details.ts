@@ -15,5 +15,6 @@ export class UserDetails{
     claimed:boolean;
     claimAmount:number;
     premiumAmount:number;
+    adminMessage:string;
 
 }

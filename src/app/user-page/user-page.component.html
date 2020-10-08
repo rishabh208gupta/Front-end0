@@ -45,7 +45,7 @@
   <div class="column">
     <div *ngFor="let nopol of noPolicyUserDetails" class="box">
       <ul>
-        <li><h1>Choose Policy</h1></li>
+        <li><h1>Pending Policy</h1></li>
         <li>vehicle : {{ nopol.vehicleType }}</li>
         <li><h3>chassis number : {{ nopol.chasisNo }}</h3></li>
       </ul>
@@ -92,8 +92,9 @@
         <li>policy type : {{ cl.policyType }}</li>
         <li>policy duration : {{ cl.policyDuration }} years</li>
         <li>policy age : {{ cl.age }} days</li>
-        <li *ngIf="cl.claimed"><h2>claim approved for amount : {{ cl.claimAmount }}</h2></li>
-        <li *ngIf ="!cl.claimed">approval pending...</li>
+        <!-- <li *ngIf="cl.claimed"><h2>{{ cl.adminMessage }}</h2></li>
+        <li *ngIf ="!cl.claimed">{{ cl.adminMessage }}</li> -->
+        <li><h2>{{ cl.adminMessage }}</h2></li>
       </ul>
     </div>
   </div>
