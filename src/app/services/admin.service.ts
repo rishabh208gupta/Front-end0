@@ -12,7 +12,7 @@ export class AdminService {
   
   constructor(private http: HttpClient) { }
 
-  adminUrl: string = 'http://localhost:9090/adminpage';
+  adminUrl: string = 'http://localhost:9090/adminlogin';
 
   adminLogin(admin: Admin): Observable<AdminStatus>{
     return this.http.post<AdminStatus>(this.adminUrl,admin);
