@@ -1,10 +1,26 @@
 <app-nav></app-nav>
-<div class="t1">{{statusMessage}}
+<div class="t3" *ngIf="!status">{{statusMessage}}
 </div>
 
 <div *ngIf="status" class="t1">
     
-   {{name}} Your claim id is {{claimId}}.Please keep this for future reference...<br>
-    Thanks !
+   
+    <div class="t2">
+    <table >
+        <tr>
+            <td>Customer Name</td>
+            <td>{{name}}</td>
+        </tr>
+        <tr>
+            <td>Claim Id</td>
+            <td>{{claimId}}</td>
+            
+        </tr>
+        <tr>
+            <td>Status Message</td>
+            <td>{{statusMessage}}</td>
+        </tr>
+    </table>
+</div>
 </div>
 

@@ -38,7 +38,7 @@
 
 
 <div class="d4">
-  <h3 class="text">Update the Pending claim requests : <button class="b1" type="submit">Claim approval</button></h3>
+  <h3 class="text">Update the Pending claim requests : </h3>
   <br><br>
   <form class="d5" (ngSubmit)="approval()"> 
     Claim Id:
@@ -50,7 +50,7 @@
     </select>
     Amount:
     <input type="number" placeholder="amount" [(ngModel)]="adminApproval.amount" name="amount">
-  
+    <button class="b1" type="submit">Claim approval</button>
   </form>
 </div>
 
