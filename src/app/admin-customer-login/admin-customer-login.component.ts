@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,17 +9,22 @@ import { Router } from '@angular/router';
 })
 export class AdminCustomerLoginComponent implements OnInit {
   option:string;
-  
+  errMessage: string;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
 
   }
-  signIn(){
+  signIn(form : NgForm){
+    if (form.valid){
     if(this.option=="login")
       this.router.navigate(['/login']);
     else
       this.router.navigate(['/admin-page']);
 
   }
+  else{
+    this.errMessage = 'Choose one option';
+  }
+}
 }

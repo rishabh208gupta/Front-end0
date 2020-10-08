@@ -4,7 +4,7 @@
 </div>
 <div id="image-container">
   <div class="log6">
-    <form #loginForm="ngForm" (ngSubmit)="loginCheck()">
+    <form #loginForm="ngForm" (ngSubmit)="loginCheck(loginForm)">
       <div class="l">
         <div>
           <input
@@ -41,9 +41,14 @@
             </div>
 
         </div>
+        
 
         <div>
           <button type="submit" class="log3">Login</button>
+
+        </div>
+        <div class="input-div" *ngIf="errMessage" style="color: red">
+          {{ errMessage }}
         </div>
 
         <span>

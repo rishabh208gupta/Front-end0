@@ -4,7 +4,7 @@
     
     <div class="signin">
     
-    <form (ngSubmit)="signIn()">
+    <form #loginForm="ngForm" (ngSubmit)="signIn(loginForm)">
         <div class="s">
         <div class="s5">
         <input type="radio"  class="s1" value="admin-page" name="loginType"  [(ngModel)]="option"/>
@@ -16,6 +16,9 @@
         </div>
         
         <button type="submit" class="s3" >Submit</button>
+        <div class="input-div" *ngIf="errMessage" style="color: red">
+            {{ errMessage }}
+        </div>
         </div>
     </form>
     </div>
