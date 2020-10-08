@@ -10,20 +10,36 @@
           <input
             name="email"
             type="text"
-            placeholder="Email"
+            placeholder="Email Id"
             class="log1"
+            required
             [(ngModel)]="login.email"
+            #userid="ngModel"
           />
+          <div *ngIf="loginForm.submitted && userid.invalid">
+            <div class="input-div" *ngIf="userid.errors.required">
+              <span class="sp-alert">Enter Email Id</span>
+            </div>
+          </div>
+
         </div>
 
         <div>
           <input
             name="password"
             type="password"
-            placeholder="password"
+            placeholder="Password"
+            required
             class="log2"
             [(ngModel)]="login.password"
+            #password="ngModel"
           />
+          <div *ngIf="loginForm.submitted && password.invalid">
+            <div class="input-div" *ngIf="password.errors.required">
+              <span class="sp-alert">Password is required.</span>
+            </div>
+            </div>
+
         </div>
 
         <div>
@@ -38,13 +54,7 @@
           >
             forgot password
           </button>
-          <button
-            type="button "
-            class="log5"
-            [routerLink]="['/reset-password']"
-          >
-            reset password
-          </button>
+          
         </span>
       </div>
     </form>

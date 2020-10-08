@@ -1,50 +1,110 @@
-<app-nav></app-nav>
+<app-navbar></app-navbar>
 <body>
-<div class="pre">
-  <h1 class="pre1">Calculate Vechile Premium</h1>
-  <form class="pre2" (ngSubmit)="calculatePremium()" >
-    <label for="wheeler"><h3>Select whether vehicle is 2 or 4 wheeler</h3></label>
-    <span>
-      <input type="radio" class="pre3" value="50000" name="vehicleType"  [(ngModel)]="premiumDetails.vehiclePrice"/>
-      <label for="2-wheeler">For 2 Wheeler</label>
-      <input type="radio" class="pre4" value="400000" name="vehicleType" [(ngModel)]="premiumDetails.vehiclePrice"/>
-      <label for="4-wheeler">For 4 Wheeler</label>
-    </span>
+  <div class="pre">
+    <h1 class="pre1">Calculate Vechile Premium</h1>
+    <form class="pre2" (ngSubmit)="calculatePremium()">
+      <label for="wheeler"
+        ><h3>Select whether vehicle is 2 or 4 wheeler</h3></label
+      >
+      <span>
+        <input
+          type="radio"
+          class="pre3"
+          value="50000"
+          name="vehicleType"
+          [(ngModel)]="premiumDetails.vehiclePrice"
+        />
+        <label for="2-wheeler">For 2 Wheeler</label>
+        <input
+          type="radio"
+          class="pre4"
+          value="400000"
+          name="vehicleType"
+          [(ngModel)]="premiumDetails.vehiclePrice"
+        />
+        <label for="4-wheeler">For 4 Wheeler</label>
+      </span>
 
-    <label for="policy"><h3>Select policy type : comprehensive or third-party</h3></label>
-    <span>
-      <input type="radio" class="pre3" value="7" name="policyType" [(ngModel)]="premiumDetails.premiumRate" />
-      <label for="comprehensive">Comprehensive</label>
-      <input type="radio" class="pre4" value="6.5" name="policyType" [(ngModel)]="premiumDetails.premiumRate" />
-      <label for="third-party">Third-party</label>
-    </span>
+      <label for="policy"
+        ><h3>Select policy type : comprehensive or third-party</h3></label
+      >
+      <span>
+        <input
+          type="radio"
+          class="pre3"
+          value="7"
+          name="policyType"
+          [(ngModel)]="premiumDetails.premiumRate"
+        />
+        <label for="comprehensive">Comprehensive</label>
+        <input
+          type="radio"
+          class="pre4"
+          value="6.5"
+          name="policyType"
+          [(ngModel)]="premiumDetails.premiumRate"
+        />
+        <label for="third-party">Third-party</label>
+      </span>
 
-    <label for="policy"><h3>Select plan duration : one two or three year plan</h3></label>
-    <span>
-      <input type="radio" class="pre3" value="1" name="years" [(ngModel)]="premiumDetails.planYear" />
-      <label for="1 year">1 year</label>
-      <input type="radio" class="pre4" value="2" name="years" [(ngModel)]="premiumDetails.planYear" />
-      <label for="2 year">2 year</label>
-      <input type="radio" class="pre4" value="3" name="years" [(ngModel)]="premiumDetails.planYear" />
-      <label for="3 year">3 year</label>
-    </span>
+      <label for="policy"
+        ><h3>Select plan duration : one two or three year plan</h3></label
+      >
+      <span>
+        <input
+          type="radio"
+          class="pre3"
+          value="1"
+          name="years"
+          [(ngModel)]="premiumDetails.planYear"
+        />
+        <label for="1 year">1 year</label>
+        <input
+          type="radio"
+          class="pre4"
+          value="2"
+          name="years"
+          [(ngModel)]="premiumDetails.planYear"
+        />
+        <label for="2 year">2 year</label>
+        <input
+          type="radio"
+          class="pre4"
+          value="3"
+          name="years"
+          [(ngModel)]="premiumDetails.planYear"
+        />
+        <label for="3 year">3 year</label>
+      </span>
 
-    <div >
-      <label for="date"><h3>Select the date of purchase of your vehicle :</h3></label>
-      <input type="date" name="dateOfPurchase" placeholder="Enter date of purchase" class="pre6" [(ngModel)]="premiumDetails.purchaseDate"/>
-    </div>
-    
-    <div>
-      <button type="submit" class="pre7" >
-        Submit
-      </button>
-    </div>
-    <br>
-    <h3 class="a">YOUR IDV (INSURED DECLARED VALUE) IS:<b>{{premiumAnswer.idv}}</b></h3>
-    <br>
-    <br>
-    <h3 class="a">YOUR ESTIMATED PREMIUM VALUE IS:<b>{{premiumAnswer.estimatedValue}}</b></h3>
-    <br>
-  </form>
-</div>
+      <div>
+        <label for="date"
+          ><h3>Select the date of purchase of your vehicle :</h3></label
+        >
+        <input
+          type="date"
+          name="dateOfPurchase"
+          placeholder="Enter date of purchase"
+          class="pre6"
+          [(ngModel)]="premiumDetails.purchaseDate"
+        />
+      </div>
+
+      <div>
+        <button type="submit" class="pre7">Submit</button>
+      </div>
+      <br />
+      <h3 class="a">
+        YOUR IDV (INSURED DECLARED VALUE) IS:<b>{{ premiumAnswer.idv }}</b>
+      </h3>
+      <br />
+      <br />
+      <h3 class="a">
+        YOUR ESTIMATED PREMIUM VALUE IS:<b>{{
+          premiumAnswer.estimatedValue
+        }}</b>
+      </h3>
+      <br />
+    </form>
+  </div>
 </body>
