@@ -24,6 +24,7 @@ export class ClaimComponent implements OnInit {
   ngOnInit(): void {
     this.customerName=sessionStorage.getItem('customerName');
     this.customerId=sessionStorage.getItem('customerId');
+    this.policyNo=parseInt(sessionStorage.getItem('userPolicyNo'));
   }
 
   onClaimClick(){

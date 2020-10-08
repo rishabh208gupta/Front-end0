@@ -9,6 +9,8 @@ import { NewPolicy, UserPolicy } from '../models/new-policy';
 import { UserClaim } from '../models/statusClaim';
 import { CheckPayment, UserPayment } from '../models/payment';
 import { UserDetails } from '../models/user-details';
+import { CalculatePremiumService } from '../services/calculate-premium.service';
+import { PremiumDetails } from '../calculate-premium/calculate-premium.component';
 
 
 @Component({
@@ -36,7 +38,9 @@ export class UserPageComponent implements OnInit {
   noClaimUserDetails:UserDetails[]=[];
   ClaimUserDetails:UserDetails[]=[];
 
-  
+  premiumDetails :PremiumDetails= new PremiumDetails() ;
+  idv:number;
+  estimatedValue:number;
 
   customerName:string=sessionStorage.getItem('customerName');
 
@@ -44,7 +48,7 @@ export class UserPageComponent implements OnInit {
   checkPayment:CheckPayment[]=[];
 
   constructor(
-    private router:Router, private claimService:ClaimService,private userPageService:UserPageService
+    private router:Router, private claimService:ClaimService,private userPageService:UserPageService, private calulatePremiumService:CalculatePremiumService
   ) { }
 
   ngOnInit(): void {
@@ -187,6 +191,9 @@ export class UserPageComponent implements OnInit {
        userDetails.vehicleType=this.userVehicle[i].vehicleType;
        userDetails.chasisNo=this.userVehicle[i].chasisNo;
        userDetails.vehicleId=this.userVehicle[i].vehicleId;
+       userDetails.manufacturer=this.userVehicle[i].manufacturer;
+       userDetails.purchaseDate=this.userVehicle[i].purchaseDate;
+       userDetails.registrationNo=this.userVehicle[i].registrationNo;
       // alert(JSON.stringify(userDetails));
        this.noPolicyUserDetails.push(userDetails);
       }
@@ -198,7 +205,31 @@ export class UserPageComponent implements OnInit {
           userDetails.policyType=this.userPolicy[i].policyType;
           userDetails.policyDuration=this.userPolicy[i].policyDuration;
           userDetails.policyNo=this.userPolicy[i].policyNo;
-         // alert(JSON.stringify(userDetails));
+          this.premiumDetails.planYear=this.userPolicy[i].policyDuration;
+          this.premiumDetails.purchaseDate=this.userVehicle[i].purchaseDate;
+          if(this.userVehicle[i].vehicleType=='2-wheeler'){
+            this.premiumDetails.vehiclePrice=50000;
+          }
+          else if(this.userVehicle[i].vehicleType=='4-wheeler'){
+            this.premiumDetails.vehiclePrice=400000;
+          }
+
+          if(this.userPolicy[i].policyType=='comprehensive'){
+            this.premiumDetails.premiumRate=7;
+          }
+          else if(this.userPolicy[i].policyType=='third party liability'){
+            this.premiumDetails.premiumRate=6.5;
+          }
+          this.calulatePremiumService.calculatePremium(this.premiumDetails).subscribe(data=>{
+            //alert(JSON.stringify(data));
+            this.idv=data.idv;
+            this.estimatedValue=data.estimatedValue;
+           // alert(this.estimatedValue);
+            userDetails.premiumAmount=this.estimatedValue;
+          })
+          
+          
+          //alert(JSON.stringify(userDetails));
           this.noPaymentUserDetails.push(userDetails);
         }
         else{
@@ -237,17 +268,24 @@ export class UserPageComponent implements OnInit {
     this.fillView();
   }
 
-  onSelectPolicyClick(val:any){
-   sessionStorage.setItem('vehicleId',val);
+  onSelectPolicyClick(vehicleId:any,vehicleType:any, manufacturer:any,purchaseDate:any,registrationNo:any,chasisNo:any){
+   sessionStorage.setItem('vehicleId',vehicleId);
+   sessionStorage.setItem('vehicleType',vehicleType);
+   sessionStorage.setItem('manufacturer',manufacturer);
+   sessionStorage.setItem('purchaseDate',purchaseDate);
+   sessionStorage.setItem('registrationNo',registrationNo);
+   sessionStorage.setItem('chasisNo',chasisNo);
    this.router.navigate(['/new-policy']); 
   }
 
-  onMakePaymentClick(val:any){
+  onMakePaymentClick(val:any,amount:any){
     sessionStorage.setItem('policyNo',val);
+    sessionStorage.setItem('premiumAmount',amount);
     this.router.navigate(['/make-payment']);
   }
 
-  onClaimNowClick(){
+  onClaimNowClick(val:any){
+    sessionStorage.setItem('userPolicyNo',val);
     this.router.navigate(['/claim'])
   }
 }

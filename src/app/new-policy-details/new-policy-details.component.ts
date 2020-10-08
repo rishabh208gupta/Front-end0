@@ -33,13 +33,13 @@ export class NewPolicyDetailsComponent implements OnInit {
   constructor(private router:Router, private buyPolicyService:BuyPolicyService) { }
 
   ngOnInit(): void {
-    alert(sessionStorage.getItem('vehicleId'));
+   // alert(sessionStorage.getItem('vehicleId'));
     this.newPolicy.vehicle.vehicleId=parseInt(sessionStorage.getItem('vehicleId'));
    // this.vehicleType=sessionStorage.getItem('vehicleType');
    // this.purchaseDate=new Date(sessionStorage.getItem('purchaseDate'));
    this.buyPolicyService.calculatePremium(parseInt(sessionStorage.getItem('vehicleId'))).subscribe(data=>{
     this.premiumStatus=data;
-    alert(JSON.stringify(this.premiumStatus));
+   // alert(JSON.stringify(this.premiumStatus));
     this.vehicleType=sessionStorage.getItem('vehicleType');
     this.manufacturer=sessionStorage.getItem('manufacturer');
     this.purchaseDate= new Date(sessionStorage.getItem('purchaseDate'));
