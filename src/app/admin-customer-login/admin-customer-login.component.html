@@ -2,7 +2,7 @@
 <h1 class="s4">Login to LTI Insurance</h1>
 <div id="image-container">
   <div class="signin">
-    <form #adcusForm="ngForm">
+    <form #adcusForm="ngForm" (ngSubmit)="signIn(adcusForm)">
       <div class="s">
         <div class="s5">
           <input
