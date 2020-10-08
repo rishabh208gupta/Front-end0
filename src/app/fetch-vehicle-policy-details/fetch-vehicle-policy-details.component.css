@@ -1,0 +1,51 @@
+td { 
+    width:150px; 
+    text-align:center; 
+    border:1px solid black; 
+    padding: 12px 15px;
+  
+} 
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid #009879;
+   
+}
+th{
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    width:150px; 
+    text-align:center; 
+    border:1px solid black; 
+    padding: 12px 15px;
+   
+    
+}
+div{
+    margin-left: 500px;
+}
+.button2{
+    background: #009879;
+    color: #fff;
+    width: 400px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    box-shadow: 0 10px 5px -9px rgba(0,0,0,.3);
+    padding: 20px;
+    
+}
+.t2{
+    color: ivory;
+}
+select{
+    display:block;
+    width: 400px;
+    height: 40px;
+}

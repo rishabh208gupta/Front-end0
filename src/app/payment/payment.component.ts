@@ -25,7 +25,7 @@ export class PaymentComponent implements OnInit {
      
     })
    // alert(sessionStorage.getItem('premiumAmount'));
-   this.bill.amount=parseInt(sessionStorage.getItem('premiumAmount'));
+   this.bill.amount=parseFloat(sessionStorage.getItem('premiumAmount'));
     this.payment.newPolicy.policyNo=parseInt(sessionStorage.getItem('policyNo'));
     this.payment.amount=this.bill.amount;
    

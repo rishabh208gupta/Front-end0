@@ -41,13 +41,13 @@
   <button class="btn" (click)="onButtonClick()">policy history</button>
 </div>
 
-<div class="row">
+<div class="row" *ngIf="toggle">
   <div class="column">
     <div *ngFor="let nopol of noPolicyUserDetails" class="box">
       <ul>
         <li><h1>Choose Policy</h1></li>
         <li>vehicle : {{ nopol.vehicleType }}</li>
-        <li>chassis number : {{ nopol.chasisNo }}</li>
+        <li><h3>chassis number : {{ nopol.chasisNo }}</h3></li>
       </ul>
       <button class="btn" (click)="onSelectPolicyClick( nopol.vehicleId,nopol.vehicleType,nopol.manufacturer,nopol.purchaseDate,nopol.registrationNo,nopol.chasisNo)">select policy</button>
     </div>
@@ -61,7 +61,7 @@
         <li>chassis number : {{ nopay.chasisNo }}</li>
         <li>policy type : {{ nopay.policyType }}</li>
         <li>policy duration : {{ nopay.policyDuration }} years</li>
-        <li>Premium Amount : {{nopay.premiumAmount }}</li>
+        <li><h2>Premium Amount : {{nopay.premiumAmount }}</h2></li>
       </ul>
       <button class="btn" (click)="onMakePaymentClick(nopay.policyNo,nopay.premiumAmount)">make payment</button>
     </div>
@@ -73,10 +73,11 @@
         <li><h1>Not Yet Claimed</h1></li>
         <li>vehicle : {{ nocl.vehicleType }}</li>
         <li>chassis number : {{ nocl.chasisNo }}</li>
-        <li>policy number : {{ nocl.policyNo }}</li>
+        
         <li>policy type : {{ nocl.policyType }}</li>
         <li>policy duration : {{ nocl.policyDuration }} years</li>
         <li>policy age : {{ nocl.age }} days</li>
+        <li><h2>policy number : {{ nocl.policyNo }}</h2></li>
       </ul>
       <button class="btn" (click)="onClaimNowClick(nocl.policyNo)">claim now</button>
     </div>
@@ -91,7 +92,7 @@
         <li>policy type : {{ cl.policyType }}</li>
         <li>policy duration : {{ cl.policyDuration }} years</li>
         <li>policy age : {{ cl.age }} days</li>
-        <li *ngIf="cl.claimed">claim approved for amount : {{ cl.claimAmount }}</li>
+        <li *ngIf="cl.claimed"><h2>claim approved for amount : {{ cl.claimAmount }}</h2></li>
         <li *ngIf ="!cl.claimed">approval pending...</li>
       </ul>
     </div>

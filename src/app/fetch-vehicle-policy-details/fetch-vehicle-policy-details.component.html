@@ -1,1 +1,72 @@
-<p>fetch-vehicle-policy-details works!</p>
+<app-nav></app-nav>
+
+<div>
+<table border="1">
+    <tr>
+        <th>Policy Number</th>
+        <td>{{userPolicyNo}}</td>
+    </tr>
+    <tr>
+        <th>Vehicle Id</th>
+        <td>{{vehiclePolicyDetails.vehicleId}}</td>
+    </tr>
+    <tr>
+        <th>Vehicle Type</th>
+        <td>{{vehiclePolicyDetails.vehicleType}}</td>
+    </tr>
+    <tr>
+        <th>Manufacturer</th>
+        <td>{{vehiclePolicyDetails.manufacturer}}</td>
+    </tr>
+    <tr>
+        <th>Model</th>
+        <td>{{vehiclePolicyDetails.model}}</td>
+    </tr>
+    <tr>
+        <th>Driving Licence Number</th>
+        <td>{{vehiclePolicyDetails.dlNo}}</td>
+    </tr>
+    <tr>
+        <th>Purchase Date</th>
+        <td>{{vehiclePolicyDetails.purchaseDate}}</td>
+    </tr>
+    <tr>
+        <th>Registration Number</th>
+        <td>{{vehiclePolicyDetails.registrationNo}}</td>
+    </tr>
+    <tr>
+        <th>Engine Number</th>
+        <td>{{vehiclePolicyDetails.engineNo}}</td>
+    </tr>
+    <tr>
+        <th>Chasis Number</th>
+        <td>{{vehiclePolicyDetails.chasisNo}}</td>
+    </tr>
+    <tr>
+        <th>Policy Type</th>
+        <td>{{vehiclePolicyDetails.policyType}}</td>
+    </tr>
+    <tr>
+        <th>Policy Duration</th>
+        <td>{{vehiclePolicyDetails.policyDuration}}</td>
+    </tr>
+</table>
+</div>
+
+<form (ngSubmit)="onClaimClick()">
+    
+  
+    <div>
+      <label for="reason" class="t2">Reason</label>
+      <select name="reason" [(ngModel)]="reason" > 
+        <option value="natural disaster">Natural Disaster</option>
+        <option value="man made disaster">Man Made Disaster</option>
+        <option value="road accident">Road Accident</option>
+        <option value="theft">Theft</option>
+      </select>
+    </div>
+    
+    <div>
+      <button type="submit" class="button2" >Claim</button>
+    </div>
+  </form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service'
 
@@ -9,6 +10,7 @@ import { AdminService } from 'src/app/services/admin.service'
 })
 export class AdminPageComponent implements OnInit {
   admin : Admin = new Admin();
+  errMessage: string;
   constructor(
     private adminService: AdminService,
     private router: Router
@@ -16,7 +18,8 @@ export class AdminPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  adminCheck(){
+  adminCheck(form : NgForm){
+    if (form.valid){
     console.log(JSON.stringify(this.admin));
     
     this.adminService.adminLogin(this.admin).subscribe((data) => {
@@ -30,6 +33,10 @@ export class AdminPageComponent implements OnInit {
       this.router.navigate(['/dashboard']);
     });
   }
+  else{
+    this.errMessage = 'Invalid username/password';
+  }
+}
 }
 export class Admin{
     adminId: number;

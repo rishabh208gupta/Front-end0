@@ -47,6 +47,9 @@ export class UserPageComponent implements OnInit {
   checkClaim:CheckClaim[]=[];
   checkPayment:CheckPayment[]=[];
 
+  toggle:boolean=false;
+  once:boolean=true;
+
   constructor(
     private router:Router, private claimService:ClaimService,private userPageService:UserPageService, private calulatePremiumService:CalculatePremiumService
   ) { }
@@ -253,6 +256,7 @@ export class UserPageComponent implements OnInit {
             userDetails.policyDuration=this.userPolicy[i].policyDuration;
             userDetails.age=this.userPayment[i].age;
             userDetails.claimed=this.userClaim[i].claimed;
+            //alert(userDetails.claimed);
             userDetails.claimAmount=this.userClaim[i].claimAmount;
          //  alert(JSON.stringify(userDetails));
             this.ClaimUserDetails.push(userDetails);
@@ -263,9 +267,13 @@ export class UserPageComponent implements OnInit {
   }
 
   onButtonClick(){
-   
-   this.fillBool();
+   this.toggle=!this.toggle;
+   if(this.once==true){
+    this.fillBool();
     this.fillView();
+    this.once=false;
+   }
+   
   }
 
   onSelectPolicyClick(vehicleId:any,vehicleType:any, manufacturer:any,purchaseDate:any,registrationNo:any,chasisNo:any){
@@ -286,6 +294,6 @@ export class UserPageComponent implements OnInit {
 
   onClaimNowClick(val:any){
     sessionStorage.setItem('userPolicyNo',val);
-    this.router.navigate(['/claim'])
+    this.router.navigate(['/fetch-vehicle-policy-details']);
   }
 }

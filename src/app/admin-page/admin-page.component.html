@@ -4,16 +4,24 @@
 </div>
 <div id="image-container">
 <div class="adminlogin">
-    <form (ngSubmit)="adminCheck()">
+    <form #adminForm="ngForm" (ngSubmit)="adminCheck(adminForm)">
       <div class="a">
       <div class="a1">
         <input
           name="username"
           type="text"
           placeholder="username"
+          required
           class="log1"
           [(ngModel)]="admin.username"
+          #username="ngModel"
         />
+
+        <div *ngIf="adminForm.submitted && username.invalid">
+          <div class="input-div" *ngIf="username.errors.required">
+            <span class="sp-alert">Enter Username </span>
+          </div>
+        </div>
       </div>
   
       <div class="a2">
@@ -21,14 +29,25 @@
           name="password"
           type="password"
           placeholder="password"
+          required
           class="log2"
           [(ngModel)]="admin.password"
+          #password="ngModel"
         />
+        <div *ngIf="adminForm.submitted && password.invalid">
+          <div class="input-div" *ngIf="password.errors.required">
+            <span class="sp-alert">Password is required.</span>
+          </div>
+          </div>
+        
       </div>
   
       <div class="a3">
         <button type="submit" class="log3" [routerLink]="['/dashboard']" >Login</button>
       </div>
+      <div class="input-div" *ngIf="errMessage" style="color: red">
+        {{ errMessage }}
+    </div>
     </div>
     </form>
   </div>

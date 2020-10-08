@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,13 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   login: Login = new Login();
   data: any;
+  errMessage: string;
   constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {}
 
-  loginCheck() {
+  loginCheck(form : NgForm) {
+    if (form.valid){
     console.log(JSON.stringify(this.login));
 
     this.loginService.login(this.login).subscribe((data) => {
@@ -26,6 +29,10 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/forgot-password']);
       this.router.navigate(['/user-page']);
     });
+  }
+  else{
+    this.errMessage = 'Invalid Email Id/ Password';
+  }
   }
 }
 
