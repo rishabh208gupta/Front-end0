@@ -31,14 +31,11 @@
 
         <div *ngIf="adcusForm.submitted && type.invalid">
           <div class="input-div" *ngIf="type.errors.required">
-            <span class="sp-alert">Required</span>
+            <span class="sp-alert">Choose how you wish to continue!</span>
           </div>
         </div>
 
         <button type="submit" class="s3">Submit</button>
-        <div class="input-div" *ngIf="errMessage" style="color: red">
-          {{ errMessage }}
-        </div>
       </div>
     </form>
   </div>
