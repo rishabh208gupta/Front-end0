@@ -109,16 +109,21 @@
       </div>
     </div>
     <div style="display: inline">
-      <form (ngSubmit)="makePayment()">
+      <form (ngSubmit)="payForm.valid && makePayment()" #payForm="ngForm">
         <div class="input-div">
           <label for="paymentMode"><h2>Chose Payment mode</h2></label>
-          <select name="paymentMode" [(ngModel)]="payment.paymentMode">
+          <select name="paymentMode" [(ngModel)]="payment.paymentMode" required #mode="ngModel">
             <option value="credit card">Credit card</option>
             <option value="debit card">Debit card</option>
             <option value="paytm">Paytm</option>
             <option value="UPI">UPI</option>
           </select>
         </div>
+        <div *ngIf="payForm.submitted && mode.invalid">
+          <div class="input-div" *ngIf="mode.errors.required">
+            <span class="sp-alert">Required</span>
+          </div>
+          </div>
         <div class="btn-div">
           <button class="btn-success" type="submit">Make payment</button>
         </div>

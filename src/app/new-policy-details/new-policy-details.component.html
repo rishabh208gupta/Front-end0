@@ -24,7 +24,7 @@
 </div>
 
 <div class="buy1">
-  <form  (ngSubmit)="onClickPayment()" #policyForm = "ngForm">
+  <form  (ngSubmit)="policyForm.valid && onClickPayment()" #policyForm = "ngForm">
     <div class="buy3"><h1>Plans</h1></div>
     <div><h3>Choose your Plan</h3></div>
     <span>
@@ -34,6 +34,7 @@
         name="policyType"
         [(ngModel)]="newPolicy.policy.policyType"
         required
+        #policyType="ngModel"
         
       />
       <label for="policyType">Third Party Liability</label>
@@ -42,9 +43,15 @@
         value="comprehensive"
         name="policyType"
         [(ngModel)]="newPolicy.policy.policyType"
+        #policyType="ngModel"
       />
       <label for="policyType">Comprehensive</label>
     </span>
+    <div *ngIf="policyForm.submitted && policyType.invalid">
+      <div class="input-div" *ngIf="policyType.errors.required">
+        <span class="sp-alert">Required</span>
+      </div>
+      </div>
     <div>
       <input
         type="radio"
@@ -52,6 +59,8 @@
         name="policyDuration"
         [(ngModel)]="newPolicy.policy.policyDuration"
         required
+        #policyDuration="ngModel"
+
         
       />
       <label for="policyDuration">One year</label>
@@ -60,6 +69,7 @@
         value="2"
         name="policyDuration"
         [(ngModel)]="newPolicy.policy.policyDuration"
+        #policyDuration="ngModel"
         
       />
       <label for="policyDuration">Two years</label>
@@ -68,10 +78,16 @@
         value="3"
         name="policyDuration"
         [(ngModel)]="newPolicy.policy.policyDuration"
+        #policyDuration="ngModel"
         
       />
       <label for="policyDuration">Three years</label>
     </div>
+    <div *ngIf="policyForm.submitted && policyDuration.invalid">
+      <div class="input-div" *ngIf="policyDuration.errors.required">
+        <span class="sp-alert">Required</span>
+      </div>
+      </div>
     
     <div>
       <button type="submit" class="buy2">
@@ -83,7 +99,7 @@
   <div>
     <button (click)="onAmountClick()">show amount</button>
   </div>
-  <div *ngIf="policyForm.valid">
+  <div *ngIf="policyForm.valid && toggle">
     <br>
     Your IDV is:<b>{{idv}}</b>
     <br>
