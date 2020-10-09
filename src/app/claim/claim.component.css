@@ -3,10 +3,11 @@
   height: 100px;
   margin-left: 550px;
   margin-top: 50px;
+  margin-bottom:50px;
 }
 
 .body {
-  height: calc(100vh - 95px);
+  height: 1000px;
   background: url(../../assets/images/ren.jpg);
   background-size: cover; 
   background-repeat: no-repeat;
@@ -92,12 +93,14 @@ td {
 }
 table {
   border-collapse: collapse;
-  margin: 25px 0;
+  
   font-size: 0.9em;
   font-family: sans-serif;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-bottom: 2px solid #009879;
+
+  height: 70px;
 }
 th {
   background-color: #009879;
@@ -117,4 +120,7 @@ th {
 
 .t2 {
   color: black;
+}
+.t5{
+  margin-top: 150px;
 }
