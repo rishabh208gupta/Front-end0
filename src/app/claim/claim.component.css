@@ -89,9 +89,6 @@ td {
   text-align: center;
   border: 1px solid black;
   padding: 12px 15px;
-  position: fixed;
-  bottom: 0%;
- 
 }
 table {
   border-collapse: collapse;
@@ -110,7 +107,6 @@ th {
   text-align: center;
   border: 1px solid black;
   padding: 12px 15px;
-  
 }
 
 .anu{

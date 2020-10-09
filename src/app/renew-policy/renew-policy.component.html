@@ -1,11 +1,45 @@
 <app-nav></app-nav>
-<div class="t1">
-  Save upto 80%+ on car insurance
-  Renew in 2 minutes
-  </div>
-<div class="rp">
 <div class="index">
+<button type="button" (click)="clickPolicyDetails()" id="button1">See all your policies</button>
+<div *ngIf="toggle">
+<div *ngIf="claimPageDisplay[0].status">
+  <table border="1">
+    <tr>
+      <th>Policy Number</th>
+      <th>Policy Id </th>
+      <th>Policy Type</th>
+      <th>Vehicle Type</th>
+      <th>Manufacturer</th>
+      <th>Car Model</th>
+      <th>Registration Number</th>
+     </tr>
+  </table>
+  <table border="1" >
+    <div *ngFor="let c of claimPageDisplay">
+     
+    
+      <tr>
+        <td>{{c.policyNo}}</td>
+       <td>{{c.policyId}}</td>
+        <td>{{c.policyType}}</td>
+        <td>{{c.vehicleType}}</td>
+        <td>{{c.manufacturer}}</td>
+        <td>{{c.model}}</td>
+        <td>{{c.registrationNo}}</td>
+      </tr>
+    </div>
+    </table>
+  </div>
+  <div *ngIf="!claimPageDisplay[0].status">
+    <h3>There is no policy associated with this account...</h3>
+  </div>
+</div>
 
+
+<div class="t1">
+Save upto 80%+ on car insurance
+Renew in 2 minutes
+</div>
 <br><br>
 <div id="container">
   <br><br><br>
@@ -30,41 +64,5 @@
   <div *ngIf=!status class="status">
     {{statusMessage}}
   </div>
-
 </div>
-<button type="button" (click)="clickPolicyDetails()" id="button1">See all your policies</button>
-</div>
-<div *ngIf="toggle">
-  <div *ngIf="claimPageDisplay[0].status">
-    <table border="1">
-      <tr>
-        <th>Policy Number</th>
-        <th>Policy Id </th>
-        <th>Policy Type</th>
-        <th>Vehicle Type</th>
-        <th>Manufacturer</th>
-        <th>Car Model</th>
-        <th>Registration Number</th>
-       </tr>
-    </table>
-    <table border="1" >
-      <div *ngFor="let c of claimPageDisplay">
-       
-      
-        <tr>
-          <td>{{c.policyNo}}</td>
-         <td>{{c.policyId}}</td>
-          <td>{{c.policyType}}</td>
-          <td>{{c.vehicleType}}</td>
-          <td>{{c.manufacturer}}</td>
-          <td>{{c.model}}</td>
-          <td>{{c.registrationNo}}</td>
-        </tr>
-      </div>
-      </table>
-    </div>
-    <div *ngIf="!claimPageDisplay[0].status">
-      <h3>There is no policy associated with this account...</h3>
-    </div>
-  </div>
 </div>
